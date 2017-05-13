@@ -1,0 +1,60 @@
+body{
+/*    background-image: url(../img/registroestudiante.jpg);*/
+background-color: lightskyblue;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+header{
+    
+    background-color: #eea236;
+    
+}
+
+h1{
+    color: black;
+}
+
+#formulario{
+    
+    background-color: white;
+    width: 500px;
+    height: 450px;
+    border-radius: 10px;
+    
+}
+
+input,select{
+    border-color: aquamarine;
+    border-radius: 10px;
+    border-width: 2px;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    font-family: Arial;
+    font-size: 100%;
+    border-color: crimson;
+    background:khaki;
+    color: darkblue;
+    font-weight: bold;
+}
+button{
+    border-radius: 10px;
+    border-width: 2px;
+    background: crimson;
+    border: none;
+    width: 125px;
+    height: 50px;
+    color: white;
+    font-family: Arial;
+    font-size: medium;
+    font-weight: bold;
+}
+
+#bo1{
+    position: relative;
+    alignment-adjust: auto;
+    margin-left: 5%;
+}
+
