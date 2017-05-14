@@ -32,7 +32,7 @@ public class ServletCursos extends HttpServlet {
         //Generar mensajes dependiendo de las opciones
         switch (opcion) {
             case 1://Agregar Curso
-                if (DCur.AgregarRegistro()) {
+                if (DCur.AgregarCurso()) {
                    
                     request.setAttribute("exito", "<script> alert('Se registró correctamente')</script>");
                 }else {
@@ -42,7 +42,7 @@ public class ServletCursos extends HttpServlet {
                 request.getRequestDispatcher("registro_Cursos.jsp").forward(request, response);
                 break;
             case 2: //Actualizar curso
-                if (DCur.ActualizarRegistros()) {
+                if (DCur.ActualizarCurso()) {
                     
                     request.setAttribute("exito", "<script> alert('Se registró correctamente')</script>");
                     
@@ -51,15 +51,15 @@ public class ServletCursos extends HttpServlet {
                 }
                 request.getRequestDispatcher("registro_Cursos.jsp").forward(request, response);
                 break;
-            /*case 3: //Eliminar curso
-                if (DCur.EliminarRegistros()) {
+            case 3: //Eliminar curso
+                if (DCur.EliminarCurso()) {
                     request.setAttribute("exito", "<script> alert('Se registró correctamente')</script>");
 
                 }else {
                     request.setAttribute("error", "<script> alert('NO se ha podido registrar')</script>");
                 }
                 request.getRequestDispatcher("registro_Cursos.jsp").forward(request, response);
-                break;*/
+                break;
         }
 
     }

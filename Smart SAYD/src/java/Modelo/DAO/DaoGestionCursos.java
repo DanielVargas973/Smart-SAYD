@@ -2,12 +2,12 @@ package Modelo.DAO;
 
 import Modelo.BEAN.BeanCurso;
 import Util.Conexion;
-import Util.InterfaceEstudiante;
+import Util.InterfaceCurso;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class DaoGestionCursos extends Conexion implements InterfaceEstudiante {
+public class DaoGestionCursos extends Conexion implements InterfaceCurso {
 
     public Connection conn = null;
     private Statement puente = null;
@@ -38,7 +38,7 @@ public class DaoGestionCursos extends Conexion implements InterfaceEstudiante {
     }
 
     @Override
-    public boolean AgregarRegistro() {//Agregar curso
+    public boolean AgregarCurso() {//Agregar curso
         try {
             puente.executeUpdate("INSERT INTO curso (`Fecha_fin`,`Fecha_inicio`,`Id_Curso`,`id_programa`) VALUES ('" + Fecha_fin + "','" + Fecha_inicio + "'," + id_Curso + "," + idPrograma + ")");
             listo = true;
@@ -49,7 +49,7 @@ public class DaoGestionCursos extends Conexion implements InterfaceEstudiante {
     }
 
     @Override
-    public boolean ActualizarRegistros() {//Actualizar curso
+    public boolean ActualizarCurso() {//Actualizar curso
         try {
             puente.executeUpdate("update curso set Fecha_inicio = '" + Fecha_inicio + "', Fecha_fin = '" + Fecha_fin + "', id_programa = '" + idPrograma + "' where Id_Curso='" + id_Curso + "';");
             listo = true;
@@ -59,13 +59,14 @@ public class DaoGestionCursos extends Conexion implements InterfaceEstudiante {
         return listo;
     }
 
-    /*@Override
-    public boolean EliminarRegistros() {//Eliminar curso
+    @Override
+    public boolean EliminarCurso() {//Eliminar curso
         try {
             puente.executeUpdate("delete from curso where Id_Curso ='" + id_Curso + "'");
             listo = true;
         } catch (Exception e) {
             Logger.getLogger(DaoGestionCursos.class.getName()).log(Level.SEVERE, null, e);
         }
-        return listo;*/
+        return listo;
+    }
 }
