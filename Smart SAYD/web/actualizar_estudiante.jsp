@@ -55,39 +55,39 @@
     <center>
         <h1>Actualizar Datos</h1><br>
         <div class="container">
-        <form method="post" action="">
+            <form method="post" action="">
 
-            <label>Numero de identificación:</label><br>
-            <input class="form-control" type="number" name="textidestu"><br>
+                <label>Numero de identificación:</label><br>
+                <input class="form-control" type="number" name="textidestu"><br>
 
-            <button class="btn-primary">Actualizar Datos</button>
-            <input type="hidden" name="textOpcion" value="3"><br><br>
-        </form>
-        <form method="post" action="Estudiante">
-            <table>
-                <tr>
-                    <td><label>Nombres: </label></td>
-                    <td><input class="form-control" type="text" name="textnombres" value="<%=nombres%>"><br>  </td>
-                </tr>
-                <tr>
-                    <td><label>Apellidos: </label></td>
-                    <td><input class="form-control" type="text" name="textapellidos" value="<%=apellidos%>"><br> </td>
-                </tr>
-                <tr>
-                    <td><label>Fecha de Nacimiento: </label></td>
-                    <td><input class="form-control" type="date" name="textfechan"><br> </td>
-                </tr>
-                <tr>
-                    <td><label>Contraseña: </label></td>
-                    <td><input class="form-control" type="password" name="textcontrasena"><br>  </td>
-                </tr>
-                <tr>
-                    <td><label>Repetir Contraseña: </label></td>
-                    <td><input class="form-control" type="password" name="textcontrasena"><br> </td>
-                </tr>
-                <tr>
-                    <td><label>Estrato: </label></td>
-                    <td><select class="form-control" id="se1" name="textestrato">
+                <button class="btn-primary">Actualizar Datos</button>
+                <input type="hidden" name="textOpcion" value="3"><br><br>
+            </form>
+            <form method="post" action="Estudiante">
+                <table>
+                    <tr>
+                        <td><label>Nombres: </label></td>
+                        <td><input class="form-control" type="text" name="textnombres" value="<%=nombres%>"><br>  </td>
+                    </tr>
+                    <tr>
+                        <td><label>Apellidos: </label></td>
+                        <td><input class="form-control" type="text" name="textapellidos" value="<%=apellidos%>"><br> </td>
+                    </tr>
+                    <tr>
+                        <td><label>Fecha de Nacimiento: </label></td>
+                        <td><input class="form-control" type="date" name="textfechan"><br> </td>
+                    </tr>
+                    <tr>
+                        <td><label>Contraseña: </label></td>
+                        <td><input class="form-control" type="password" name="textcontrasena"><br>  </td>
+                    </tr>
+                    <tr>
+                        <td><label>Repetir Contraseña: </label></td>
+                        <td><input class="form-control" type="password" name="textcontrasena"><br> </td>
+                    </tr>
+                    <tr>
+                        <td><label>Estrato: </label></td>
+                        <td><select class="form-control" id="se1" name="textestrato">
                                 <option value="">Elija su Estrato</option>
                                 <option value="1">1 - Muy Bajo</option>
                                 <option value="2">2 - Bajo</option>
@@ -96,20 +96,20 @@
                                 <option value="5">5 - Medio Alto</option>
                                 <option value="6">6 - Alto</option>
                             </select><br></td>
-                </tr>
-                <tr>
-                    <td><label>Correo Electronico: </label></td>
-                    <td><input class="form-control" type="text" name="textcorreo"><br> </td>
-                </tr>
-                <tr>
-                    <td><label>Numero de telefono: </label></td>
-                    <td><input class="form-control" type="number" name="textnumerotel"><br> </td>
-                </tr>
+                    </tr>
+                    <tr>
+                        <td><label>Correo Electronico: </label></td>
+                        <td><input class="form-control" type="text" name="textcorreo"><br> </td>
+                    </tr>
+                    <tr>
+                        <td><label>Numero de telefono: </label></td>
+                        <td><input class="form-control" type="number" name="textnumerotel"><br> </td>
+                    </tr>
 
-            </table>
-            <br><button class="btn-primary">Actualizar Estudiante</button>
-            <input type="hidden" name="textOpcion" value="3">
-        </form>
+                </table>
+                <br><button type="submit" class="btn-primary">Actualizar Estudiante</button>
+                <input type="hidden" name="textOpcion" value="3">
+            </form>
         </div>
         <a type="button" href="menu.jsp"><button class="btn-danger">Regresar</button></a><br><br>
         <%if (request.getAttribute("error") != null) {%>
