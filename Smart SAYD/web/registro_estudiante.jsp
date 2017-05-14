@@ -100,14 +100,12 @@
                         <td><input class="form-control" type="date" name="textfechain"><br><br></td>
                     </tr>
                 </table>
-
                 <br>
-                <button class="btn-primary">Registrar Estudiante</button>
+                <button type="submit" class="btn-primary">Registrar Estudiante</button>
 
                 <input type="hidden" name="textOpcion" value="1">
-
-                <a type="button" href="menu.jsp"><button id="bo1" class="btn-danger">Regresar</button></a> 
             </form>
+            <a href="menu.jsp"><button id="bo1" class="btn-danger">Regresar</button></a>
 
         </div><br>
         <%if (request.getAttribute("error") != null) {%>
