@@ -37,7 +37,7 @@
                         <table>
                             <tr>
                                 <td>Identificación del curso: </td>
-                                <td><input type="Number" name="textCurso" placeholder="Número de iddentificación"></td>
+                                <td><input type="Number" name="textCurso" placeholder="Número de identificación"></td>
                             </tr>
                             <tr>
                                 <td>Selección del programa: </td>
