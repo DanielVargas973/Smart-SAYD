@@ -10,7 +10,6 @@
     Connection con = null;
     Statement puente = null;
     ResultSet rs = null;
-
     boolean encontrado = false;
     boolean listo = false;
 
@@ -25,6 +24,20 @@
         <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="Bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
         <link href="css/registro_estudiante.css" rel="stylesheet" type="text/css"/>
+        <script src="JQuery/jquery-3.2.1.min.js" type="text/javascript"></script>
+        <script src="js/fechas.js" type="text/javascript"></script>
+        <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
+        <script>
+            $(function () {
+                $('[type="date"]').prop('max', function () {
+                    return new Date().toJSON().split('T')[0];
+                });
+            });
+            function regresar() {
+                window.location.href = 'menu.jsp';
+            }
+
+        </script>
         <title>Registro Estudiante</title>
     </head>
     <body>
@@ -34,7 +47,7 @@
             </div><br>
         </header>
     <center>
-        <h1>Registro Estudiante</h1><br>
+        <br><img src="img/registro.png" alt=""/><br><br>
         <div id="formulario" class="container"><br>
             <form method="post" action="Estudiante" class="form-inline">
                 <table>
@@ -62,7 +75,8 @@
                     </tr>
                     <tr>
                         <td><label>Fecha Expedición: </label></td>
-                        <td><input class="form-control" type="date" name="textfechaex"><br><br></td>
+                        <td><input class="form-control" type="date" id="fecha1" name="textfechaex"><br><br></td>
+
                     </tr>
                     <tr>
                         <td><label>Genero: </label></td>
@@ -77,15 +91,16 @@
                         <td><select class="form-control" id="se1" name="textidcurso">
                                 <%try {
                                         out.print("<option value=''>Selecione un Curso</option>");
-                                        rs = puente.executeQuery("SELECT count(*) as cantidad ,Id_Curso,Nombre_programa FROM estudiante,programa GROUP BY Id_Curso;");
+                                        rs = puente.executeQuery("SELECT count(*) as cantidad ,Id_Curso,Nombre_programa FROM programa,estudiante GROUP BY Id_Curso;");
                                         while (rs.next()) {
-                                            if (Integer.parseInt(rs.getString("cantidad")) < 40) {
-                                %>
+                                            if (Integer.parseInt(rs.getString("cantidad")) < 40) {//Begin IF
+%>
 
                                 <option value="<%=rs.getString("Id_Curso")%>"><%=rs.getString("Id_Curso")%><%out.print(" - ");%><%=rs.getString("Nombre_programa")%></option>
 
                                 <%
                                         }//End IF
+
                                     }
                                 } catch (Exception e) {
                                 %>
@@ -97,15 +112,20 @@
                     </tr>
                     <tr>
                         <td><label>Fecha Inscripción: </label></td>
-                        <td><input class="form-control" type="date" name="textfechain"><br><br></td>
+                        <td><input class="form-control" type="date" id="fecha2" name="textfechain"><br><br></td>
                     </tr>
                 </table>
-                <br>
-                <button type="submit" class="btn-primary">Registrar Estudiante</button>
-
-                <input type="hidden" name="textOpcion" value="1">
+                <br><br>
+                <table>
+                    <tr>
+                        <td><button  class="btn-primary">Registrar Estudiante</button>
+                            <input type="hidden" name="textOpcion" value="1"/></td>
+                        <td><input class="btn-danger" type="button" id="bo1" onclick="regresar()" value="Regresar"></td>
+                    </tr>
+                </table>
             </form>
-            <a href="menu.jsp"><button id="bo1" class="btn-danger">Regresar</button></a>
+
+
 
         </div><br>
         <%if (request.getAttribute("error") != null) {%>

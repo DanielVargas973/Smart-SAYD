@@ -21,13 +21,13 @@
             </div><br>
         </header>
     <center>
-        <h2>Menú</h2><br>
+        <img src="img/menu.png" alt=""/><br><br>
 
-        <b><a type="button" href="actualizar_estudiante.jsp"><button class="btn-danger">Actualizar Estudiante</button></a></b>
+        <b><a type="button" href="registro_estudiante.jsp"><button class="btn-danger">Registrar Estudiante</button></a></b>
 
         <br><br>
 
-        <b><a type="button" href="registro_estudiante.jsp"><button class="btn-danger">Registrar Estudiante</button></a></b>
+        <b><a type="button" href="actualizar_estudiante.jsp"><button class="btn-danger">Actualizar Estudiante</button></a></b>
 
     </center>
     <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>

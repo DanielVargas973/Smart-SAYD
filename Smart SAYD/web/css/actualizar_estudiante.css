@@ -1,5 +1,5 @@
 body{
-    background-image: url("img/registro_estudiante.jpg");
+    background-color: lightblue;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -7,7 +7,7 @@ body{
 }
 header{
     
-    background-color: #eea236;
+    background-color: lightsalmon;
     
 }
 
