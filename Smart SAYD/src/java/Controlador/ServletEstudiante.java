@@ -77,7 +77,7 @@ public class ServletEstudiante extends HttpServlet {
                 } else {
                     request.setAttribute("error", "<script> alert('Error, no se ha podido actualizar')</script>");
                 }
-                request.getRequestDispatcher("modificar_estudiante.jsp").forward(request, response);
+                request.getRequestDispatcher("actualizar_estudiante.jsp").forward(request, response);
                 break;
             case 3: //Consultar Registro
                 
@@ -92,7 +92,7 @@ public class ServletEstudiante extends HttpServlet {
                     request.setAttribute("error", "<script> alert('Error, no se encontro el estudiante')</script>");
                     
                 }    
-                request.getRequestDispatcher("modificar_estudiante.jsp").forward(request, response);
+                request.getRequestDispatcher("actualizar_estudiante.jsp").forward(request, response);
                 break;
         }
         

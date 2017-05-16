@@ -1,14 +1,18 @@
 body{
+    /*    background-image: url(../img/registroestudiante.jpg);*/
     background-color: salmon;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
+center{
+    margin-top: 7%;
+}
 header{
-    
+
     background-color: #faebcc;
-    
+
 }
 
 h1{
@@ -19,7 +23,7 @@ h1{
 
     background-color: white;
     width: 500px;
-    height: 550px;
+    height: 250px;
     border-radius: 10px;
 
 }
@@ -49,8 +53,8 @@ button{
     font-family: Arial;
     font-size: medium;
     font-weight: bold;
-
 }
+
 #bo1{
     position: relative;
     alignment-adjust: auto;
