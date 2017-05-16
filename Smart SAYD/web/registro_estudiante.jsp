@@ -25,6 +25,7 @@
         <link href="Bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
         <link href="css/registro_estudiante.css" rel="stylesheet" type="text/css"/>
         <script src="JQuery/jquery-3.2.1.min.js" type="text/javascript"></script>
+        <script src="js/val_registro_estudiante.js" type="text/javascript"></script>
         <script src="js/fechas.js" type="text/javascript"></script>
         <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
         <script>
@@ -53,11 +54,11 @@
                 <table>
                     <tr>
                         <td><label>Nombres: &nbsp;</label></td>
-                        <td><input class="form-control" type="text" name="textnombres" placeholder="Nombres"><br><br></td>
+                        <td><input class="form-control" type="text" name="textnombres" placeholder="Nombres"><p id="Renombre"></p><br></td>
                     </tr>
                     <tr>
                         <td><label>Apellidos: &nbsp;</label></td>
-                        <td><input class="form-control" type="text" name="textapellidos" placeholder="Apellidos"><br><br></td>
+                        <td><input class="form-control" type="text" name="textapellidos" placeholder="Apellidos"><p id="Reapellido"></p><br></td>
                     </tr>
                     <tr>
                         <td><label>Tipo Identificación: &nbsp;</label></td>
@@ -71,7 +72,7 @@
                     </tr>
                     <tr>
                         <td><label>Numero Identificación: &nbsp;&nbsp;</label></td>
-                        <td><input class="form-control" type="number" name="textnumeroid" placeholder="Numero Identificación"><br><br></td>
+                        <td><input class="form-control" type="number" name="textnumeroid" placeholder="Numero Identificación"><p id="Renumid"></p><br></td>
                     </tr>
                     <tr>
                         <td><label>Fecha Expedición: &nbsp;</label></td>
@@ -115,7 +116,7 @@
                         <td><input class="form-control" type="date" id="fecha2" name="textfechain"><br><br></td>
                     </tr>
                 </table>
-                <br><br>
+                </div><br><br>
                 <table>
                     <tr>
                         <td><button class="btn-primary">Registrar Estudiante</button>
@@ -124,7 +125,7 @@
                     </tr>
                 </table>
             </form>
-        </div><br>
+        
         <%if (request.getAttribute("error") != null) {%>
         ${error}
         <%} else {%>

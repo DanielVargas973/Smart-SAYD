@@ -1,24 +1,3 @@
-$(document).ready(function (){
-    $("input[name=textcontrasena1]"). blur(function (){
-        ComprobarClave();
-    });
-});
-function ComprobarClave(){
-    pass1 = $("input[name=textcontrasena]").val();
-    pass2 = $("input[name=textcontrasena1]").val();
-    
-    if (pass1 =="" && pass2=="") {
-        $("#Res").html("Contraseñas Requeridas.");
-    }else{
-        if (pass1 == pass2) {
-        $("#Res").html("Contraseñas Correctas. ");
-         }else{
-        $("#Res").html("Contraseñas no Coinciden. ");
-    }
-    }
-    
-}
-
 $(document).ready(function(){
 
 $("input[name=textidestu]"). blur(function(){
@@ -79,6 +58,3 @@ estudiante = $("input[name=textidestu]").val();
         $("#ReEstu").html("Documento Requerido. ");
     }
 }
-//putos
-
-

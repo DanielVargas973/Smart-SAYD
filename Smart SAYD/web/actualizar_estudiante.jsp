@@ -50,10 +50,14 @@
         <link href="Bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
         <link href="css/actualizar_estudiante.css" rel="stylesheet" type="text/css"/>
         <script src="JQuery/jquery-3.2.1.min.js" type="text/javascript"></script>
-        <script src="js/actualizar_estudiante.js" type="text/javascript"></script>
+        <script src="js/val_actualizar_estudiante.js" type="text/javascript"></script>
         <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
         <script>
-
+            $(function () {
+                $('[type="date"]').prop('max', function () {
+                    return new Date().toJSON().split('T')[0];
+                });
+            });
             function regresar() {
                 window.location.href = 'menu.jsp';
             }
@@ -85,7 +89,7 @@
                 <table>
                     <tr>
                         <td><label>Documento:  </label></td>
-                        <td><input class="form-control" type="number" readonly="readonly" name="textidestu" value="<%=idEstudiante%>"><p id="ReEstu"><br>  </td>
+                        <td><input class="form-control" type="number" readonly="readonly" name="textidestu" value="<%=idEstudiante%>"><p id="ReEstu"></p><br></td>
                     </tr>
                     <tr>
                         <td><label>Nombres: &nbsp;</label></td>
