@@ -76,7 +76,7 @@ public class DaoRegistroEstudiante extends Conexion implements InterfaceEstudian
     @Override
     public boolean ActualizarRegistros() {
         try {
-            puente.executeUpdate("update estudiante set Nombres='"+Nombres+"', Apellidos='"+Apellidos+"', Fecha_nacimiento='"+Fecha_nacimiento+"', Estrato='"+Estrato+"', Numero_telefono='"+Numero_telefono+"', Correo_electronico='"+Correo_electronico+"', `Contrasena='"+Contrasena+"' where idEstudiante='" + idEstudiante + "';");
+            puente.executeUpdate("update estudiante set Nombres='"+Nombres+"', Apellidos='"+Apellidos+"', Fecha_nacimiento='"+Fecha_nacimiento+"', Estrato='"+Estrato+"', Numero_telefono='"+Numero_telefono+"', Correo_electronico='"+Correo_electronico+"', Contrasena='"+Contrasena+"' where idEstudiante=" + idEstudiante + ";");
             listo = true;
         } catch (Exception e) {
             Logger.getLogger(DaoRegistroEstudiante.class.getName()).log(Level.SEVERE, null, e);

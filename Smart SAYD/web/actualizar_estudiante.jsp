@@ -32,10 +32,10 @@
 
             nombres = rs.getString("Nombres");
             apellidos = rs.getString("Apellidos");
-            
+
             if (true) {
-                    
-                }
+
+            }
 
         }
     } catch (Exception e) {
@@ -50,9 +50,10 @@
         <link href="Bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
         <link href="css/actualizar_estudiante.css" rel="stylesheet" type="text/css"/>
         <script src="JQuery/jquery-3.2.1.min.js" type="text/javascript"></script>
+        <script src="js/actualizar_estudiante.js" type="text/javascript"></script>
         <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
         <script>
-                    
+
             function regresar() {
                 window.location.href = 'menu.jsp';
             }
@@ -68,36 +69,43 @@
         </header>
     <center>
         <br><img src="img/actualizar.png" alt=""/><br><br>
-        <div id="formulario" class="container"><br>
+        <div id="formulario1" class="container"><br>
             <form method="post" action="Estudiante">
+                
                 <table>
                     <td><label>Numero de identificación:&nbsp;</label></td>
-                    <td><input class="form-control" type="number" name="textidestu" value="<%=idEstudiante%>"><br></td>
+                    <td><input class="form-control" type="number" name="textidestu"><p id="ReEstu"></p><br></td>
                 </table>
                 <button class="btn-primary">Actualizar Datos&nbsp;</button>
                 <input type="hidden" name="textOpcion" value="3"><br>
             </form>
+            </div>
             <form method="post" action="Estudiante">
+                <div id="formulario2" class="container">
                 <table>
                     <tr>
+                        <td><label>Documento:  </label></td>
+                        <td><input class="form-control" type="number" readonly="readonly" name="textidestu" value="<%=idEstudiante%>"><p id="ReEstu"><br>  </td>
+                    </tr>
+                    <tr>
                         <td><label>Nombres: &nbsp;</label></td>
-                        <td><input class="form-control" type="text" name="textnombres" readonly="readonly" value="<%=nombres%>"><br>  </td>
+                        <td><input class="form-control" type="text" readonly="readonly" name="textnombres" value="<%=nombres%>"><p id="Renombre"></p><br></td>
                     </tr>
                     <tr>
                         <td><label>Apellidos: &nbsp;</label></td>
-                        <td><input class="form-control" type="text" name="textapellidos" readonly="readonly" value="<%=apellidos%>"><br> </td>
+                        <td><input class="form-control" type="text" readonly="readonly" name="textapellidos" value="<%=apellidos%>"><p id="Reapellido"></p><br></td>
                     </tr>
                     <tr>
                         <td><label>Fecha de Nacimiento: &nbsp;</label></td>
-                        <td><input class="form-control" type="date" name="textfechan"><br> </td>
+                        <td><input class="form-control" type="date" name="textfechan"><br></td>
                     </tr>
                     <tr>
                         <td><label>Contraseña: &nbsp;</label></td>
-                        <td><input class="form-control" type="password" name="textcontrasena"><br>  </td>
+                        <td><input class="form-control" type="password" name="textcontrasena"><p id="Recontra"></p><br> </td>
                     </tr>
                     <tr>
                         <td><label>Repetir Contraseña: &nbsp;</label></td>
-                        <td><input class="form-control" type="password" name="textcontrasena"><br> </td>
+                        <td><input class="form-control" type="password" name="textcontrasena1"><p id="Res"></p><br></td>
                     </tr>
                     <tr>
                         <td><label>Estrato: &nbsp;</label></td>
@@ -113,27 +121,28 @@
                     </tr>
                     <tr>
                         <td><label>Correo Electronico: &nbsp;</label></td>
-                        <td><input class="form-control" type="text" name="textcorreo"><br> </td>
+                        <td><input class="form-control" type="email" name="textcorreo"><p id="Recorreo"></p><br></td>
                     </tr>
                     <tr>
                         <td><label>Numero de telefono: &nbsp;</label></td>
-                        <td><input class="form-control" type="number" name="textnumerotel"><br> </td>
+                        <td><input class="form-control" type="number" name="textnumerotel"><p id="Retel"></p><br></td>
                     </tr>
-
-                </table><br>
+                
+                </table>
+                </div><br>    
                 <table>
                     <tr>
-                    <td><button class="btn-primary">Actualizar Estudiante</button>
-                        <input type="hidden" name="textOpcion" value="2"></td>
-                    <td><input class="btn-danger" type="button" id="bo1" onclick="regresar()" value="Regresar"></td>
+                        <td><button class="btn-primary">Actualizar Estudiante</button>
+                            <input type="hidden" name="textOpcion" value="2"></td>
+                        <td><input class="btn-danger" type="button" id="bo1" onclick="regresar()" value="Regresar"></td>
                     </tr>
                 </table>
             </form>
-        </div>
+        
         <%if (request.getAttribute("error") != null) {%>
         ${error}
         <% } else { %>
-        ${Exito}
+        ${exito}
         <% }%>
     </center>
 </body>
