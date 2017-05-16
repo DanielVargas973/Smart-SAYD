@@ -1,5 +1,5 @@
 body{
-    background-color: lightblue;
+    background-color: salmon;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -7,7 +7,7 @@ body{
 }
 header{
     
-    background-color: lightsalmon;
+    background-color: #faebcc;
     
 }
 
@@ -41,4 +41,18 @@ button{
     font-weight: bold;
 
 }
-
+#bo1{
+    position: relative;
+    alignment-adjust: auto;
+    margin-left: 5%;
+    border-radius: 10px;
+    border-width: 2px;
+    background: #5e5e5e;
+    border: none;
+    width: 125px;
+    height: 50px;
+    color: white;
+    font-family: Arial;
+    font-size: medium;
+    font-weight: bold;
+}

@@ -111,7 +111,7 @@
             <input type="hidden" name="textOpcion" value="3">
         </form>
         </div>
-        <a type="button" href="menu.jsp"><button class="btn-danger">Regresar</button></a><br><br>
+                <a type="button" href="menu.jsp"><button class="btn-danger" id="bo1">Regresar</button></a><br><br>
         <%if (request.getAttribute("error") != null) {%>
         ${error}
         <% } else { %>

@@ -94,7 +94,7 @@
                                         rs = puente.executeQuery("SELECT count(*) as cantidad ,Id_Curso,Nombre_programa FROM programa,estudiante GROUP BY Id_Curso;");
                                         while (rs.next()) {
                                             if (Integer.parseInt(rs.getString("cantidad")) < 40) {//Begin IF
-%>
+                                %>
 
                                 <option value="<%=rs.getString("Id_Curso")%>"><%=rs.getString("Id_Curso")%><%out.print(" - ");%><%=rs.getString("Nombre_programa")%></option>
 
@@ -124,9 +124,6 @@
                     </tr>
                 </table>
             </form>
-
-
-
         </div><br>
         <%if (request.getAttribute("error") != null) {%>
         ${error}
