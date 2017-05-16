@@ -52,15 +52,15 @@
             <form method="post" action="Estudiante" class="form-inline">
                 <table>
                     <tr>
-                        <td><label>Nombres: </label></td>
+                        <td><label>Nombres: &nbsp;</label></td>
                         <td><input class="form-control" type="text" name="textnombres" placeholder="Nombres"><br><br></td>
                     </tr>
                     <tr>
-                        <td><label>Apellidos: </label></td>
+                        <td><label>Apellidos: &nbsp;</label></td>
                         <td><input class="form-control" type="text" name="textapellidos" placeholder="Apellidos"><br><br></td>
                     </tr>
                     <tr>
-                        <td><label>Tipo Identificación: </label></td>
+                        <td><label>Tipo Identificación: &nbsp;</label></td>
                         <td><select class="form-control" id="se1" name="texttipoid">
                                 <option value="">Elija su Tipo de Documento</option>
                                 <option value="1">Cedula de Ciudadania</option>
@@ -70,16 +70,16 @@
                             </select><br><br></td>
                     </tr>
                     <tr>
-                        <td><label>Numero Identificación: </label></td>
+                        <td><label>Numero Identificación: &nbsp;&nbsp;</label></td>
                         <td><input class="form-control" type="number" name="textnumeroid" placeholder="Numero Identificación"><br><br></td>
                     </tr>
                     <tr>
-                        <td><label>Fecha Expedición: </label></td>
+                        <td><label>Fecha Expedición: &nbsp;</label></td>
                         <td><input class="form-control" type="date" id="fecha1" name="textfechaex"><br><br></td>
 
                     </tr>
                     <tr>
-                        <td><label>Genero: </label></td>
+                        <td><label>Genero: &nbsp;</label></td>
                         <td><select class="form-control" id="se2" name="textgenero">
                                 <option value="">Selecione su Genero</option>
                                 <option value="1">Masculino</option>
@@ -87,7 +87,7 @@
                             </select><br><br></td>
                     </tr>
                     <tr>
-                        <td><label>Curso: </label></td>
+                        <td><label>Curso: &nbsp;</label></td>
                         <td><select class="form-control" id="se1" name="textidcurso">
                                 <%try {
                                         out.print("<option value=''>Selecione un Curso</option>");
@@ -111,14 +111,14 @@
                             </select><br><br></td>
                     </tr>
                     <tr>
-                        <td><label>Fecha Inscripción: </label></td>
+                        <td><label>Fecha Inscripción: &nbsp;</label></td>
                         <td><input class="form-control" type="date" id="fecha2" name="textfechain"><br><br></td>
                     </tr>
                 </table>
                 <br><br>
                 <table>
                     <tr>
-                        <td><button  class="btn-primary">Registrar Estudiante</button>
+                        <td><button class="btn-primary">Registrar Estudiante</button>
                             <input type="hidden" name="textOpcion" value="1"/></td>
                         <td><input class="btn-danger" type="button" id="bo1" onclick="regresar()" value="Regresar"></td>
                     </tr>
