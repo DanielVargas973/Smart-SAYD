@@ -35,7 +35,7 @@
                     nombres = rs.getString("Nombres");
                     apellidos = rs.getString("Apellidos");
                     if (nombres == "" || apellidos == "" || nombres == "" && apellidos == "") {
-                        %><script></script>
+                        %><script>alert("Error, no se encuentro el estudiante");/script><%
                     }
         }
         
