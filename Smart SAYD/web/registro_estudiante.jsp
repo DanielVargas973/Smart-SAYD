@@ -21,6 +21,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
         <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="Bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
         <link href="css/registro_estudiante.css" rel="stylesheet" type="text/css"/>
