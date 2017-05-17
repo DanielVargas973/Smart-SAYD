@@ -11,5 +11,6 @@ function ComprobarCurso(){
 curso = $("input[name=textCurso]").val();
     if (curso =="") {
         $("#curso").html("Numero Curso Requerido. ");
+        $("#Curso").css("border-color","red");
     }
 }

@@ -78,7 +78,7 @@
                 
                 <table>
                     <td><label>Numero de identificación:&nbsp;</label></td>
-                    <td><input class="form-control" type="number" name="textidestu"><p id="ReEstu"></p><br></td>
+                    <td><input class="form-control" type="number" id="estu" name="textidestu"><p id="ReEstu"></p><br></td>
                 </table>
                 <button class="btn-primary">Actualizar Datos&nbsp;</button>
                 <input type="hidden" name="textOpcion" value="3"><br>
@@ -89,15 +89,15 @@
                 <table>
                     <tr>
                         <td><label>Documento:  </label></td>
-                        <td><input class="form-control" type="number" readonly="readonly" name="textidestu" value="<%=idEstudiante%>"><p id="ReEstu"></p><br></td>
+                        <td><input class="form-control" type="number" readonly="readonly" id="estu1" name="textidestu" value="<%=idEstudiante%>"><p id="ReEstu"></p><br></td>
                     </tr>
                     <tr>
                         <td><label>Nombres: &nbsp;</label></td>
-                        <td><input class="form-control" type="text" readonly="readonly" name="textnombres" value="<%=nombres%>"><p id="Renombre"></p><br></td>
+                        <td><input class="form-control" type="text" readonly="readonly" id="nombres" name="textnombres" value="<%=nombres%>"><p id="Renombre"></p><br></td>
                     </tr>
                     <tr>
                         <td><label>Apellidos: &nbsp;</label></td>
-                        <td><input class="form-control" type="text" readonly="readonly" name="textapellidos" value="<%=apellidos%>"><p id="Reapellido"></p><br></td>
+                        <td><input class="form-control" type="text" readonly="readonly" id="apellidos" name="textapellidos" value="<%=apellidos%>"><p id="Reapellido"></p><br></td>
                     </tr>
                     <tr>
                         <td><label>Fecha de Nacimiento: &nbsp;</label></td>
@@ -105,11 +105,11 @@
                     </tr>
                     <tr>
                         <td><label>Contraseña: &nbsp;</label></td>
-                        <td><input class="form-control" type="password" name="textcontrasena"><p id="Recontra"></p><br> </td>
+                        <td><input class="form-control" type="password" id="contrasena" name="textcontrasena"><p id="Recontra"></p><br> </td>
                     </tr>
                     <tr>
                         <td><label>Repetir Contraseña: &nbsp;</label></td>
-                        <td><input class="form-control" type="password" name="textcontrasena1"><p id="Res"></p><br></td>
+                        <td><input class="form-control" type="password" id="contrasena1" name="textcontrasena1"><p id="Res"></p><br></td>
                     </tr>
                     <tr>
                         <td><label>Estrato: &nbsp;</label></td>
@@ -125,11 +125,11 @@
                     </tr>
                     <tr>
                         <td><label>Correo Electronico: &nbsp;</label></td>
-                        <td><input class="form-control" type="email" name="textcorreo"><p id="Recorreo"></p><br></td>
+                        <td><input class="form-control" type="email" id="correo" name="textcorreo"><p id="Recorreo"></p><br></td>
                     </tr>
                     <tr>
                         <td><label>Numero de telefono: &nbsp;</label></td>
-                        <td><input class="form-control" type="number" name="textnumerotel"><p id="Retel"></p><br></td>
+                        <td><input class="form-control" type="number" id="numerotel" name="textnumerotel"><p id="Retel"></p><br></td>
                     </tr>
                 
                 </table>

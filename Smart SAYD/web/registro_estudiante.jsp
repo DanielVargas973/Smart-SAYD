@@ -49,16 +49,16 @@
         </header>
     <center>
         <br><img src="img/registro.png" alt=""/><br><br>
-        <div id="formulario" class="container"><br>
-            <form method="post" action="Estudiante" class="form-inline">
+            <form id="fo" method="post" action="Estudiante" class="form-inline">
+                <div id="formulario" class="container"><br>
                 <table>
                     <tr>
                         <td><label>Nombres: &nbsp;</label></td>
-                        <td><input class="form-control has-focus" type="text" name="textnombres" placeholder="Nombres"><p id="Renombre"></p><br></td>
+                        <td><input class="form-control has-focus" type="text" id="nombres" name="textnombres" placeholder="Nombres"><p id="Renombre"></p><br></td>
                     </tr>
                     <tr>
                         <td><label>Apellidos: &nbsp;</label></td>
-                        <td><input class="form-control" type="text" name="textapellidos" placeholder="Apellidos"><p id="Reapellido"></p><br></td>
+                        <td><input class="form-control" type="text" name="textapellidos" id="apellidos" placeholder="Apellidos"><p id="Reapellido"></p><br></td>
                     </tr>
                     <tr>
                         <td><label>Tipo Identificación: &nbsp;</label></td>
@@ -72,7 +72,7 @@
                     </tr>
                     <tr>
                         <td><label>Numero Identificación: &nbsp;&nbsp;</label></td>
-                        <td><input class="form-control" type="number" name="textnumeroid" placeholder="Numero Identificación"><p id="Renumid"></p><br></td>
+                        <td><input class="form-control" type="number" name="textnumeroid" id="numero" placeholder="Numero Identificación"><p id="Renumid"></p><br></td>
                     </tr>
                     <tr>
                         <td><label>Fecha Expedición: &nbsp;</label></td>

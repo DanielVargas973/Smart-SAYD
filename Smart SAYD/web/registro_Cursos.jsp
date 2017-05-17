@@ -51,7 +51,7 @@
                     <table>
                         <tr>
                             <td><label>Identificación del curso: &nbsp;</label></td>
-                            <td><input class="form-control" type="Number" name="textCurso" placeholder="Número de identificación"><p id="curso"></p><br></td>
+                            <td><input class="form-control" type="Number" id="Curso" name="textCurso" placeholder="Número de identificación"><p id="curso"></p><br></td>
                         </tr>
                         <tr>
                             <td><label>Selección del programa: &nbsp;</label></td>
