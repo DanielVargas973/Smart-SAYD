@@ -93,7 +93,7 @@
                         <td><select class="form-control" id="se1" name="textidcurso">
                                 <%try {
                                         out.print("<option value=''>Selecione un Curso</option>");
-                                        rs = puente.executeQuery("SELECT count(*) as cantidad ,Id_Curso,Nombre_programa FROM programa,estudiante GROUP BY Id_Curso;");
+                                        rs = puente.executeQuery("SELECT count(e.Apellidos) as cantidad ,c.Id_Curso,Nombre_programa FROM curso c left join estudiante e on c.Id_Curso = e.Id_Curso inner join programa p on p.idPrograma = c.id_programa GROUP BY c.Id_Curso;");
                                         while (rs.next()) {
                                             if (Integer.parseInt(rs.getString("cantidad")) < 40) {//Begin IF
                                 %>
