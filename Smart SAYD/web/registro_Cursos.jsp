@@ -26,7 +26,10 @@
         <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="Bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
         <link href="css/registro_cursos.css" rel="stylesheet" type="text/css"/>
+        <link href="JQuery/JqueryUI/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css"/>
         <script src="JQuery/jquery-3.2.1.min.js" type="text/javascript"></script>
+        <script src="JQuery/JqueryUI/jquery-ui-1.12.1/jquery-ui.js" type="text/javascript"></script>
+        <a href="JQuery/JqueryUI/jquery-ui-1.12.1.custom/package.json"></a>
         <script src="js/val_registro_cursos.js" type="text/javascript"></script>
         <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
         <script>
@@ -34,6 +37,12 @@
             function regresar() {
                 window.location.href = 'menu.jsp';
             }
+            $(ducument).ready(function () {
+                $(function () {
+                    $("date").datepicker();
+                    $("date").datepicker();
+                });
+            });
 
         </script>
         <title>Gestión de cursos</title>
@@ -48,48 +57,48 @@
         <br><img src="img/recursos.png" alt=""/><br><br>
         <form class="form-inline" method="POST" action="Curso">
             <div id="formulario" class="container"><br>
-                    <table>
-                        <tr>
-                            <td><label>Identificación del curso: &nbsp;</label></td>
-                            <td><input class="form-control" type="Number" id="Curso" name="textCurso" placeholder="Número de identificación"><p id="curso"></p><br></td>
-                        </tr>
-                        <tr>
-                            <td><label>Selección del programa: &nbsp;</label></td>
-                            <td><select class="form-control" id="se1" name="textseleccion">
-                                    <%try {
-                                            out.println("<option value=''>Selecione un Curso</option>");
-                                            rs = puente.executeQuery("select * from programa");
-                                            while (rs.next()) {
+                <table>
+                    <tr>
+                        <td><label>Identificación del curso: &nbsp;</label></td>
+                        <td><input class="form-control" type="Number" id="Curso" name="textCurso" placeholder="Número de identificación"><p id="curso"></p><br></td>
+                    </tr>
+                    <tr>
+                        <td><label>Selección del programa: &nbsp;</label></td>
+                        <td><select class="form-control" id="se1" name="textseleccion">
+                                <%try {
+                                        out.println("<option value=''>Selecione un Curso</option>");
+                                        rs = puente.executeQuery("select * from programa");
+                                        while (rs.next()) {
 
-                                    %>
+                                %>
 
-                                    <option value="<%=rs.getString("idPrograma")%>"><%=rs.getString("Nombre_programa")%></option>
+                                <option value="<%=rs.getString("idPrograma")%>"><%=rs.getString("Nombre_programa")%></option>
 
-                                    <%
+                                <%
 
-                                        }
-                                    } catch (Exception e) {
-                                    %>
-                                    <option value="">No se encontro ninguna lista</option> 
-                                    <%
-                                        }
-                                    %></select><br><br>
-                            </td>
-                        </tr>
-                    </table>
-                    <table>
-                        <tr>
-                            <td><label>Fecha de inicio: &nbsp;</label></td>
-                            <td><input class="form-control" type="date" name="textFechaIni"><br><br></td>
-                        </tr>
-                        <tr>
-                            <td><label>Fecha de finalización:&nbsp;&nbsp;</label></td>
-                            <td><input class="form-control" type="date" name="textFechaFin"><br><br></td>
-                        </tr>
-                    </table>
+                                    }
+                                } catch (Exception e) {
+                                %>
+                                <option value="">No se encontro ninguna lista</option> 
+                                <%
+                                    }
+                                %></select><br><br>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td><label>Fecha de inicio: &nbsp;</label></td>
+                        <td><input class="form-control" type="date" name="textFechaIni"><br><br></td>
+                    </tr>
+                    <tr>
+                        <td><label>Fecha de finalización:&nbsp;&nbsp;</label></td>
+                        <td><input class="form-control" type="date" name="textFechaFin"><br><br></td>
+                    </tr>
+                </table>
             </div>
             <br>
-            
+
             <table>
                 <tr>
                     <td><button class="btn-primary">Crear curso</button>
