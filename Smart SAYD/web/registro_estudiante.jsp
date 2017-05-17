@@ -54,7 +54,7 @@
                 <table>
                     <tr>
                         <td><label>Nombres: &nbsp;</label></td>
-                        <td><input class="form-control" type="text" name="textnombres" placeholder="Nombres"><p id="Renombre"></p><br></td>
+                        <td><input class="form-control has-focus" type="text" name="textnombres" placeholder="Nombres"><p id="Renombre"></p><br></td>
                     </tr>
                     <tr>
                         <td><label>Apellidos: &nbsp;</label></td>
@@ -116,7 +116,7 @@
                         <td><input class="form-control" type="date" id="fecha2" name="textfechain"><br><br></td>
                     </tr>
                 </table>
-                </div><br><br>
+                </div><br>
                 <table>
                     <tr>
                         <td><button class="btn-primary">Registrar Estudiante</button>

@@ -19,6 +19,7 @@ function ComprobarNombre() {
     nombre = $("input[name=textnombres]").val();
     if (nombre == "") {
         $("#Renombre").html("Nombre Requerido. ");
+        $(this).css('background-color', 'red');
     }
 }
 

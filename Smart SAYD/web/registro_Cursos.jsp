@@ -27,6 +27,7 @@
         <link href="Bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
         <link href="css/registro_cursos.css" rel="stylesheet" type="text/css"/>
         <script src="JQuery/jquery-3.2.1.min.js" type="text/javascript"></script>
+        <script src="js/val_registro_cursos.js" type="text/javascript"></script>
         <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
         <script>
 
@@ -45,14 +46,12 @@
         </header>
     <center>
         <br><img src="img/recursos.png" alt=""/><br><br>
-        <div id="formulario" class="container"><br>
-            <form class="form-inline" method="POST" action="Curso">
-
-                <left>
+        <form class="form-inline" method="POST" action="Curso">
+            <div id="formulario" class="container"><br>
                     <table>
                         <tr>
                             <td><label>Identificación del curso: &nbsp;</label></td>
-                            <td><input class="form-control" type="Number" name="textCurso" placeholder="Número de identificación"><br><br></td>
+                            <td><input class="form-control" type="Number" name="textCurso" placeholder="Número de identificación"><p id="curso"></p><br></td>
                         </tr>
                         <tr>
                             <td><label>Selección del programa: &nbsp;</label></td>
@@ -78,8 +77,6 @@
                             </td>
                         </tr>
                     </table>
-                </left>
-                <right>
                     <table>
                         <tr>
                             <td><label>Fecha de inicio: &nbsp;</label></td>
@@ -90,18 +87,18 @@
                             <td><input class="form-control" type="date" name="textFechaFin"><br><br></td>
                         </tr>
                     </table>
-                </right>
-                <br>
-                <br>
-                <table>
-                    <tr>
-                        <td><button class="btn-primary">Crear curso</button>
-                            <input type="hidden" name="textOpcion" value="1"></td>
-                        <td><input class="btn-danger" type="button" id="bo1" onclick="regresar()" value="Regresar"></td>
-                    </tr>
-                </table>
-            </form>
-        </div>
+            </div>
+            <br>
+            
+            <table>
+                <tr>
+                    <td><button class="btn-primary">Crear curso</button>
+                        <input type="hidden" name="textOpcion" value="1"></td>
+                    <td><input class="btn-danger" type="button" id="bo1" onclick="regresar()" value="Regresar"></td>
+                </tr>
+            </table>
+        </form>
+
     </center>
     <% if (request.getAttribute("error") != null) { %>
     ${error}

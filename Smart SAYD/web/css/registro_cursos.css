@@ -6,6 +6,9 @@ body{
     background-position: center;
     background-attachment: fixed;
 }
+p{
+    color: red;
+}
 center{
     margin-top: 7%;
 }
@@ -23,7 +26,7 @@ h1{
 
     background-color: white;
     width: 500px;
-    height: 250px;
+    height: auto;
     border-radius: 10px;
 
 }
