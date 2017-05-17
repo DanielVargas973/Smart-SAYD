@@ -39,6 +39,7 @@ public class ServletEstudiante extends HttpServlet {
         int opcion = Integer.parseInt(request.getParameter("textOpcion"));
         
         String idEstudiante = request.getParameter("textidestu");
+        String idConsultar = request.getParameter("textidconsultar");
         String id_Curso = request.getParameter("textidcurso");
         String Nombres = request.getParameter("textnombres");
         String Apellidos = request.getParameter("textapellidos");
@@ -53,7 +54,7 @@ public class ServletEstudiante extends HttpServlet {
         String Numero_telefono = request.getParameter("textnumerotel");
         String Correo_electronico = request.getParameter("textcorreo");
         
-        BeanEstudiante BEstu = new BeanEstudiante(idEstudiante, id_Curso, Nombres, Apellidos, Contrasena, Genero, Fecha_nacimiento, Tipo_identificacion, Numero_identificacion, Fecha_inscripcion, Fecha_expedicion, Estrato, Numero_telefono, Correo_electronico);
+        BeanEstudiante BEstu = new BeanEstudiante(idEstudiante,idConsultar, id_Curso, Nombres, Apellidos, Contrasena, Genero, Fecha_nacimiento, Tipo_identificacion, Numero_identificacion, Fecha_inscripcion, Fecha_expedicion, Estrato, Numero_telefono, Correo_electronico);
         DaoRegistroEstudiante DEstu = new DaoRegistroEstudiante(BEstu);
         
         switch (opcion) {
@@ -81,7 +82,7 @@ public class ServletEstudiante extends HttpServlet {
                 break;
             case 3: //Consultar Registro
                 
-                BeanEstudiante bestudiante = DaoRegistroEstudiante.FiltrarEstu(idEstudiante);
+                BeanEstudiante bestudiante = DaoRegistroEstudiante.FiltrarEstu(idConsultar);
                 if (bestudiante != null) {
                     
                     request.setAttribute("bestudiante", bestudiante);
