@@ -34,6 +34,9 @@
                 $('[type="date"]').prop('max', function () {
                     return new Date().toJSON().split('T')[0];
                 });
+                $('$fecha2').prop('min', function () {
+                    return new Date().toJSON().split('T')[0];
+                });
             });
             function regresar() {
                 window.location.href = 'menu.jsp';
@@ -77,7 +80,7 @@
                     </tr>
                     <tr>
                         <td><label>Fecha Expedición: &nbsp;</label></td>
-                        <td><input class="form-control" type="date" id="fecha1" name="textfechaex"><br><br></td>
+                        <td><input class="form-control" type="date" id="fecha1" min="1970-01-01" name="textfechaex"><br><br></td>
 
                     </tr>
                     <tr>
@@ -93,7 +96,7 @@
                         <td><select class="form-control" id="se1" name="textidcurso">
                                 <%try {
                                         out.print("<option value=''>Selecione un Curso</option>");
-                                        rs = puente.executeQuery("SELECT count(*) as cantidad ,Id_Curso,Nombre_programa FROM programa,estudiante GROUP BY Id_Curso;");
+                                        rs = puente.executeQuery("SELECT count(e.Apellidos) as cantidad ,c.Id_Curso,Nombre_programa FROM curso c left join estudiante e on c.Id_Curso = e.Id_Curso inner join programa p on p.idPrograma = c.id_programa GROUP BY c.Id_Curso;");
                                         while (rs.next()) {
                                             if (Integer.parseInt(rs.getString("cantidad")) < 40) {//Begin IF
                                 %>

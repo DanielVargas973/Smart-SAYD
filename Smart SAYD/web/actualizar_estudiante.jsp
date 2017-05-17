@@ -17,27 +17,28 @@
 
     boolean encontrado = false;
     boolean listo = false;
-
+    
     con = cnx.ObtenerConexion();
     puente = con.createStatement();
+%>
 
+<%
+    
     String idEstudiante = "";
-    idEstudiante = request.getParameter("textidestu");
+    idEstudiante = request.getParameter("textidconsultar");
     String nombres = "";
     String apellidos = "";
-
     try {
         rs = puente.executeQuery("select * from estudiante where idEstudiante ='" + idEstudiante + "';");
         while (rs.next()) {
 
-            nombres = rs.getString("Nombres");
-            apellidos = rs.getString("Apellidos");
-
-            if (true) {
-
-            }
-
+                    nombres = rs.getString("Nombres");
+                    apellidos = rs.getString("Apellidos");
+                    if (nombres == "" || apellidos == "" || nombres == "" && apellidos == "") {
+                        %><script>alert("Error, no se encuentro el estudiante");/script><%
+                    }
         }
+        
     } catch (Exception e) {
         e.printStackTrace();
     }
@@ -74,21 +75,19 @@
     <center>
         <br><img src="img/actualizar.png" alt=""/><br><br>
         <div id="formulario1" class="container"><br>
-            <form method="post" action="Estudiante">
-                
+            <form method="post" action="">
                 <table>
                     <td><label>Numero de identificación:&nbsp;</label></td>
-                    <td><input class="form-control" type="number" id="estu" name="textidestu"><p id="ReEstu"></p><br></td>
+                    <td><input class="form-control" type="number" name="textidconsultar" id="estu" ><p id="ReEstu"></p><br></td>
                 </table>
-                <button class="btn-primary">Actualizar Datos&nbsp;</button>
+                <button class="btn-primary">Actualizar Datos</button>
                 <input type="hidden" name="textOpcion" value="3"><br>
             </form>
-            </div>
-            <form method="post" action="Estudiante">
-                <div id="formulario2" class="container">
+        </div>
+        <form method="post" action="Estudiante">
+            <div id="formulario2" class="container">
                 <table>
                     <tr>
-                        <td><label>Documento:  </label></td>
                         <td><input class="form-control" type="number" readonly="readonly" id="estu1" name="textidestu" value="<%=idEstudiante%>"><p id="ReEstu"></p><br></td>
                     </tr>
                     <tr>
@@ -131,23 +130,22 @@
                         <td><label>Numero de telefono: &nbsp;</label></td>
                         <td><input class="form-control" type="number" id="numerotel" name="textnumerotel"><p id="Retel"></p><br></td>
                     </tr>
-                
+
                 </table>
-                </div><br>    
-                <table>
-                    <tr>
-                        <td><button class="btn-primary">Actualizar Estudiante</button>
-                            <input type="hidden" name="textOpcion" value="2"></td>
-                        <td><input class="btn-danger" type="button" id="bo1" onclick="regresar()" value="Regresar"></td>
-                    </tr>
-                </table>
-            </form>
-        
-        <%if (request.getAttribute("error") != null) {%>
+            </div><br>    
+            <table>
+                <tr>
+                    <td><button class="btn-primary">Actualizar Estudiante</button>
+                        <input type="hidden" name="textOpcion" value="2"></td>
+                    <td><input class="btn-danger" type="button" id="bo1" onclick="regresar()" value="Regresar"></td>
+                </tr>
+            </table>
+        </form>
+        <%if (request.getAttribute("error") != null){%>
         ${error}
-        <% } else { %>
-        ${exito}
-        <% }%>
+        <%} else { %>
+        ${exito}      
+        <%}%>
     </center>
 </body>
 </html>

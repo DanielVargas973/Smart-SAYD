@@ -9,9 +9,11 @@ public class BeanInasistencia {
     private String Hora;
     private String Observacion;
     private boolean Excusa;
-    private long Excusa_archivo;
+    private String Excusa_archivo;
+    private boolean inasistencia;
 
-    public BeanInasistencia(String idAsistencia, String idAsignatura, String idEstudiante, String Fecha, String Hora, String Observacion, boolean Excusa, long Excusa_archivo) {
+
+    public BeanInasistencia(String idAsistencia, String idAsignatura, String idEstudiante, String Fecha, String Hora, String Observacion, boolean Excusa, String Excusa_archivo,boolean inasistencia) {
         this.idAsistencia = idAsistencia;
         this.idAsignatura = idAsignatura;
         this.idEstudiante = idEstudiante;
@@ -20,6 +22,7 @@ public class BeanInasistencia {
         this.Observacion = Observacion;
         this.Excusa = Excusa;
         this.Excusa_archivo = Excusa_archivo;
+        this.inasistencia= inasistencia;
     }
 
     public String getIdAsistencia() {
@@ -78,11 +81,21 @@ public class BeanInasistencia {
         this.Excusa = Excusa;
     }
 
-    public long getExcusa_archivo() {
+    public String getExcusa_archivo() {
         return Excusa_archivo;
     }
 
-    public void setExcusa_archivo(long Excusa_archivo) {
+    public void setExcusa_archivo(String Excusa_archivo) {
         this.Excusa_archivo = Excusa_archivo;
     }
+    
+    public boolean isInasistencia() {
+        return inasistencia;
+    }
+
+    public void setInasistencia(boolean inasistencia) {
+        this.inasistencia = inasistencia;
+    }
+
+    
 }
