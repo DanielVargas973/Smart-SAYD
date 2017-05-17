@@ -1,7 +1,6 @@
 <%-- 
     Document   : GestionCursos
     Created on : 06-may-2017, 12:15:59
-    Author     : Daniel Vargas
 --%>
 
 <%@page import="java.sql.*"%>
