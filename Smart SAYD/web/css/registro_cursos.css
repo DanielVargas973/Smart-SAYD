@@ -1,6 +1,6 @@
 body{
     /*    background-image: url(../img/registroestudiante.jpg);*/
-    background-color: salmon;
+    background-color: #1b6d85;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -14,7 +14,7 @@ center{
 }
 header{
 
-    background-color: #faebcc;
+    background-color: #81F79F;
 
 }
 
