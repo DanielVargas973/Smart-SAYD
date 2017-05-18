@@ -3,7 +3,6 @@ package Modelo.BEAN;
 public class BeanEstudiante {
 
     private String idEstudiante;
-    private String idConsultar;
     private String id_Curso;
     private String Nombres;
     private String Apellidos;
@@ -18,9 +17,8 @@ public class BeanEstudiante {
     private String Numero_telefono;
     private String Correo_electronico;
 
-    public BeanEstudiante(String idEstudiante, String idConsultar, String id_Curso, String Nombres, String Apellidos, String Contrasena, String Genero, String Fecha_nacimiento, String Tipo_identificacion, String Numero_identificacion, String Fecha_inscripcion, String Fecha_expedicion, String Estrato, String Numero_telefono, String Correo_electronico) {
+    public BeanEstudiante(String idEstudiante, String id_Curso, String Nombres, String Apellidos, String Contrasena, String Genero, String Fecha_nacimiento, String Tipo_identificacion, String Numero_identificacion, String Fecha_inscripcion, String Fecha_expedicion, String Estrato, String Numero_telefono, String Correo_electronico) {
         this.idEstudiante = idEstudiante;
-        this.idConsultar = idConsultar;
         this.id_Curso = id_Curso;
         this.Nombres = Nombres;
         this.Apellidos = Apellidos;
@@ -34,14 +32,6 @@ public class BeanEstudiante {
         this.Estrato = Estrato;
         this.Numero_telefono = Numero_telefono;
         this.Correo_electronico = Correo_electronico;
-    }
-
-    public String getIdConsultar() {
-        return idConsultar;
-    }
-
-    public void setIdConsultar(String idConsultar) {
-        this.idConsultar = idConsultar;
     }
 
     public String getIdEstudiante() {

@@ -19,7 +19,6 @@ public class DaoRegistroEstudiante extends Conexion implements InterfaceEstudian
     public boolean listo = false;
     
     public String idEstudiante = "";
-    public String idConsultar = "";
     public String id_Curso = "";
     public String Nombres = "";
     public String Apellidos = "";
@@ -43,7 +42,6 @@ public class DaoRegistroEstudiante extends Conexion implements InterfaceEstudian
             puente = conn.createStatement();
 
             idEstudiante = BEstudiante.getIdEstudiante();
-            idConsultar = BEstudiante.getIdConsultar();
             id_Curso = BEstudiante.getId_Curso();
             Nombres = BEstudiante.getNombres();
             Apellidos = BEstudiante.getApellidos();
@@ -97,7 +95,7 @@ public class DaoRegistroEstudiante extends Conexion implements InterfaceEstudian
             ResultSet rs = puente.executeQuery("SELECT * FROM `estudiante` WHERE `idEstudiante`='" + idEstudiante + "';");
             
             while(rs.next()){
-                BEstu = new BeanEstudiante(idEstudiante,rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13),rs.getString(14),rs.getString(15));           
+                BEstu = new BeanEstudiante(idEstudiante,rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13),rs.getString(14));           
             }
             rs.close();
             puente.close();
