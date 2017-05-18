@@ -38,8 +38,8 @@
         </script>
         <script>
             $(function () {
-                $("#FI").datepicker();
-                $("#FF").datepicker();
+                $("#FI").datepicker({dateFormat:'yy/mm/dd'});
+                $("#FF").datepicker({dateFormat:'yy/mm/dd'});
             });
         </script>
         <title>Gestión de cursos</title>
