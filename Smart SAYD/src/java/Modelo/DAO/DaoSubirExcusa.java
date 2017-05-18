@@ -25,9 +25,9 @@ public class DaoSubirExcusa extends Conexion implements InterfaceEstudiante{
     public String Fecha  = "";
     public String Hora  = "";
     public String Observacion  = "";
-    public boolean Excusa = false;
+    public String Excusa = "";
     public String Excusa_archivo  = "";
-    public boolean inasistencia=false;
+    public String inasistencia="";
 
     public DaoSubirExcusa(BeanInasistencia BInasistencia) {
 
@@ -43,15 +43,15 @@ public class DaoSubirExcusa extends Conexion implements InterfaceEstudiante{
             Fecha = BInasistencia.getFecha();
             Hora = BInasistencia.getHora();
             Observacion = BInasistencia.getObservacion();
-            Excusa = BInasistencia.isExcusa();
+            Excusa = BInasistencia.getExcusa();
             Excusa_archivo = BInasistencia.getExcusa_archivo();
-            inasistencia=BInasistencia.isInasistencia();
+            inasistencia=BInasistencia.getInasistencia();
             
            
            
 
         } catch (Exception e) {
-            Logger.getLogger(DaoRegistroEstudiante.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(DaoSubirExcusa.class.getName()).log(Level.SEVERE, null, e);
         }
 
     }
@@ -59,7 +59,7 @@ public class DaoSubirExcusa extends Conexion implements InterfaceEstudiante{
     @Override
     public boolean AgregarRegistro() {
         try {
-            puente.executeUpdate("INSERT INTO inasistencia (`idAsistencia`, `idAsignatura`,'idEstudiante', `idEstudiante`, `Fecha`, `Hora`, `Observacion`, `Excusa`, `Excusa_archivo` , `inasistencia` ) VALUES (,NULL,'"+idAsignatura+"','"+idEstudiante+"', '"+Fecha+"',NULL,'"+Observacion+"', NULL, '"+Excusa_archivo+"',NULL,)");
+            puente.executeUpdate("INSERT INTO inasistencia (`idAsistencia`, `idAsignatura`,'idEstudiante' , `Fecha`, `Hora`, `Observacion`, `Excusa`, `Excusa_archivo` , `inasistencia` ) VALUES ('"+idAsistencia+"', '"+idAsignatura+"', '"+idEstudiante+"', '"+Fecha+"', '"+Hora+"', '"+Observacion+"', '"+Excusa+"', '"+Excusa_archivo+"', '"+inasistencia+"')");
             listo = true;
         } catch (Exception e) {
             Logger.getLogger(DaoSubirExcusa.class.getName()).log(Level.SEVERE, null, e);
