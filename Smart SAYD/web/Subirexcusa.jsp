@@ -1,3 +1,4 @@
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="Util.Conexion"%>
 <%@page import="java.sql.*"%>
@@ -39,7 +40,7 @@
             }
 
         </script>
-        <title>Registro Estudiante</title>
+        <title>Excusa</title>
     </head>
     <body>
         <header>
@@ -50,7 +51,7 @@
     <center>
         <br> <img src="img/gestion_excusas.png" alt=""/> <br><br>
         
-            <form id="fo" method="post" action="ServletGestionExcusa" class="form-inline">
+        <form id="fo" method="post" action="Excusa" class="form-inline" >
                 <div id="formulario" class="container"><br>
                 <table> 
                     <tr>
@@ -109,13 +110,13 @@
                     </tr>
                     <tr>
                         <td><label>Seleccionar archivo: &nbsp;</label></td>
-                        <td><input class="form-control" type="text" id="ARCHIVO" name="textarchivo"><br><br></td>
+                        <td><input class="form-control" type="file" id="ARCHIVO" name="textarchivo"><br><br></td>
                     </tr>
                 </table>
                 </div><br>
                 <table>
                     <tr>
-                        <td><button class="btn-primary">Registrar Estudiante</button>
+                        <td><button class="btn-primary">Subir excusa</button>
                             <input type="hidden" name="textOpcion" value="1"/></td>
                         <td><input class="btn-danger" type="button" id="bo1" onclick="regresar()" value="Regresar"></td>
                     </tr>
