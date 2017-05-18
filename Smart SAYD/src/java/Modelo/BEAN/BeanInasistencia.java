@@ -1,19 +1,17 @@
 package Modelo.BEAN;
 
 public class BeanInasistencia {
-
     private String idAsistencia;
     private String idAsignatura;
     private String idEstudiante;
     private String Fecha;
     private String Hora;
     private String Observacion;
-    private boolean Excusa;
+    private String Excusa;
     private String Excusa_archivo;
-    private boolean inasistencia;
+    private String inasistencia;
 
-
-    public BeanInasistencia(String idAsistencia, String idAsignatura, String idEstudiante, String Fecha, String Hora, String Observacion, boolean Excusa, String Excusa_archivo,boolean inasistencia) {
+    public BeanInasistencia(String idAsistencia, String idAsignatura, String idEstudiante, String Fecha, String Hora, String Observacion, String Excusa, String Excusa_archivo, String inasistencia) {
         this.idAsistencia = idAsistencia;
         this.idAsignatura = idAsignatura;
         this.idEstudiante = idEstudiante;
@@ -22,8 +20,9 @@ public class BeanInasistencia {
         this.Observacion = Observacion;
         this.Excusa = Excusa;
         this.Excusa_archivo = Excusa_archivo;
-        this.inasistencia= inasistencia;
+        this.inasistencia = inasistencia;
     }
+
 
     public String getIdAsistencia() {
         return idAsistencia;
@@ -73,11 +72,11 @@ public class BeanInasistencia {
         this.Observacion = Observacion;
     }
 
-    public boolean isExcusa() {
+    public String getExcusa() {
         return Excusa;
     }
 
-    public void setExcusa(boolean Excusa) {
+    public void setExcusa(String Excusa) {
         this.Excusa = Excusa;
     }
 
@@ -88,14 +87,17 @@ public class BeanInasistencia {
     public void setExcusa_archivo(String Excusa_archivo) {
         this.Excusa_archivo = Excusa_archivo;
     }
-    
-    public boolean isInasistencia() {
+
+    public String getInasistencia() {
         return inasistencia;
     }
 
-    public void setInasistencia(boolean inasistencia) {
+    public void setInasistencia(String inasistencia) {
         this.inasistencia = inasistencia;
     }
-
     
+     
+   
+
 }
+    

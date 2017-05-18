@@ -50,7 +50,7 @@
     <center>
         <br> <img src="img/gestion_excusas.png" alt=""/> <br><br>
         
-            <form id="fo" method="post" action="Excusa" class="form-inline">
+            <form id="fo" method="post" action="ServletGestionExcusa" class="form-inline">
                 <div id="formulario" class="container"><br>
                 <table> 
                     <tr>
