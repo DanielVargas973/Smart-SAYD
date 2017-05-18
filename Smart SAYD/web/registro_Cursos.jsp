@@ -38,8 +38,8 @@
         </script>
         <script>
             $(function () {
-                $("#FI").datepicker({dateFormat:'yy/mm/dd'});
-                $("#FF").datepicker({dateFormat:'yy/mm/dd'});
+                $("#FI").datepicker();
+                $("#FF").datepicker();
             });
         </script>
         <title>Gestión de cursos</title>
@@ -86,11 +86,11 @@
                 <table>
                     <tr>
                         <td><label>Fecha de inicio: &nbsp;</label></td>
-                        <td><input id="FI"class="form-control" type="text" name="textFechaIni"><br><br></td>
+                        <td><input id="FI"class="form-control" type="date" name="textFechaIni"><br><br></td>
                     </tr>
                     <tr>
                         <td><label>Fecha de finalización:&nbsp;&nbsp;</label></td>
-                        <td><input id="FF"class="form-control" type="text" name="textFechaFin"><br><br></td>
+                        <td><input id="FF"class="form-control" type="date" name="textFechaFin"><br><br></td>
                     </tr>
                 </table>
             </div>

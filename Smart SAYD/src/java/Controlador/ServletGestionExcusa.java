@@ -5,9 +5,9 @@
  */
 package Controlador;
 
-
+import Modelo.BEAN.BeanCurso;
 import Modelo.BEAN.BeanInasistencia;
-
+import Modelo.DAO.DaoGestionCursos;
 import Modelo.DAO.DaoSubirExcusa;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -33,15 +33,15 @@ public class ServletGestionExcusa extends HttpServlet {
         
         //Obtener datos
         int opcion = Integer.parseInt(request.getParameter("textOpcion"));
-        String idAsistencia = request.getParameter("");
+        String idAsistencia = request.getParameter("textobservaciones");
         String idAsignatura = request.getParameter("textseleccion");
         String idEstudiante = request.getParameter("textseleccion1");
         String Fecha = request.getParameter("textfecha");
-        String Hora = request.getParameter("");
+        String Hora = request.getParameter("textobservaciones");
         String Observacion = request.getParameter("textobservaciones");
-        String Excusa = request.getParameter("");
+        String Excusa = request.getParameter("textobservaciones");
         String Excusa_archivo = request.getParameter("textarchivo");
-        String inasistencia = request.getParameter("");
+        String inasistencia = request.getParameter("textobservaciones");
         
         
         //Llamar BEAN y el DAO
@@ -53,12 +53,12 @@ public class ServletGestionExcusa extends HttpServlet {
             case 1://Agregar Curso
                 if (DExc.AgregarRegistro()) {
                    
-                    request.setAttribute("exito", "<script> alert('su excusa se subio correctamente')</script>");
+                    request.setAttribute("exito", "<script> alert('Se registró correctamente')</script>");
                 }else {
                      
-                    request.setAttribute("error", "<script> alert('NO se ha podido surbir su excusa')</script>");
+                    request.setAttribute("error", "<script> alert('NO se ha podido registrar')</script>");
                 }
-                request.getRequestDispatcher("Subirexcusa.jsp").forward(request, response);
+                request.getRequestDispatcher("registro_Cursos.jsp").forward(request, response);
                 break;
             case 2: //Actualizar curso
                 if (DExc.ActualizarRegistros()) {
