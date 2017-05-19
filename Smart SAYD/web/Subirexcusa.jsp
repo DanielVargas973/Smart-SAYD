@@ -4,18 +4,14 @@
 <%@page import="Util.Conexion.*"%>
 
 <%
-
     Conexion cnx = new Conexion();
-
     Connection con = null;
     Statement puente = null;
     ResultSet rs = null;
     boolean encontrado = false;
     boolean listo = false;
-
     con = cnx.ObtenerConexion();
     puente = con.createStatement();
-
 %>
 
 <html>
@@ -28,6 +24,7 @@
         <script src="js/val_registro_estudiante.js" type="text/javascript"></script>
         <script src="js/fechas.js" type="text/javascript"></script>
         <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/gestion_excusas.js" type="text/javascript"></script>
         <script>
             $(function () {
                 $('[type="date"]').prop('max', function () {
@@ -37,9 +34,8 @@
             function regresar() {
                 window.location.href = 'menu.jsp';
             }
-
         </script>
-        <title>Registro Estudiante</title>
+        <title>Excusa</title>
     </head>
     <body>
         <header>
@@ -50,7 +46,7 @@
     <center>
         <br> <img src="img/gestion_excusas.png" alt=""/> <br><br>
         
-            <form id="fo" method="post" action="ServletGestionExcusa" class="form-inline">
+        <form id="fo" method="post" action="Excusa" class="form-inline" >
                 <div id="formulario" class="container"><br>
                 <table> 
                     <tr>
@@ -60,13 +56,11 @@
                                             out.println("<option value=''>Selecione un estudiante</option>");
                                             rs = puente.executeQuery("select * from estudiante");
                                             while (rs.next()) {
-
                                     %>
 
                                     <option value="<%=rs.getString("idEstudiante")%>"><%=rs.getString("Numero_identificacion")%></option>
 
                                     <%
-
                                         }
                                     } catch (Exception e) {
                                     %>
@@ -83,13 +77,11 @@
                                             out.println("<option value=''>Selecione una asigantura</option>");
                                             rs = puente.executeQuery("select * from asignatura");
                                             while (rs.next()) {
-
                                     %>
 
                                     <option value="<%=rs.getString("idAsignatura")%>"><%=rs.getString("Nombre_asignatura")%></option>
 
                                     <%
-
                                         }
                                     } catch (Exception e) {
                                     %>
@@ -109,13 +101,13 @@
                     </tr>
                     <tr>
                         <td><label>Seleccionar archivo: &nbsp;</label></td>
-                        <td><input class="form-control" type="text" id="ARCHIVO" name="textarchivo"><br><br></td>
+                        <td><input class="form-control" type="file" id="ARCHIVO" name="textarchivo"><br><br></td>
                     </tr>
                 </table>
                 </div><br>
                 <table>
                     <tr>
-                        <td><button class="btn-primary">Registrar Estudiante</button>
+                        <td><button class="btn-primary">Subir excusa</button>
                             <input type="hidden" name="textOpcion" value="1"/></td>
                         <td><input class="btn-danger" type="button" id="bo1" onclick="regresar()" value="Regresar"></td>
                     </tr>
@@ -130,3 +122,4 @@
         <br></center>               
 </body>
 </html>
+

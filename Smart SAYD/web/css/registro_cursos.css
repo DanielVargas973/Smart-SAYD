@@ -1,6 +1,6 @@
 body{
     /*    background-image: url(../img/registroestudiante.jpg);*/
-    background-color: #1b6d85;
+    background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -14,7 +14,7 @@ center{
 }
 header{
 
-    background-color: #81F79F;
+    background-color: white;
 
 }
 
@@ -24,7 +24,7 @@ h1{
 
 #formulario{
 
-    background-color: white;
+    background-color: #E6E6E6;
     width: 500px;
     height: auto;
     border-radius: 10px;

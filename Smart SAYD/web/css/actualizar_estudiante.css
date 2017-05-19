@@ -1,5 +1,5 @@
 body{
-    background-color: salmon;
+    background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -7,7 +7,7 @@ body{
 }
 header{
     
-    background-color: #faebcc;
+    background-color: white;
     
 }
 
@@ -21,7 +21,7 @@ h1{
 
 #formulario1{
 
-    background-color: white;
+    background-color: #E6E6E6;
     width: 500px;
     height: auto;
     border-top-left-radius:  10px;
@@ -30,7 +30,7 @@ h1{
 }
 #formulario2{
 
-    background-color: white;
+    background-color: #E6E6E6;
     width: 500px;
     height: auto;
     border-bottom-left-radius: 10px;

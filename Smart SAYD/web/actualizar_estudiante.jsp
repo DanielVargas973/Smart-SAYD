@@ -17,10 +17,13 @@
 
     boolean encontrado = false;
     boolean listo = false;
-
+    
     con = cnx.ObtenerConexion();
     puente = con.createStatement();
+%>
 
+<%
+    
     String idEstudiante = "";
     idEstudiante = request.getParameter("textidestu");
     String nombres = "";
@@ -29,20 +32,18 @@
         rs = puente.executeQuery("select * from estudiante where idEstudiante ='" + idEstudiante + "';");
         while (rs.next()) {
 
-            nombres = rs.getString("Nombres");
-            apellidos = rs.getString("Apellidos");
+                    nombres = rs.getString("Nombres");
+                    apellidos = rs.getString("Apellidos");
         }
-
+        
     } catch (Exception e) {
         e.printStackTrace();
     }
-
-        if (idEstudiante != "") {
-            if (nombres == "" || apellidos == "" || nombres == "" && apellidos == "") {
+    if(idEstudiante != ""){
+    if (nombres == "" || apellidos == "" || nombres == "" && apellidos == "") {
                 idEstudiante = "";
             }
-        }
-
+    }
 %>
 
 <html>
@@ -55,19 +56,15 @@
         <script src="js/val_actualizar_estudiante.js" type="text/javascript"></script>
         <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
         <script>
-    $(function () {
-        $('[type="date"]').prop('max', function () {
-            return new Date().toJSON().split('T')[0];
-        });
-    });
-    function regresar() {
-        window.location.href = 'menu.jsp';
-    }
-    /*function limpiar() {
-        $("#estu1").val("");
-        $("#nombres").val("");
-        $("#apellidos").val("");
-    }*/
+            $(function () {
+                $('[type="date"]').prop('max', function () {
+                    return new Date().toJSON().split('T')[0];
+                });
+            });
+            function regresar() {
+                window.location.href = 'menu.jsp';
+            }
+
         </script>
         <title>Actualizar Estudiante</title>
     </head>
@@ -83,7 +80,7 @@
             <form method="post" action="Estudiante">
                 <table>
                     <td><label>Numero de identificación:&nbsp;</label></td>
-                    <td><input class="form-control" type="number"  id="estu" name="textidestu"><p id="ReEstu"></p><br></td>
+                    <td><input class="form-control" type="number" name="textidestu" id="estu" ><p id="ReEstu"></p><br></td>
                 </table>
                 <button class="btn-primary">Actualizar Datos</button>
                 <input type="hidden" name="textOpcion" value="3"><br>
@@ -141,12 +138,12 @@
             <table>
                 <tr>
                     <td><button class="btn-primary">Actualizar Estudiante</button>
-                        <input type="hidden" onclick="limpiar()" name="textOpcion" value="2"></td>
+                        <input type="hidden" name="textOpcion" value="2"></td>
                     <td><input class="btn-danger" type="button" id="bo1" onclick="regresar()" value="Regresar"></td>
                 </tr>
             </table>
         </form>
-        <%if (request.getAttribute("error") != null) {%>
+        <%if (request.getAttribute("error") != null){%>
         ${error}
         <%} else { %>
         ${exito}      
