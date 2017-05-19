@@ -22,8 +22,8 @@ public class DaoSubirExcusa extends Conexion implements InterfaceEstudiante{
     public String idAsistencia  = "";
     public String idAsignatura  = "";
     public String idEstudiante  = "";
-    public String Fecha  = "";
-    public String Hora  = "";
+    public String Fecha = "";
+    public String Hora = "";
     public String Observacion  = "";
     public String Excusa = "";
     public String Excusa_archivo  = "";
@@ -59,7 +59,7 @@ public class DaoSubirExcusa extends Conexion implements InterfaceEstudiante{
     @Override
     public boolean AgregarRegistro() {
         try {
-            puente.executeUpdate("INSERT INTO inasistencia (`idAsistencia`, `idAsignatura`,'idEstudiante' , `Fecha`, `Hora`, `Observacion`, `Excusa`, `Excusa_archivo` , `inasistencia` ) VALUES ('"+idAsistencia+"', '"+idAsignatura+"', '"+idEstudiante+"', '"+Fecha+"', '"+Hora+"', '"+Observacion+"', '"+Excusa+"', '"+Excusa_archivo+"', '"+inasistencia+"')");
+            puente.executeUpdate("INSERT INTO `inasistencia` (`idAsistencia`, `idEstudiante`, `Fecha`, `Hora`, `Observacion`, `Excusa`, `Excusa_archivo`, `idAsignatura`, `inasistencia`) VALUES (NULL, '"+idEstudiante+"', '"+Fecha+"', NULL, '"+Observacion+"', NULL, '"+Excusa_archivo+"', '"+idAsignatura+"', NULL)");
             listo = true;
         } catch (Exception e) {
             Logger.getLogger(DaoSubirExcusa.class.getName()).log(Level.SEVERE, null, e);
@@ -82,7 +82,6 @@ public class DaoSubirExcusa extends Conexion implements InterfaceEstudiante{
     {
         BeanEstudiante BEstu = null;
         try {
-
             Conexion conex = new Conexion();
             Connection conn = conex.ObtenerConexion();
             Statement puente = conn.createStatement();
@@ -93,7 +92,6 @@ public class DaoSubirExcusa extends Conexion implements InterfaceEstudiante{
             }
             rs.close();
             puente.close();
-
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -33,7 +33,7 @@ public class BeanEstudiante {
         this.Numero_telefono = Numero_telefono;
         this.Correo_electronico = Correo_electronico;
     }
-
+    
     public String getIdEstudiante() {
         return idEstudiante;
     }
