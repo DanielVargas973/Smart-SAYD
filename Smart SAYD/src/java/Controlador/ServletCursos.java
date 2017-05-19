@@ -1,3 +1,5 @@
+//2
+
 package Controlador;
 
 import Modelo.BEAN.BeanCurso;
@@ -18,7 +20,7 @@ public class ServletCursos extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         
-        //Obtener datos
+        //Obtener datos 
         int opcion = Integer.parseInt(request.getParameter("textOpcion"));
         String id_Curso = request.getParameter("textCurso");
         String idPrograma = request.getParameter("textseleccion");
