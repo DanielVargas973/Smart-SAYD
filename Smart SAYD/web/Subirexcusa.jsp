@@ -19,14 +19,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="Bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
-        <link href="css/registro_estudiante.css" rel="stylesheet" type="text/css"/>
+        <link href="css/Subirexcusa.css" rel="stylesheet" type="text/css"/>
+        <link href="JQuery/JqueryUI/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css"/>
         <script src="JQuery/jquery-3.2.1.min.js" type="text/javascript"></script>
+        <script src="JQuery/JqueryUI/jquery-ui-1.12.1/jquery-ui.js" type="text/javascript"></script>
         <script src="js/val_registro_estudiante.js" type="text/javascript"></script>
         <script src="js/fechas.js" type="text/javascript"></script>
         <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
         <script src="js/gestion_excusas.js" type="text/javascript"></script>
         <script>
             $(function () {
+                $("#fecha").datepicker({dateFormat:'yy/mm/dd'});
                 $('[type="date"]').prop('max', function () {
                     return new Date().toJSON().split('T')[0];
                 });
@@ -93,11 +96,11 @@
                     </tr>
                     <tr>
                         <td><label>Fecha: &nbsp;</label></td>
-                        <td><input class="form-control" type="date" id="fecha" name="textfecha"><br><br></td>
+                        <td><input class="form-control" type="text" id="fecha" name="textfecha" placeholder="AAAA/MM/DD"><br><br></td>
                     </tr>
                     <tr>
                         <td><label>observaciones: &nbsp;</label></td>
-                        <td><input class="form-control" type="text" id="OBSERVACION" name="textobservaciones"><br><br></td>
+                        <td><textarea class="form-control" id="observacion" name="textobservaciones" placeholder="Escribe el motivo de tu inasistencia"></textarea><br><br></td>
                     </tr>
                     <tr>
                         <td><label>Seleccionar archivo: &nbsp;</label></td>
