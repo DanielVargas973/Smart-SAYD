@@ -52,11 +52,14 @@
         <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="Bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
         <link href="css/actualizar_estudiante.css" rel="stylesheet" type="text/css"/>
+        <link href="JQuery/JqueryUI/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css"/>
         <script src="JQuery/jquery-3.2.1.min.js" type="text/javascript"></script>
+        <script src="JQuery/JqueryUI/jquery-ui-1.12.1/jquery-ui.js" type="text/javascript"></script>
         <script src="js/val_actualizar_estudiante.js" type="text/javascript"></script>
         <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
         <script>
             $(function () {
+                $("#fechaN").datepicker({dateFormat:'yy/mm/dd'});
                 $('[type="date"]').prop('max', function () {
                     return new Date().toJSON().split('T')[0];
                 });
@@ -102,7 +105,7 @@
                     </tr>
                     <tr>
                         <td><label>Fecha de Nacimiento: &nbsp;</label></td>
-                        <td><input class="form-control" type="date" name="textfechan"><br></td>
+                        <td><input class="form-control" type="text" id="fechaN" name="textfechan" placeholder="AAAA/MM/DD"><br></td>
                     </tr>
                     <tr>
                         <td><label>Contraseña: &nbsp;</label></td>
