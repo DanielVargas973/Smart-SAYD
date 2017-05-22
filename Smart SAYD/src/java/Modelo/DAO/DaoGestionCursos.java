@@ -10,13 +10,16 @@ import java.util.logging.Logger;
 
 public class DaoGestionCursos extends Conexion implements InterfaceCurso {
 
+    //Creacion conexion con BD
     public Connection conn = null;
     private Statement puente = null;
     private ResultSet rs = null;
 
+    //Banderas de notificacion de estado
     public boolean encontrado = false;
     public boolean listo = false;
 
+    //Declaracion de variables
     public String id_Curso = "";
     public String idPrograma = "";
     public String Fecha_inicio = "";
