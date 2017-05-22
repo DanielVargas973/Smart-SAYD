@@ -9,9 +9,11 @@ public class BeanPersonal {
     private String Tipo_identificacion;
     private String Numero_identificacion;
     private String Fecha_Expedicion;
+    private String Ciudad_Expedicion;
     private String Pais_Expedicion;
     private String Genero;
     private String Fecha_Nacimiento;
+    private String Ciudad_Nacimiento;
     private String Pais_Nacimiento;
     private String Estrato;
     private String Numero_Telefono;
@@ -20,6 +22,7 @@ public class BeanPersonal {
     private String EPS;
     private String RH_y_Gruposanguineo;
     private String Rol_Asignado;
+    private String Contrasena;
 
     public BeanPersonal(String idTrabajador, String Nombre, String PrimerApellido, String SegundoApellido, String Tipo_identificacion, String Numero_identificacion, String Fecha_Expedicion, String Pais_Expedicion, String Genero, String Fecha_Nacimiento, String Pais_Nacimiento, String Estrato, String Numero_Telefono, String Correo_Electronico, String Direccion_Residencia, String EPS, String RH_y_Gruposanguineo, String Rol_Asignado) {
         this.idTrabajador = idTrabajador;
@@ -29,6 +32,7 @@ public class BeanPersonal {
         this.Tipo_identificacion = Tipo_identificacion;
         this.Numero_identificacion = Numero_identificacion;
         this.Fecha_Expedicion = Fecha_Expedicion;
+        this.Ciudad_Expedicion = Ciudad_Expedicion;
         this.Pais_Expedicion = Pais_Expedicion;
         this.Genero = Genero;
         this.Fecha_Nacimiento = Fecha_Nacimiento;
