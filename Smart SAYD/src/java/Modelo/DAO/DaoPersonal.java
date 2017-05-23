@@ -1,8 +1,11 @@
 package Modelo.DAO;
 
+import Modelo.BEAN.BeanPersonal;
 import Util.Conexion;
 import Util.InterfaceTrabajador;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DaoPersonal extends Conexion implements InterfaceTrabajador {
 
@@ -38,5 +41,59 @@ public class DaoPersonal extends Conexion implements InterfaceTrabajador {
     public String Rol_Asignado = "";
     public String Contrasena = "";
 
-    //
+    //Llamado de metodos declarados en el BEAN
+    public DaoPersonal(BeanPersonal BPer){
+        super();
+        try{
+            conn = this.ObtenerConexion();
+            puente = conn.createStatement();
+            idTrabajador = BPer.getIdTrabajador();
+            Nombre = BPer.getNombre();
+            PrimerApellido = BPer.getPrimerApellido();
+            SegundoApellido =BPer.getSegundoApellido();
+            Tipo_identificacion = BPer.getTipo_identificacion();
+            Numero_identificacion =BPer.getNumero_identificacion();
+            Fecha_Expedicion = BPer.getFecha_Expedicion();
+            Ciudad_Expedicion = BPer.getCiudad_Expedicion();
+            Pais_Expedicion = BPer.getPais_Expedicion();
+            Genero = BPer.getGenero();
+            Fecha_Nacimiento = BPer.getFecha_Nacimiento();
+            Ciudad_Nacimiento = BPer.getCiudad_Nacimiento();
+            Pais_Nacimiento = BPer.getPais_Nacimiento();
+            Estrato = BPer.getEstrato();
+            Numero_Telefono = BPer.getNumero_Telefono();
+            Correo_Electronico = BPer.getCorreo_Electronico();
+            Direccion_Residencia = BPer.getDireccion_Residencia();
+            EPS = BPer.getEPS();
+            RH_y_Gruposanguineo = BPer.getRH_y_Gruposanguineo();
+            Rol_Asignado = BPer.getRol_Asignado();
+            Contrasena = BPer.getContrasena();
+        }catch(Exception e){
+            Logger.getLogger(DaoGestionCursos.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+
+    //Inscripcion de un nuevo trabajador
+    @Override
+    public boolean AgregarTrabajador() {
+        try {
+            puente.executeUpdate("");
+            listo = true;
+        } catch (Exception e) {
+            Logger.getLogger(DaoGestionCursos.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return listo;
+    }
+
+    //Actualizacion de datos de un trabajador
+    @Override
+    public boolean ActualizarTrabajador() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    //Eñiminacion de un trabajador
+    @Override
+    public boolean EliminarTrabajador() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
