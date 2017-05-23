@@ -1,7 +1,7 @@
 package Modelo.BEAN;
 
 public class BeanPersonal {
-
+    
     private String idTrabajador;
     private String Nombre;
     private String PrimerApellido;
@@ -9,9 +9,11 @@ public class BeanPersonal {
     private String Tipo_identificacion;
     private String Numero_identificacion;
     private String Fecha_Expedicion;
+    private String Ciudad_Expedicion;
     private String Pais_Expedicion;
     private String Genero;
     private String Fecha_Nacimiento;
+    private String Ciudad_Nacimiento;
     private String Pais_Nacimiento;
     private String Estrato;
     private String Numero_Telefono;
@@ -20,8 +22,9 @@ public class BeanPersonal {
     private String EPS;
     private String RH_y_Gruposanguineo;
     private String Rol_Asignado;
+    private String Contrasena;
 
-    public BeanPersonal(String idTrabajador, String Nombre, String PrimerApellido, String SegundoApellido, String Tipo_identificacion, String Numero_identificacion, String Fecha_Expedicion, String Pais_Expedicion, String Genero, String Fecha_Nacimiento, String Pais_Nacimiento, String Estrato, String Numero_Telefono, String Correo_Electronico, String Direccion_Residencia, String EPS, String RH_y_Gruposanguineo, String Rol_Asignado) {
+    public BeanPersonal(String idTrabajador, String Nombre, String PrimerApellido, String SegundoApellido, String Tipo_identificacion, String Numero_identificacion, String Fecha_Expedicion, String Ciudad_Expedicion, String Pais_Expedicion, String Genero, String Fecha_Nacimiento, String Ciudad_Nacimiento, String Pais_Nacimiento, String Estrato, String Numero_Telefono, String Correo_Electronico, String Direccion_Residencia, String EPS, String RH_y_Gruposanguineo, String Rol_Asignado, String Contrasena) {
         this.idTrabajador = idTrabajador;
         this.Nombre = Nombre;
         this.PrimerApellido = PrimerApellido;
@@ -29,9 +32,11 @@ public class BeanPersonal {
         this.Tipo_identificacion = Tipo_identificacion;
         this.Numero_identificacion = Numero_identificacion;
         this.Fecha_Expedicion = Fecha_Expedicion;
+        this.Ciudad_Expedicion = Ciudad_Expedicion;
         this.Pais_Expedicion = Pais_Expedicion;
         this.Genero = Genero;
         this.Fecha_Nacimiento = Fecha_Nacimiento;
+        this.Ciudad_Nacimiento = Ciudad_Nacimiento;
         this.Pais_Nacimiento = Pais_Nacimiento;
         this.Estrato = Estrato;
         this.Numero_Telefono = Numero_Telefono;
@@ -40,6 +45,7 @@ public class BeanPersonal {
         this.EPS = EPS;
         this.RH_y_Gruposanguineo = RH_y_Gruposanguineo;
         this.Rol_Asignado = Rol_Asignado;
+        this.Contrasena = Contrasena;
     }
 
     public String getIdTrabajador() {
@@ -98,6 +104,14 @@ public class BeanPersonal {
         this.Fecha_Expedicion = Fecha_Expedicion;
     }
 
+    public String getCiudad_Expedicion() {
+        return Ciudad_Expedicion;
+    }
+
+    public void setCiudad_Expedicion(String Ciudad_Expedicion) {
+        this.Ciudad_Expedicion = Ciudad_Expedicion;
+    }
+
     public String getPais_Expedicion() {
         return Pais_Expedicion;
     }
@@ -120,6 +134,14 @@ public class BeanPersonal {
 
     public void setFecha_Nacimiento(String Fecha_Nacimiento) {
         this.Fecha_Nacimiento = Fecha_Nacimiento;
+    }
+
+    public String getCiudad_Nacimiento() {
+        return Ciudad_Nacimiento;
+    }
+
+    public void setCiudad_Nacimiento(String Ciudad_Nacimiento) {
+        this.Ciudad_Nacimiento = Ciudad_Nacimiento;
     }
 
     public String getPais_Nacimiento() {
@@ -185,4 +207,13 @@ public class BeanPersonal {
     public void setRol_Asignado(String Rol_Asignado) {
         this.Rol_Asignado = Rol_Asignado;
     }
+
+    public String getContrasena() {
+        return Contrasena;
+    }
+
+    public void setContrasena(String Contrasena) {
+        this.Contrasena = Contrasena;
+    }
+    
 }
