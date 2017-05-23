@@ -43,8 +43,8 @@ public class DaoRegistroEstudiante extends Conexion implements InterfaceEstudian
 
             idEstudiante = BEstudiante.getIdEstudiante();
             id_Curso = BEstudiante.getId_Curso();
-            Nombres = BEstudiante.getNombres();
-            Apellidos = BEstudiante.getApellidos();
+            Nombres = BEstudiante.getNombres().toUpperCase();
+            Apellidos = BEstudiante.getApellidos().toUpperCase();
             Contrasena = BEstudiante.getContrasena();
             Genero = BEstudiante.getGenero();
             Fecha_nacimiento = BEstudiante.getFecha_nacimiento();
