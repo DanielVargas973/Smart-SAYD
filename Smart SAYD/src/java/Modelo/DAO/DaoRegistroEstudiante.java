@@ -65,7 +65,7 @@ public class DaoRegistroEstudiante extends Conexion implements InterfaceEstudian
     @Override
     public boolean AgregarRegistro() {
         try {
-            puente.executeUpdate("INSERT INTO estudiante (`idEstudiante`, `Id_Curso`, `Nombres`, `Apellidos`, `Genero`, `Fecha_nacimiento`, `Tipo_identificacion`, `Numero_identificacion`, `Fecha_inscripcion`, `Fecha_expedicion`, `Estrato`, `Numero_telefono`, `Correo_electronico`, `Contrasena`) VALUES ('"+Numero_identificacion+"', '"+id_Curso+"', '"+Nombres+"', '"+Apellidos+"', '"+Genero+"', NULL, '"+Tipo_identificacion+"', '"+Numero_identificacion+"', '"+Fecha_inscripcion+"', '"+Fecha_expedicion+"', NULL, NULL, NULL, '"+Numero_identificacion+"')");
+            puente.executeUpdate("INSERT INTO estudiante (`idEstudiante`, `Id_Curso`, `Nombres`, `Apellidos`, `Genero`, `Fecha_nacimiento`, `Tipo_identificacion`, `Numero_identificacion`, `Fecha_inscripcion`, `Fecha_expedicion`, `Estrato`, `Numero_telefono`, `Correo_electronico`, `Contrasena`) VALUES (NULL, '"+id_Curso+"', '"+Nombres+"', '"+Apellidos+"', '"+Genero+"', NULL, '"+Tipo_identificacion+"', '"+Numero_identificacion+"', '"+Fecha_inscripcion+"', '"+Fecha_expedicion+"', NULL, NULL, NULL, '"+Numero_identificacion+"')");
             listo = true;
         } catch (Exception e) {
             Logger.getLogger(DaoRegistroEstudiante.class.getName()).log(Level.SEVERE, null, e);
@@ -76,7 +76,7 @@ public class DaoRegistroEstudiante extends Conexion implements InterfaceEstudian
     @Override
     public boolean ActualizarRegistros() {
         try {
-            puente.executeUpdate("update estudiante set Nombres='"+Nombres+"', Apellidos='"+Apellidos+"', Fecha_nacimiento='"+Fecha_nacimiento+"', Estrato='"+Estrato+"', Numero_telefono='"+Numero_telefono+"', Correo_electronico='"+Correo_electronico+"', Contrasena='"+Contrasena+"' where idEstudiante=" + idEstudiante + ";");
+            puente.executeUpdate("update estudiante set Nombres='"+Nombres+"', Apellidos='"+Apellidos+"', Fecha_nacimiento='"+Fecha_nacimiento+"', Estrato='"+Estrato+"', Numero_telefono='"+Numero_telefono+"', Correo_electronico='"+Correo_electronico+"', Contrasena='"+Contrasena+"' where Numero_identificacion=" + Numero_identificacion + ";");
             listo = true;
         } catch (Exception e) {
             Logger.getLogger(DaoRegistroEstudiante.class.getName()).log(Level.SEVERE, null, e);
@@ -84,7 +84,7 @@ public class DaoRegistroEstudiante extends Conexion implements InterfaceEstudian
         return listo;
     }
     
-    public static BeanEstudiante FiltrarEstu (String idEstudiante) // opcion 3  
+    public static BeanEstudiante FiltrarEstu (String Numero_identificacion) // opcion 3  
     {
         BeanEstudiante BEstu = null;
         try {
@@ -92,10 +92,10 @@ public class DaoRegistroEstudiante extends Conexion implements InterfaceEstudian
             Conexion conex = new Conexion();
             Connection conn = conex.ObtenerConexion();
             Statement puente = conn.createStatement();
-            ResultSet rs = puente.executeQuery("SELECT * FROM `estudiante` WHERE `idEstudiante`='" + idEstudiante + "';");
+            ResultSet rs = puente.executeQuery("SELECT * FROM `estudiante` WHERE `Numero_identificacion`='" + Numero_identificacion + "';");
             
             while(rs.next()){
-                BEstu = new BeanEstudiante(idEstudiante,rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13),rs.getString(14));           
+                BEstu = new BeanEstudiante(Numero_identificacion,rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10),rs.getString(11),rs.getString(12),rs.getString(13),rs.getString(14));           
             }
             rs.close();
             puente.close();
