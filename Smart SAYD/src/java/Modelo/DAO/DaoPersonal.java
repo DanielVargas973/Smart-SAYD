@@ -73,7 +73,7 @@ public class DaoPersonal extends Conexion implements InterfaceTrabajador {
         }
     }
 
-    //Inscripcion de un nuevo trabajador
+    //Inscripcion de un nuevo trabajador(opcion 1)
     @Override
     public boolean AgregarTrabajador() {
         try {
@@ -85,13 +85,13 @@ public class DaoPersonal extends Conexion implements InterfaceTrabajador {
         return listo;
     }
 
-    //Actualizacion de datos de un trabajador
+    //Actualizacion de datos de un trabajador (opcion 2)
     @Override
     public boolean ActualizarTrabajador() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    //Eñiminacion de un trabajador
+    //Eñiminacion de un trabajador (opcion 3)
     @Override
     public boolean EliminarTrabajador() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
