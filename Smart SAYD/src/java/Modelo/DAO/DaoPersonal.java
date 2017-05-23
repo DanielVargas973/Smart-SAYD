@@ -88,12 +88,24 @@ public class DaoPersonal extends Conexion implements InterfaceTrabajador {
     //Actualizacion de datos de un trabajador (opcion 2)
     @Override
     public boolean ActualizarTrabajador() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            puente.executeUpdate("");
+            listo = true;
+        } catch (Exception e) {
+            Logger.getLogger(DaoGestionCursos.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return listo;
     }
 
     //Eñiminacion de un trabajador (opcion 3)
     @Override
     public boolean EliminarTrabajador() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            puente.executeUpdate("");
+            listo = true;
+        } catch (Exception e) {
+            Logger.getLogger(DaoGestionCursos.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return listo;
     }
 }
