@@ -1,5 +1,5 @@
 body{
-    /*    background-image: url(../img/registroestudiante.jpg);*/
+    /*background-image: url(../img/registroestudiante.jpg);*/
     background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,7 +29,7 @@ h1{
 
 }
 
-/*input,select{
+input,select{
     border-color: aquamarine;
     border-radius: 10px;
     border-width: 2px;
@@ -54,9 +54,9 @@ button{
     font-family: Arial;
     font-size: medium;
     font-weight: bold;
-}*/
+}
 
-/*#bo1{
+#bo1{
     position: relative;
     alignment-adjust: auto;
     margin-left: 5%;
@@ -70,9 +70,9 @@ button{
     font-family: Arial;
     font-size: medium;
     font-weight: bold;
-}*/
+}
 
-/*#fecha1,#fecha2{
+.ui-datepicker-year,.ui-datepicker-month{
     border-color: #5e5e5e;
     border-radius: 5px;
     border-width: 1px;
@@ -85,4 +85,4 @@ button{
     background:white;
     color: black;
     font-weight: bold;
-}*/
+}
