@@ -81,7 +81,7 @@ public class ServletEstudiante extends HttpServlet {
                 break;
             case 3: //Consultar Registro
                 
-                BeanEstudiante bestudiante = DaoRegistroEstudiante.FiltrarEstu(idEstudiante);
+                BeanEstudiante bestudiante = DaoRegistroEstudiante.FiltrarEstu(Numero_identificacion);
                 if (bestudiante != null) {
                     
                     request.setAttribute("bestudiante", bestudiante);
