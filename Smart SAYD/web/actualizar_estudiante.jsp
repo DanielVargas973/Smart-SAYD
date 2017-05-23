@@ -23,15 +23,15 @@
 %>
 
 <%
-    String idEstudiante = "";
-    idEstudiante = request.getParameter("textidestu");
+    String numeroid = "";
+    numeroid = request.getParameter("textnumeroid");
     String nombres = "";
     String apellidos = "";
     String fechan = "";
     String correo = "";
     String telefono = "";
     try {
-        rs = puente.executeQuery("select * from estudiante where idEstudiante ='" + idEstudiante + "';");
+        rs = puente.executeQuery("select * from estudiante where Numero_identificacion ='" + numeroid + "';");
         while (rs.next()) {
 
             nombres = rs.getString("Nombres");
@@ -52,9 +52,9 @@
     } catch (Exception e) {
         e.printStackTrace();
     }
-    if (idEstudiante != "") {
+    if (numeroid != "") {
         if (nombres == "" || apellidos == "" || nombres == "" && apellidos == "") {
-            idEstudiante = "";
+            numeroid = "";
         }
     }
 %>
@@ -68,6 +68,7 @@
         <link href="JQuery/JqueryUI/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css"/>
         <script src="JQuery/jquery-3.2.1.min.js" type="text/javascript"></script>
         <script src="JQuery/JqueryUI/jquery-ui-1.12.1/jquery-ui.js" type="text/javascript"></script>
+        <script src="js/val_fechas_actuaestudiante.js" type="text/javascript"></script>
         <script src="js/val_actualizar_estudiante.js" type="text/javascript"></script>
         <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
         <script>
@@ -81,11 +82,11 @@
             function regresar() {
                 window.location.href = 'menu.jsp';
             }
-            function limpiar() {
-                /*$("#estu1").val("");
+            /*function limpiar() {
+                $("#estu1").val("");
                  $("#nombres").val("");
-                 $("#apellidos").val("");*/
-            }
+                 $("#apellidos").val("");
+            }*/
         </script>
         <title>Actualizar Estudiante</title>
     </head>
@@ -101,7 +102,7 @@
             <form method="post" action="Estudiante">
                 <table>
                     <td><label>Numero de identificación:&nbsp;</label></td>
-                    <td><input class="form-control" type="number" name="textidestu" id="estu" ><p id="ReEstu"></p><br></td>
+                    <td><input class="form-control" type="number" name="textnumeroid" id="estu" ><p id="ReEstu"></p><br></td>
                 </table>
                 <button class="btn-primary">Actualizar Datos</button>
                 <input type="hidden" name="textOpcion" value="3"><br>
@@ -111,7 +112,7 @@
             <div id="formulario2" class="container">
                 <table>
                     <tr>
-                        <td><input class="form-control" type="hidden" readonly="readonly" id="estu1" name="textidestu" value="<%=idEstudiante%>"><p id="ReEstu"></p><br></td>
+                        <td><input class="form-control" type="hidden" readonly="readonly" id="estu1" name="textnumeroid" value="<%=numeroid%>"><p id="ReEstu"></p><br></td>
                     </tr>
                     <tr>
                         <td><label>Nombres: &nbsp;</label></td>
