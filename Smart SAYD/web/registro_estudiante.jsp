@@ -72,7 +72,7 @@
                     <tr>
                         <td><label>Tipo Identificación: &nbsp;</label></td>
                         <td><select class="form-control" id="se1" name="texttipoid">
-                                <option value="">Elija su Tipo de Documento</option>
+                                <option selected="true" disabled="disabled">Elija su Tipo de Documento</option>
                                 <option value="1">Cedula de Ciudadania</option>
                                 <option value="2">Tarjeta de Identidad</option>
                                 <option value="3">Cedula de Extranjería</option>
@@ -91,7 +91,7 @@
                     <tr>
                         <td><label>Genero: &nbsp;</label></td>
                         <td><select class="form-control" id="se2" name="textgenero">
-                                <option value="">Selecione su Genero</option>
+                                <option selected="true" disabled="disabled">Selecione su Genero</option>
                                 <option value="1">Masculino</option>
                                 <option value="2">Femenino</option>
                             </select><br><br></td>
@@ -100,7 +100,7 @@
                         <td><label>Curso: &nbsp;</label></td>
                         <td><select class="form-control" id="se1" name="textidcurso">
                                 <%try {
-                                        out.print("<option value=''>Selecione un Curso</option>");
+                                        out.print("<option selected='true' disabled='disabled'>Selecione un Curso</option>");
                                         rs = puente.executeQuery("SELECT count(e.Apellidos) as cantidad ,c.Id_Curso,Nombre_programa FROM curso c left join estudiante e on c.Id_Curso = e.Id_Curso inner join programa p on p.idPrograma = c.id_programa GROUP BY c.Id_Curso;");
                                         while (rs.next()) {
                                             if (Integer.parseInt(rs.getString("cantidad")) < 40) {//Begin IF
@@ -114,7 +114,7 @@
                                     }
                                 } catch (Exception e) {
                                 %>
-                                <option value="">No se encontro ninguna lista</option> 
+                                <option selected="true" disabled="disabled">No se encontro ninguna lista</option> 
                                 <%
                                     }
                                 %>                          
