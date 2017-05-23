@@ -29,7 +29,7 @@
         <script src="JQuery/jquery-3.2.1.min.js" type="text/javascript"></script>
         <script src="JQuery/JqueryUI/jquery-ui-1.12.1/jquery-ui.js" type="text/javascript"></script>
         <script src="js/val_registro_estudiante.js" type="text/javascript"></script>
-        <script src="js/fechas.js" type="text/javascript"></script>
+        <script src="js/val_fechas_registroestu.js" type="text/javascript"></script>
         <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
         <script>
             $(function () {
@@ -37,6 +37,9 @@
                     return new Date().toJSON().split('T')[0];
                 });
                 $('$fecha2').prop('min', function () {
+                    return new Date().toJSON().split('T')[0];
+                });
+                $('$fecha2').prop('max', function () {
                     return new Date().toJSON().split('T')[0];
                 });
             });
@@ -82,7 +85,7 @@
                     </tr>
                     <tr>
                         <td><label>Fecha Expedición: &nbsp;</label></td>
-                        <td><input class="form-control" type="text" id="fecha1" min="1970-01-01" name="textfechaex" placeholder="AAAA/MM/DD"><br><br></td>
+                        <td><input class="form-control" type="text" id="fecha1" name="textfechaex" placeholder="AAAA/MM/DD"><br><br></td>
 
                     </tr>
                     <tr>

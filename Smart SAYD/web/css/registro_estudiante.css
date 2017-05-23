@@ -29,7 +29,7 @@ h1{
 
 }
 
-input,select{
+/*input,select{
     border-color: aquamarine;
     border-radius: 10px;
     border-width: 2px;
@@ -54,9 +54,9 @@ button{
     font-family: Arial;
     font-size: medium;
     font-weight: bold;
-}
+}*/
 
-#bo1{
+/*#bo1{
     position: relative;
     alignment-adjust: auto;
     margin-left: 5%;
@@ -70,4 +70,19 @@ button{
     font-family: Arial;
     font-size: medium;
     font-weight: bold;
-}
+}*/
+
+/*#fecha1,#fecha2{
+    border-color: #5e5e5e;
+    border-radius: 5px;
+    border-width: 1px;
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-family: Arial;
+    font-size: 100%;
+    border-color: white;
+    background:white;
+    color: black;
+    font-weight: bold;
+}*/
