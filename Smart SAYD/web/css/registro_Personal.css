@@ -1,0 +1,66 @@
+header{
+
+    background-color: white;
+
+}
+body{
+    /*    background-image: url(../img/registroestudiante.jpg);*/
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+h1{
+    font-family: Tahoma; color: #8A0808;
+    font-size: 420%;
+}
+#formulario{
+    font-family: Arial;
+    color: #000;
+    font-size: 150%;
+    background-color: #E6E6E6;
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+}
+input, select{
+    width: 500px;
+    height: auto;
+    border-color: #66afe9;
+    text-align: center;
+    font-family: Arial;
+    font-size: 150%;
+}
+#bo1{
+    position: relative;
+    alignment-adjust: auto;
+    margin-left: 5%;
+    border-radius: 10px;
+    border-width: 2px;
+    background: #5e5e5e;
+    border: none;
+    width: 125px;
+    height: 50px;
+    color: white;
+    font-family: Arial;
+    font-size: medium;
+    font-weight: bold;
+}
+button{
+    border-radius: 10px;
+    border-width: 2px;
+    background: crimson;
+    border: none;
+    width: 125px;
+    height: 50px;
+    color: white;
+    font-family: Arial;
+    font-size: medium;
+    font-weight: bold;
+}
+/* 
+    Created on : 23/05/2017, 03:59:36 PM
+    Author     : Daniel
+*/
+
