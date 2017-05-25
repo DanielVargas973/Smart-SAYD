@@ -47,6 +47,7 @@ public class DaoPersonal extends Conexion implements InterfaceTrabajador {
         try{
             conn = this.ObtenerConexion();
             puente = conn.createStatement();
+            
             idTrabajador = BPer.getIdTrabajador();
             Nombre = BPer.getNombre();
             PrimerApellido = BPer.getPrimerApellido();
@@ -69,7 +70,7 @@ public class DaoPersonal extends Conexion implements InterfaceTrabajador {
             Rol_Asignado = BPer.getRol_Asignado();
             Contrasena = BPer.getContrasena();
         }catch(Exception e){
-            Logger.getLogger(DaoGestionCursos.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(DaoPersonal.class.getName()).log(Level.SEVERE, null, e);
         }
     }
 
@@ -80,7 +81,7 @@ public class DaoPersonal extends Conexion implements InterfaceTrabajador {
             puente.executeUpdate("INSERT INTO `personal` (`idTrabajador`, `Nombre`, `PrimerApellido`, `SegundoApellido`, `Tipo_identificacion`, `Numero_identificacion`, `Fecha_Expedicion`, `Ciudad_Expedicion`, `Pais_Expedicion`, `Genero`, `Fecha_Nacimiento`, `Ciudad_Nacimiento`, `Pais_Nacimiento`, `Estrato`, `Numero_Telefono`, `Correo_Electronico`, `Direccion_Residencia`, `EPS`, `RH_y_Gruposanguineo`, `Rol_Asignado`, `Contrasena`) VALUES ("+idTrabajador+", '"+Nombre+"', '"+PrimerApellido+"', '"+SegundoApellido+"',"+Tipo_identificacion+",'"+Numero_identificacion+"', '"+Fecha_Expedicion+"', '"+Ciudad_Expedicion+"', '"+Pais_Expedicion+"',"+Genero+", '"+Fecha_Nacimiento+"', '"+Ciudad_Nacimiento+"', '"+Pais_Nacimiento+"',"+Estrato+","+Numero_Telefono+", '"+Correo_Electronico+"', '"+Direccion_Residencia+"', '"+EPS+"', '"+RH_y_Gruposanguineo+"',"+Rol_Asignado+", '"+Contrasena+"');");
             listo = true;
         } catch (Exception e) {
-            Logger.getLogger(DaoGestionCursos.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(DaoPersonal.class.getName()).log(Level.SEVERE, null, e);
         }
         return listo;
     }
@@ -92,7 +93,7 @@ public class DaoPersonal extends Conexion implements InterfaceTrabajador {
             puente.executeUpdate("");
             listo = true;
         } catch (Exception e) {
-            Logger.getLogger(DaoGestionCursos.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(DaoPersonal.class.getName()).log(Level.SEVERE, null, e);
         }
         return listo;
     }
@@ -104,7 +105,7 @@ public class DaoPersonal extends Conexion implements InterfaceTrabajador {
             puente.executeUpdate("");
             listo = true;
         } catch (Exception e) {
-            Logger.getLogger(DaoGestionCursos.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(DaoPersonal.class.getName()).log(Level.SEVERE, null, e);
         }
         return listo;
     }
