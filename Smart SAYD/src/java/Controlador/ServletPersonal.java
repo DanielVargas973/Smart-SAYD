@@ -53,26 +53,26 @@ public class ServletPersonal extends HttpServlet {
         switch(opcion){
             case 1: //Crear usuario
                 if (DPer.AgregarTrabajador()) {
-                    request.setAttribute("exito", "<script> alert('Se registró correctamente') </script>");
+                    request.setAttribute("exito","<script> alert('Se registró correctamente')</script>");
                 } else {
-                    request.setAttribute("error", "<script> alert('No se ha podido realizar el registro') </script>");
+                    request.setAttribute("error","<script> alert('No se ha podido realizar el registro')</script>");
                 }
                 request.getRequestDispatcher("registro_Personal.jsp").forward(request, response);
             break;
             
             case 2: //Actualizar usuario
                 if (DPer.ActualizarTrabajador()) {
-                    request.setAttribute("exito", "<script> alert('Se realizo la actualizacion de forma exitosa')</script>");
+                    request.setAttribute("exito","<script> alert('Se realizo la actualizacion de forma exitosa')</script>");
                 } else {
-                    request.setAttribute("error", "<script> alert('Lo sentimos, la actualizacion no pudo ser realizada')</script>");
+                    request.setAttribute("error","<script> alert('Lo sentimos, la actualizacion no pudo ser realizada')</script>");
                 }
                 request.getRequestDispatcher("registro_Personal.jsp").forward(request, response);
             break;
             case 3: //Eliminar usuario
                 if (DPer.EliminarTrabajador()) {
-                    request.setAttribute("exito", "<script> alert ('Se ha realizado la eliminacion')</script>");
+                    request.setAttribute("exito","<script> alert ('Se ha realizado la eliminacion')</script>");
                 } else {
-                    request.setAttribute("error", "<script> alert ('Lo sentimos, no se ha podido realizar la eliminacion')</script>");
+                    request.setAttribute("error","<script> alert ('Lo sentimos, no se ha podido realizar la eliminacion')</script>");
                 }
                 request.getRequestDispatcher("registro_Personal.jsp").forward(request, response);
             break;
