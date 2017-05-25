@@ -52,19 +52,19 @@ public class ServletPersonal extends HttpServlet {
         //Seleccion de opciones y Generacion de mensajes
         switch(opcion){
             case 1: //Crear usuario
-                request.setAttribute("exito", "<script> alert('Si ingresa')</script>");
                 if (DPer.AgregarTrabajador()) {
-                    request.setAttribute("exito", "<script> alert('Se registró correctamente')</script>");
+                    request.setAttribute("exito", "<script> alert('Se registró correctamente') </script>");
                 } else {
-                    request.setAttribute("error", "<script> alert('No se ha podido realizar el registro')</script>");
+                    request.setAttribute("error", "<script> alert('No se ha podido realizar el registro') </script>");
                 }
                 request.getRequestDispatcher("registro_Personal.jsp").forward(request, response);
             break;
+            
             case 2: //Actualizar usuario
                 if (DPer.ActualizarTrabajador()) {
                     request.setAttribute("exito", "<script> alert('Se realizo la actualizacion de forma exitosa')</script>");
                 } else {
-                    request.setAttribute("error", "<script>alert('Lo sentimos, la actualizacion no pudo ser realizada')");
+                    request.setAttribute("error", "<script> alert('Lo sentimos, la actualizacion no pudo ser realizada')</script>");
                 }
                 request.getRequestDispatcher("registro_Personal.jsp").forward(request, response);
             break;
