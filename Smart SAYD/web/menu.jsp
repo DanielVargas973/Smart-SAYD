@@ -35,6 +35,10 @@
         <br><br>
 
         <b><a type="button" href="Subirexcusa.jsp"><button class="btn-danger">Gestion de Excusa</button></a></b>
+        
+        <br><br>
+
+        <b><a type="button" href="registro_Personal.jsp"><button class="btn-danger">Registrar personal</button></a></b>
 
 
     </center>
