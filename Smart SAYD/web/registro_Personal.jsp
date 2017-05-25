@@ -17,6 +17,11 @@
         <script src="JQuery/JqueryUI/jquery-ui-1.12.1/jquery-ui.js" type="text/javascript"></script>
         <script src="js/val_registro_personal.js" type="text/javascript"></script>
         <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
+        <script>
+            function regresar() {
+                window.location.href = 'menu.jsp';
+            }
+        </script>
         <title>Registrar Usuario</title>
     </head>
     <body>
@@ -37,20 +42,20 @@
                     <tr>
                         <td>IdTrabajador: &nbsp;</td>
                         </br>
-                        <td><input class="form-control has-focus" type="text" id="txtidTrabajador" placeholder="ID"></td>
+                        <td><input class="form-control has-focus" type="text" id="txtidTrabajador" name="txtidTrabajador" placeholder="ID"></td>
                     </tr>
                     <tr>
                         <td>Nombres: &nbsp;</td>
                         </br>
-                        <td><input class="form-control has-focus" type="text" id="txtNombre" placeholder="Escribe tus nombres"></td>
+                        <td><input class="form-control has-focus" type="text" id="txtNombre" name="txtNombre" placeholder="Escribe tus nombres"></td>
                     </tr>
                     <tr>
                         <td>Primer apellido: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtPrimerApellido" placeholder="Primer apellido"></td>
+                        <td><input class="form-control has-focus" type="text" id="txtPrimerApellido" name="txtPrimerApellido" placeholder="Primer apellido"></td>
                     </tr>
                     <tr>
                         <td>Segundo apellido: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtSegundoApellido" placeholder="Segundo apellido"></td>
+                        <td><input class="form-control has-focus" type="text" id="txtSegundoApellido" name="txtSegundoApellido" placeholder="Segundo apellido"></td>
                     </tr>
                     <tr>
                         <td>Tipo identificación: &nbsp;</td>
@@ -64,19 +69,19 @@
                     </tr>
                     <tr>
                         <td>Numero identificacion: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtNumeroIdentificacion" placeholder="Numero identificacion"></td>
+                        <td><input class="form-control has-focus" type="text" id="txtNumeroIdentificacion" name="txtNumeroIdentificacion" placeholder="Numero identificacion"></td>
                     </tr>
                     <tr>
                         <td>Fécha expedicion: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtFechaExpedicion" placeholder="Fecha expedicion"></td>
+                        <td><input class="form-control has-focus" type="text" id="txtFechaExpedicion" name="txtFechaExpedicion" placeholder="Fecha expedicion"></td>
                     </tr>
                     <tr>
                         <td>Ciudad expedicion: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtCiudad_Expedicion" placeholder="Ciudad expedicion"></td>
+                        <td><input class="form-control has-focus" type="text" id="txtCiudad_Expedicion" name="txtCiudad_Expedicion" placeholder="Ciudad expedicion"></td>
                     </tr>
                     <tr>
                         <td>País expedicion: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtPais_Expedicion" placeholder="País expedicion"></td>
+                        <td><input class="form-control has-focus" type="text" id="txtPais_Expedicion" name="txtPais_Expedicion" placeholder="País expedicion"></td>
                     </tr>
                     <tr>
                         <td>Género: &nbsp;</td>
@@ -88,15 +93,15 @@
                     </tr>
                     <tr>
                         <td>Fecha nacimiento: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtFecha_Nacimiento" placeholder="Fecha nacimiento"></td>
+                        <td><input class="form-control has-focus" type="text" id="txtFecha_Nacimiento" name="txtFecha_Nacimiento" placeholder="Fecha nacimiento"></td>
                     </tr>
                     <tr>
                         <td>Ciudad nacimiento: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtCiudad_Nacimiento" placeholder="Ciudad nacimiento"></td>
+                        <td><input class="form-control has-focus" type="text" id="txtCiudad_Nacimiento" name="txtCiudad_Nacimiento" placeholder="Ciudad nacimiento"></td>
                     </tr>
                     <tr>
                         <td>País nacimiento: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtPais_Nacimiento" placeholder="País nacimiento"></td>
+                        <td><input class="form-control has-focus" type="text" id="txtPais_Nacimiento" name="txtPais_Nacimiento" placeholder="País nacimiento"></td>
                     </tr>
                     <tr>
                         <td>Estrato: &nbsp;</td>
@@ -112,19 +117,19 @@
                     </tr>
                     <tr>
                         <td>Número telefono: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="number" id="txtNumero_Telefono" placeholder="Teléfono - Celular"></td>
+                        <td><input class="form-control has-focus" type="number" id="txtNumero_Telefono" name="txtNumero_Telefono" placeholder="Teléfono - Celular"></td>
                     </tr>
                     <tr>
                         <td>Correo electrónico: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtCorreo_Electronico" placeholder="Correo electrónico"></td>
+                        <td><input class="form-control has-focus" type="text" id="txtCorreo_Electronico" name="txtCorreo_Electronico" placeholder="Correo electrónico"></td>
                     </tr>
                     <tr>
                         <td>Direccion residencia: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtDireccion_Residencia" placeholder="Direccion"></td>
+                        <td><input class="form-control has-focus" type="text" id="txtDireccion_Residencia" name="txtDireccion_Residencia" placeholder="Direccion"></td>
                     </tr>
                     <tr>
                         <td>EPS: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtEPS" placeholder="Nombre entidad"></td>
+                        <td><input class="form-control has-focus" type="text" id="txtEPS" name="txtEPS" placeholder="Nombre entidad"></td>
                     </tr>
                     <tr>
                         <td>RH: &nbsp;</td>
@@ -161,12 +166,12 @@
                     </tr>
                     <tr>
                         <td>Contraseña: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="password" id="txtContrasena" placeholder="Contraseña"></td>
+                        <td><input class="form-control has-focus" type="password" id="txtContrasena" name="txtContrasena" placeholder="Contraseña"></td>
                     </tr>
                     <tr>
-                        <td><input class="btn-danger" type="button" id="bo1" onclick="regresar()" value="Regresar"></td>
                         <td><button class="btn-primary">Registrar usuario</button>
                             <input type="hidden" name="textOpcion" value="1"></td>
+                        <td><input class="btn-danger" type="button" id="bo1" onclick="regresar()" value="Regresar"></td>
                     </tr>
                 </table>
             </div>
