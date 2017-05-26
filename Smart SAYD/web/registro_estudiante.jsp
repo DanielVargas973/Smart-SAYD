@@ -85,7 +85,7 @@
                     </tr>
                     <tr>
                         <td><label>Fecha Expedición: &nbsp;</label></td>
-                        <td><input class="form-control" type="text" id="fecha1" name="textfechaex" placeholder="AAAA/MM/DD"><br><br></td>
+                        <td><input class="form-control" type="text" id="fecha1" name="textfechaex" placeholder="AAAA/MM/DD"><p id="Reexped"></p><br></td>
 
                     </tr>
                     <tr>
