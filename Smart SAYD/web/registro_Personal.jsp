@@ -31,80 +31,72 @@
             </div><br>
         </header>
     <center>
-        </br>
+        <br/>
         <h1>Registro de nuevo usuario</h1>
-        </br>
-        </br>
+        <br/>
         <form class="form-inline" method="POST" action="Personal">
-            <div id="formulario" class="container">
-                </br>
+            <div id="formulario" class="container"><br/><br/>
                 <table>
                     <tr>
-                        <td>IdTrabajador: &nbsp;</td>
-                        </br>
-                        <td><input class="form-control has-focus" type="text" id="txtidTrabajador" name="txtidTrabajador" placeholder="ID"></td>
+                        <td><label>Nombres: &nbsp;</label></td>
+                        <td><input class="form-control has-focus" type="text" id="txtNombre" name="txtNombre" placeholder="Escribe tus nombres"><br/></td>
                     </tr>
                     <tr>
-                        <td>Nombres: &nbsp;</td>
-                        </br>
-                        <td><input class="form-control has-focus" type="text" id="txtNombre" name="txtNombre" placeholder="Escribe tus nombres"></td>
+                        <td><label>Primer apellido: &nbsp;</label></td>
+                        <td><input class="form-control has-focus" type="text" id="txtPrimerApellido" name="txtPrimerApellido" placeholder="Primer apellido"><br/></td>
                     </tr>
                     <tr>
-                        <td>Primer apellido: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtPrimerApellido" name="txtPrimerApellido" placeholder="Primer apellido"></td>
+                        <td><label>Segundo apellido: &nbsp;</label></td>
+                        <td><input class="form-control has-focus" type="text" id="txtSegundoApellido" name="txtSegundoApellido" placeholder="Segundo apellido"><br/></td>
                     </tr>
                     <tr>
-                        <td>Segundo apellido: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtSegundoApellido" name="txtSegundoApellido" placeholder="Segundo apellido"></td>
-                    </tr>
-                    <tr>
-                        <td>Tipo identificación: &nbsp;</td>
+                        <td><label>Tipo identificación: &nbsp;</label></td>
                         <td><select class="form-control" id="se1" name="txtTipo_identificacion">
                                 <option value="">Elija su Tipo de Documento</option>
                                 <option value="1">Cedula de Ciudadania</option>
                                 <option value="2">Tarjeta de Identidad</option>
                                 <option value="3">Cedula de Extranjería</option>
                                 <option value="4">Numero de Identificación Tributaria</option>
-                            </select></td>
+                            </select><br/><br/></td>
                     </tr>
                     <tr>
-                        <td>Numero identificacion: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtNumeroIdentificacion" name="txtNumeroIdentificacion" placeholder="Numero identificacion"></td>
+                        <td><label>Número identificación: &nbsp;</label></td>
+                        <td><input class="form-control has-focus" type="text" id="txtNumeroIdentificacion" name="txtNumeroIdentificacion" placeholder="Numero identificacion"><br/></td>
                     </tr>
                     <tr>
-                        <td>Fécha expedicion: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtFechaExpedicion" name="txtFechaExpedicion" placeholder="Fecha expedicion"></td>
+                        <td><label>Fécha expedicion: &nbsp;</label></td>
+                        <td><input class="form-control has-focus" type="text" id="txtFechaExpedicion" name="txtFechaExpedicion" placeholder="Fecha expedicion"><br/></td>
                     </tr>
                     <tr>
-                        <td>Ciudad expedicion: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtCiudad_Expedicion" name="txtCiudad_Expedicion" placeholder="Ciudad expedicion"></td>
+                        <td><label>Ciudad expedicion: &nbsp;</label></td>
+                        <td><input class="form-control has-focus" type="text" id="txtCiudad_Expedicion" name="txtCiudad_Expedicion" placeholder="Ciudad expedicion"><br/><br/></td>
                     </tr>
                     <tr>
-                        <td>País expedicion: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtPais_Expedicion" name="txtPais_Expedicion" placeholder="País expedicion"></td>
+                        <td><label>País expedicion: &nbsp;</label></td>
+                        <td><input class="form-control has-focus" type="text" id="txtPais_Expedicion" name="txtPais_Expedicion" placeholder="País expedicion"><br/></td>
                     </tr>
                     <tr>
-                        <td>Género: &nbsp;</td>
+                        <td><label>Género: &nbsp;</label></td>
                         <td><select class="form-control" id="se2" name="txtGenero">
                                 <option value="" selected="true" disabled="disabled">Selecione su Genero</option>
                                 <option value="1">Masculino</option>
                                 <option value="2">Femenino</option>
-                            </select><br><br></td>
+                            </select><br/></td>
                     </tr>
                     <tr>
-                        <td>Fecha nacimiento: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtFecha_Nacimiento" name="txtFecha_Nacimiento" placeholder="Fecha nacimiento"></td>
+                        <td><label>Fecha nacimiento: &nbsp;</label></td>
+                        <td><input class="form-control has-focus" type="text" id="txtFecha_Nacimiento" name="txtFecha_Nacimiento" placeholder="Fecha nacimiento"><br/></td>
                     </tr>
                     <tr>
-                        <td>Ciudad nacimiento: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtCiudad_Nacimiento" name="txtCiudad_Nacimiento" placeholder="Ciudad nacimiento"></td>
+                        <td><label>Ciudad nacimiento: &nbsp;</label></td>
+                        <td><input class="form-control has-focus" type="text" id="txtCiudad_Nacimiento" name="txtCiudad_Nacimiento" placeholder="Ciudad nacimiento"><br/><br/></td>
                     </tr>
                     <tr>
-                        <td>País nacimiento: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtPais_Nacimiento" name="txtPais_Nacimiento" placeholder="País nacimiento"></td>
+                        <td><label>País nacimiento: &nbsp;</label></td>
+                        <td><input class="form-control has-focus" type="text" id="txtPais_Nacimiento" name="txtPais_Nacimiento" placeholder="País nacimiento"><br/></td>
                     </tr>
                     <tr>
-                        <td>Estrato: &nbsp;</td>
+                        <td><label>Estrato: &nbsp;</label></td>
                         <td><select class="form-control" id="se1" name="txtEstrato">
                                 <option value="" selected="true" disabled="disabled">Elija su Estrato</option>
                                 <option value="1">1</option>
@@ -113,26 +105,38 @@
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                                 <option value="6">6</option>
-                            </select><br></td>
+                            </select><br/></td>
                     </tr>
                     <tr>
-                        <td>Número telefono: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="number" id="txtNumero_Telefono" name="txtNumero_Telefono" placeholder="Teléfono - Celular"></td>
+                        <td><label>Número telefono: &nbsp;</label></td>
+                        <td><input class="form-control has-focus" type="number" id="txtNumero_Telefono" name="txtNumero_Telefono" placeholder="Teléfono - Celular"><br/></td>
                     </tr>
                     <tr>
-                        <td>Correo electrónico: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtCorreo_Electronico" name="txtCorreo_Electronico" placeholder="Correo electrónico"></td>
+                        <td><label>Correo electrónico: &nbsp;</label></td>
+                        <td><input class="form-control has-focus" type="text" id="txtCorreo_Electronico" name="txtCorreo_Electronico" placeholder="Correo electrónico"><br/><br/></td>
                     </tr>
                     <tr>
-                        <td>Direccion residencia: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtDireccion_Residencia" name="txtDireccion_Residencia" placeholder="Direccion"></td>
+                        <td><label>Direccion residencia: &nbsp;</label></td>
+                        <td><input class="form-control has-focus" type="text" id="txtDireccion_Residencia" name="txtDireccion_Residencia" placeholder="Direccion"><br/></td>
                     </tr>
                     <tr>
-                        <td>EPS: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="text" id="txtEPS" name="txtEPS" placeholder="Nombre entidad"></td>
+                        <td><label>EPS: &nbsp;</label></td>
+                        <td><input class="form-control has-focus" type="text" id="txtEPS" name="txtEPS" placeholder="Nombre entidad"><br/></td>
                     </tr>
                     <tr>
-                        <td>RH: &nbsp;</td>
+                        <td><label>Grupo sanguíneo: &nbsp;</label></td>
+                        <td>
+                            <select class="form-control" id="se1" name="txtGrupo_Sanguineo">
+                                <option value="" selected="true" disabled="disabled">Elija su grupo</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="AB">AB</option>
+                                <option value="O">O</option>
+                            </select><br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>RH: &nbsp;</label></td>
                         <td>
                             <select class="form-control" id="se1" name="txtRH">
                                 <option value="" selected="true" disabled="disabled">Elija su tipo</option>
@@ -142,19 +146,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Grupo sanguíneo: &nbsp;</td>
-                        <td>
-                            <select class="form-control" id="se1" name="txtGrupo_Sanguineo">
-                                <option value="" selected="true" disabled="disabled">Elija su grupo</option>
-                                <option value="A">A</option>
-                                <option value="B">B</option>
-                                <option value="AB">AB</option>
-                                <option value="O">O</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Rol asignado: &nbsp;</td>
+                        <td><label>Rol asignado: &nbsp;</label></td>
                         <td>
                             <select class="form-control" id="se1" name="txtRol_Asignado">
                                 <option value="" selected="true" disabled="disabled">Elija un rol</option>
@@ -165,17 +157,28 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>Contraseña: &nbsp;</td>
-                        <td><input class="form-control has-focus" type="password" id="txtContrasena" name="txtContrasena" placeholder="Contraseña"></td>
+                        <td><label>Contraseña: &nbsp;</label></td>
+                        <td><input class="form-control has-focus" type="password" id="txtContrasena" name="txtContrasena" placeholder="Contraseña"><br/></td>
                     </tr>
+                </table>
+                <br/>
+            </div>
+            <div>
+                <table>
+                    <br/>
                     <tr>
-                        <td><button class="btn-primary">Registrar usuario</button>
-                            <input type="hidden" name="textOpcion" value="1"></td>
                         <td><input class="btn-danger" type="button" id="bo1" onclick="regresar()" value="Regresar"></td>
+                        <td><button class="btn-primary">Registrar Estudiante</button>
+                            <input type="hidden" name="textOpcion" value="1"/></td>
                     </tr>
                 </table>
             </div>
         </form>
+        <%if (request.getAttribute("error") != null) {%>
+        ${error}
+        <%} else {%>
+        ${exito}
+        <%}%>
     </center>
 </body>
 </html>

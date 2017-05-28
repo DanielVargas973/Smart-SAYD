@@ -22,7 +22,6 @@ public class ServletPersonal extends HttpServlet {
         
         //Obtencion de datos
         int opcion = Integer.parseInt(request.getParameter("textOpcion"));
-        String idTrabajador = request.getParameter("txtidTrabajador");
         String Nombre = request.getParameter("txtNombre");
         String PrimerApellido = request.getParameter("txtPrimerApellido");
         String SegundoApellido = request.getParameter("txtSegundoApellido");
@@ -46,7 +45,7 @@ public class ServletPersonal extends HttpServlet {
         String Contrasena = request.getParameter("txtContrasena");
         String RH_y_Gruposanguineo = Grupo_Sanguineo+RH;
         //LLamar BEAN y DAO
-        BeanPersonal BPer = new BeanPersonal(idTrabajador, Nombre, PrimerApellido, SegundoApellido, Tipo_identificacion, Numero_identificacion, Fecha_Expedicion, Ciudad_Expedicion, Pais_Expedicion, Genero, Fecha_Nacimiento, Ciudad_Nacimiento, Pais_Nacimiento, Estrato, Numero_Telefono, Correo_Electronico, Direccion_Residencia, EPS, RH_y_Gruposanguineo, Rol_Asignado, Contrasena);
+        BeanPersonal BPer = new BeanPersonal(Nombre, PrimerApellido, SegundoApellido, Tipo_identificacion, Numero_identificacion, Fecha_Expedicion, Ciudad_Expedicion, Pais_Expedicion, Genero, Fecha_Nacimiento, Ciudad_Nacimiento, Pais_Nacimiento, Estrato, Numero_Telefono, Correo_Electronico, Direccion_Residencia, EPS, RH_y_Gruposanguineo, Rol_Asignado, Contrasena);
         DaoPersonal DPer = new DaoPersonal(BPer);
         
         //Seleccion de opciones y Generacion de mensajes

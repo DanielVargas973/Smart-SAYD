@@ -2,7 +2,6 @@ package Modelo.BEAN;
 
 public class BeanPersonal {
     
-    private String idTrabajador;
     private String Nombre;
     private String PrimerApellido;
     private String SegundoApellido;
@@ -24,8 +23,7 @@ public class BeanPersonal {
     private String Rol_Asignado;
     private String Contrasena;
 
-    public BeanPersonal(String idTrabajador, String Nombre, String PrimerApellido, String SegundoApellido, String Tipo_identificacion, String Numero_identificacion, String Fecha_Expedicion, String Ciudad_Expedicion, String Pais_Expedicion, String Genero, String Fecha_Nacimiento, String Ciudad_Nacimiento, String Pais_Nacimiento, String Estrato, String Numero_Telefono, String Correo_Electronico, String Direccion_Residencia, String EPS, String RH_y_Gruposanguineo, String Rol_Asignado, String Contrasena) {
-        this.idTrabajador = idTrabajador;
+    public BeanPersonal(String Nombre, String PrimerApellido, String SegundoApellido, String Tipo_identificacion, String Numero_identificacion, String Fecha_Expedicion, String Ciudad_Expedicion, String Pais_Expedicion, String Genero, String Fecha_Nacimiento, String Ciudad_Nacimiento, String Pais_Nacimiento, String Estrato, String Numero_Telefono, String Correo_Electronico, String Direccion_Residencia, String EPS, String RH_y_Gruposanguineo, String Rol_Asignado, String Contrasena) {
         this.Nombre = Nombre;
         this.PrimerApellido = PrimerApellido;
         this.SegundoApellido = SegundoApellido;
@@ -46,14 +44,6 @@ public class BeanPersonal {
         this.RH_y_Gruposanguineo = RH_y_Gruposanguineo;
         this.Rol_Asignado = Rol_Asignado;
         this.Contrasena = Contrasena;
-    }
-
-    public String getIdTrabajador() {
-        return idTrabajador;
-    }
-
-    public void setIdTrabajador(String idTrabajador) {
-        this.idTrabajador = idTrabajador;
     }
 
     public String getNombre() {

@@ -16,11 +16,8 @@ h1{
     font-size: 420%;
 }
 #formulario{
-    font-family: Arial;
-    color: #000;
-    font-size: 150%;
     background-color: #E6E6E6;
-    width: 500px;
+    width: 550px;
     height: auto;
     border-radius: 10px;
 }

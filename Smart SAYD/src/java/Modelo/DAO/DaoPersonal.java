@@ -19,7 +19,6 @@ public class DaoPersonal extends Conexion implements InterfaceTrabajador {
     public boolean listo = false;
 
     //Declaracion de variables
-    public String idTrabajador = "";
     public String Nombre = "";
     public String PrimerApellido = "";
     public String SegundoApellido = "";
@@ -48,7 +47,6 @@ public class DaoPersonal extends Conexion implements InterfaceTrabajador {
             conn = this.ObtenerConexion();
             puente = conn.createStatement();
             
-            idTrabajador = BPer.getIdTrabajador();
             Nombre = BPer.getNombre();
             PrimerApellido = BPer.getPrimerApellido();
             SegundoApellido =BPer.getSegundoApellido();
@@ -78,7 +76,7 @@ public class DaoPersonal extends Conexion implements InterfaceTrabajador {
     @Override
     public boolean AgregarTrabajador() {
         try {
-            puente.executeUpdate("INSERT INTO `personal` (`idTrabajador`, `Nombre`, `PrimerApellido`, `SegundoApellido`, `Tipo_identificacion`, `Numero_identificacion`, `Fecha_Expedicion`, `Ciudad_Expedicion`, `Pais_Expedicion`, `Genero`, `Fecha_Nacimiento`, `Ciudad_Nacimiento`, `Pais_Nacimiento`, `Estrato`, `Numero_Telefono`, `Correo_Electronico`, `Direccion_Residencia`, `EPS`, `RH_y_Gruposanguineo`, `Rol_Asignado`, `Contrasena`) VALUES ("+idTrabajador+", '"+Nombre+"', '"+PrimerApellido+"', '"+SegundoApellido+"',"+Tipo_identificacion+",'"+Numero_identificacion+"', '"+Fecha_Expedicion+"', '"+Ciudad_Expedicion+"', '"+Pais_Expedicion+"',"+Genero+", '"+Fecha_Nacimiento+"', '"+Ciudad_Nacimiento+"', '"+Pais_Nacimiento+"',"+Estrato+","+Numero_Telefono+", '"+Correo_Electronico+"', '"+Direccion_Residencia+"', '"+EPS+"', '"+RH_y_Gruposanguineo+"',"+Rol_Asignado+", '"+Contrasena+"');");
+            puente.executeUpdate("INSERT INTO `personal` (`Nombre`, `PrimerApellido`, `SegundoApellido`, `Tipo_identificacion`, `Numero_identificacion`, `Fecha_Expedicion`, `Ciudad_Expedicion`, `Pais_Expedicion`, `Genero`, `Fecha_Nacimiento`, `Ciudad_Nacimiento`, `Pais_Nacimiento`, `Estrato`, `Numero_Telefono`, `Correo_Electronico`, `Direccion_Residencia`, `EPS`, `RH_y_Gruposanguineo`, `Rol_Asignado`, `Contrasena`) VALUES ('"+Nombre+"', '"+PrimerApellido+"', '"+SegundoApellido+"',"+Tipo_identificacion+",'"+Numero_identificacion+"', '"+Fecha_Expedicion+"', '"+Ciudad_Expedicion+"', '"+Pais_Expedicion+"',"+Genero+", '"+Fecha_Nacimiento+"', '"+Ciudad_Nacimiento+"', '"+Pais_Nacimiento+"',"+Estrato+","+Numero_Telefono+", '"+Correo_Electronico+"', '"+Direccion_Residencia+"', '"+EPS+"', '"+RH_y_Gruposanguineo+"',"+Rol_Asignado+", '"+Contrasena+"');");
             listo = true;
         } catch (Exception e) {
             Logger.getLogger(DaoPersonal.class.getName()).log(Level.SEVERE, null, e);
