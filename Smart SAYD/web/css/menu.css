@@ -1,24 +1,124 @@
-body{
+body
+{
     background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
-center{
-    margin-top: 10%;
-}
-header{
-    
-    background-color: white;
-    
+
+nav
+{
+    border-top: 2px solid #a94442;
+    box-sizing: border-box;
+    margin-top: 140px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    background-color: #e0e0e0;
+    padding-right: .25em;
+    padding-top: 5px;
+    position: absolute;
+    left:-20em;
+    transition: all .4s;
+    z-index: 20;
+    height: 81.7%;
 }
 
-h1{
+nav.mostrar
+{
+    left:0;
+}
+
+.menu
+{
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    margin-top: 12px;
+    margin-left: 50px;
+    text-decoration: none;
+    text-transform: uppercase; 
+}
+
+#mostrar-menu
+{
+    background-image: url(../img/menuplano.png);
+    cursor:pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 22px;
+    height: 42px;
+    position: absolute;
+    top: 6em;
+    width: 42px;
+    z-index: 30;
+}
+
+#menu
+{
+    list-style: none;
+    line-height: 42px;
+    padding-left: 0;
+    width: 20em;
+    /*outline: 1px solid red;*/
+}
+
+#menu a
+{
+    margin-left: .5em;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase; 
+    transition: all .6s;
+    display: block;
+    width: 100%;
+}
+
+#menu li
+{
+    box-shadow: 3px 0 #a94442 inset;
+    margin-bottom: 5px;
+    padding-left: 1.5em;
+    /*outline: 1px solid green;*/
+}
+
+#menu li:hover
+{
+    margin-left: 1em; 
+    box-shadow: 20em 0 #a94442 inset;
+    margin-bottom: 5px;
+    padding-left: 1.5em;
+    transition: all .6s;
+}
+
+#me
+{
+    margin-right: 1em;
+}
+
+#logo
+{
+    margin-left: 250px;
+}
+
+header
+{
+    background-color: white;
+    border-bottom: 2px solid #a94442;
+}
+
+center
+{
+    margin-top: 10%;
+}
+
+h1
+{
     color: black;
     font-family: Rosewood Std Regular;
 }
-input,select{
+input,select
+{
     border-color: aquamarine;
     border-radius: 10px;
     border-width: 2px;
@@ -32,7 +132,8 @@ input,select{
     color: darkblue;
     font-weight: bold;
 }
-button{
+button
+{
     border-radius: 10px;
     border-width: 2px;
     background: crimson;

@@ -1,8 +1,103 @@
-header{
-
-    background-color: white;
-
+nav
+{
+    border-top: 2px solid #a94442;
+    box-sizing: border-box;
+    margin-top: 140px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    background-color: #e0e0e0;
+    padding-right: .25em;
+    padding-top: 5px;
+    position: absolute;
+    left:-20em;
+    transition: all .4s;
+    z-index: 20;
+    height: 81.7%;
 }
+
+nav.mostrar
+{
+    left:0;
+}
+
+.menu
+{
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    margin-top: 12px;
+    margin-left: 50px;
+    text-decoration: none;
+    text-transform: uppercase; 
+}
+
+#mostrar-menu
+{
+    background-image: url(../img/menuplano.png);
+    cursor:pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 22px;
+    height: 42px;
+    position: absolute;
+    top: 6em;
+    width: 42px;
+    z-index: 30;
+}
+
+#menu
+{
+    list-style: none;
+    line-height: 42px;
+    padding-left: 0;
+    width: 20em;
+    /*outline: 1px solid red;*/
+}
+
+#menu a
+{
+    margin-left: .5em;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase; 
+    transition: all .6s;
+    display: block;
+    width: 100%;
+}
+
+#menu li
+{
+    box-shadow: 3px 0 #a94442 inset;
+    margin-bottom: 5px;
+    padding-left: 1.5em;
+    /*outline: 1px solid green;*/
+}
+
+#menu li:hover
+{
+    margin-left: 1em; 
+    box-shadow: 20em 0 #a94442 inset;
+    margin-bottom: 5px;
+    padding-left: 1.5em;
+    transition: all .6s;
+}
+
+#me
+{
+    margin-right: 1em;
+}
+
+#logo
+{
+    margin-left: 250px;
+}
+
+header
+{
+    background-color: white;
+    border-bottom: 2px solid #a94442;
+}
+
 body{
     /*    background-image: url(../img/registroestudiante.jpg);*/
     background-color: white;
@@ -24,7 +119,7 @@ h1{
 input, select{
     width: 500px;
     height: auto;
-    border-color: #66afe9;
+    border-color: #a94442;
     text-align: center;
     font-family: Arial;
     font-size: 150%;
@@ -35,7 +130,7 @@ input, select{
     margin-left: 5%;
     border-radius: 10px;
     border-width: 2px;
-    background: #5e5e5e;
+    background: #a94442;
     border: none;
     width: 125px;
     height: 50px;
@@ -47,7 +142,7 @@ input, select{
 button{
     border-radius: 10px;
     border-width: 2px;
-    background: crimson;
+    background: #a94442;
     border: none;
     width: 125px;
     height: 50px;

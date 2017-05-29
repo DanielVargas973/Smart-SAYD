@@ -16,18 +16,23 @@
         <script src="JQuery/jquery-3.2.1.min.js" type="text/javascript"></script>
         <script src="JQuery/JqueryUI/jquery-ui-1.12.1/jquery-ui.js" type="text/javascript"></script>
         <script src="js/val_registro_personal.js" type="text/javascript"></script>
-        <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
-        <script>
-            function regresar() {
-                window.location.href = 'menu.jsp';
-            }
-        </script>
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <title>Registrar Usuario</title>
     </head>
     <body>
         <header>
+            <div id="mostrar-menu"><label class="menu">Menú</label></div>
+            <nav id="menu">
+                <li><a href="registro_Personal.jsp"><img id="me" width="42px" height="42px" src="img/menu1.png" alt=""/>Registrar Personal</a></li>                
+                <li><a href="registrar_programa.jsp"><img id="me" width="42px" height="42px" src="img/menu2.png" alt=""/>Registrar Programa</a></li>  
+                <li><a href="registro_Cursos.jsp"><img id="me" width="42px" height="42px" src="img/menu3.png" alt=""/>Registrar Cursos</a></li>  
+                <li><a href="registro_estudiante.jsp"><img id="me" width="42px" height="42px" src="img/menu4.png" alt=""/>Registrar Estudiante</a></li>  
+                <li><a href="actualizar_estudiante.jsp"><img id="me" width="42px" height="42px" src="img/menu5.png" alt=""/>Actualizar Estudiante</a></li>  
+                <li><a href="Subirexcusa.jsp"><img id="me" width="42px" height="42px" src="img/menu6.png" alt=""/>Gestión Excusas</a></li>  
+                <li><a href="carga_masiva_datos.jsp"><img id="me" width="42px" height="42px" src="img/menu7.png" alt=""/>Carga Masiva</a></li>  
+            </nav>
             <br><div class="container">                
-                <img src="img/SmartSAYD.png" alt="logo"/>
+                <img id="logo" margin-left="200px" src="img/SmartSAYD.png" alt="logo"/>
             </div><br>
         </header>
     <center>
@@ -39,15 +44,15 @@
                 <table>
                     <tr>
                         <td><label>Nombres: &nbsp;</label></td>
-                        <td><input class="form-control has-focus" type="text" id="txtNombre" name="txtNombre" placeholder="Escribe tus nombres"><br/></td>
+                        <td><input class="form-control has-focus" type="text" id="txtNombre" name="txtNombre" placeholder="Escribe tus nombres"><br><br></td>
                     </tr>
                     <tr>
                         <td><label>Primer apellido: &nbsp;</label></td>
-                        <td><input class="form-control has-focus" type="text" id="txtPrimerApellido" name="txtPrimerApellido" placeholder="Primer apellido"><br/></td>
+                        <td><input class="form-control has-focus" type="text" id="txtPrimerApellido" name="txtPrimerApellido" placeholder="Primer apellido"><br><br></td>
                     </tr>
                     <tr>
                         <td><label>Segundo apellido: &nbsp;</label></td>
-                        <td><input class="form-control has-focus" type="text" id="txtSegundoApellido" name="txtSegundoApellido" placeholder="Segundo apellido"><br/></td>
+                        <td><input class="form-control has-focus" type="text" id="txtSegundoApellido" name="txtSegundoApellido" placeholder="Segundo apellido"><br><br></td>
                     </tr>
                     <tr>
                         <td><label>Tipo identificación: &nbsp;</label></td>
@@ -57,23 +62,23 @@
                                 <option value="2">Tarjeta de Identidad</option>
                                 <option value="3">Cedula de Extranjería</option>
                                 <option value="4">Numero de Identificación Tributaria</option>
-                            </select><br/><br/></td>
+                            </select><br><br></td>
                     </tr>
                     <tr>
                         <td><label>Número identificación: &nbsp;</label></td>
-                        <td><input class="form-control has-focus" type="text" id="txtNumeroIdentificacion" name="txtNumeroIdentificacion" placeholder="Numero identificacion"><br/></td>
+                        <td><input class="form-control has-focus" type="text" id="txtNumeroIdentificacion" name="txtNumeroIdentificacion" placeholder="Numero identificacion"><br><br></td>
                     </tr>
                     <tr>
                         <td><label>Fécha expedicion: &nbsp;</label></td>
-                        <td><input class="form-control has-focus" type="text" id="txtFechaExpedicion" name="txtFechaExpedicion" placeholder="Fecha expedicion"><br/></td>
+                        <td><input class="form-control has-focus" type="text" id="txtFechaExpedicion" name="txtFechaExpedicion" placeholder="Fecha expedicion"><br><br></td>
                     </tr>
                     <tr>
                         <td><label>Ciudad expedicion: &nbsp;</label></td>
-                        <td><input class="form-control has-focus" type="text" id="txtCiudad_Expedicion" name="txtCiudad_Expedicion" placeholder="Ciudad expedicion"><br/><br/></td>
+                        <td><input class="form-control has-focus" type="text" id="txtCiudad_Expedicion" name="txtCiudad_Expedicion" placeholder="Ciudad expedicion"><br><br></td>
                     </tr>
                     <tr>
                         <td><label>País expedicion: &nbsp;</label></td>
-                        <td><input class="form-control has-focus" type="text" id="txtPais_Expedicion" name="txtPais_Expedicion" placeholder="País expedicion"><br/></td>
+                        <td><input class="form-control has-focus" type="text" id="txtPais_Expedicion" name="txtPais_Expedicion" placeholder="País expedicion"><br><br></td>
                     </tr>
                     <tr>
                         <td><label>Género: &nbsp;</label></td>
@@ -81,19 +86,19 @@
                                 <option value="" selected="true" disabled="disabled">Selecione su Genero</option>
                                 <option value="1">Masculino</option>
                                 <option value="2">Femenino</option>
-                            </select><br/></td>
+                            </select><br><br></td>
                     </tr>
                     <tr>
                         <td><label>Fecha nacimiento: &nbsp;</label></td>
-                        <td><input class="form-control has-focus" type="text" id="txtFecha_Nacimiento" name="txtFecha_Nacimiento" placeholder="Fecha nacimiento"><br/></td>
+                        <td><input class="form-control has-focus" type="text" id="txtFecha_Nacimiento" name="txtFecha_Nacimiento" placeholder="Fecha nacimiento"><br><br></td>
                     </tr>
                     <tr>
                         <td><label>Ciudad nacimiento: &nbsp;</label></td>
-                        <td><input class="form-control has-focus" type="text" id="txtCiudad_Nacimiento" name="txtCiudad_Nacimiento" placeholder="Ciudad nacimiento"><br/><br/></td>
+                        <td><input class="form-control has-focus" type="text" id="txtCiudad_Nacimiento" name="txtCiudad_Nacimiento" placeholder="Ciudad nacimiento"><br><br></td>
                     </tr>
                     <tr>
                         <td><label>País nacimiento: &nbsp;</label></td>
-                        <td><input class="form-control has-focus" type="text" id="txtPais_Nacimiento" name="txtPais_Nacimiento" placeholder="País nacimiento"><br/></td>
+                        <td><input class="form-control has-focus" type="text" id="txtPais_Nacimiento" name="txtPais_Nacimiento" placeholder="País nacimiento"><br><br></td>
                     </tr>
                     <tr>
                         <td><label>Estrato: &nbsp;</label></td>
@@ -105,23 +110,23 @@
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                                 <option value="6">6</option>
-                            </select><br/></td>
+                            </select><br><br></td>
                     </tr>
                     <tr>
                         <td><label>Número telefono: &nbsp;</label></td>
-                        <td><input class="form-control has-focus" type="number" id="txtNumero_Telefono" name="txtNumero_Telefono" placeholder="Teléfono - Celular"><br/></td>
+                        <td><input class="form-control has-focus" type="number" id="txtNumero_Telefono" name="txtNumero_Telefono" placeholder="Teléfono - Celular"><br><br></td>
                     </tr>
                     <tr>
                         <td><label>Correo electrónico: &nbsp;</label></td>
-                        <td><input class="form-control has-focus" type="text" id="txtCorreo_Electronico" name="txtCorreo_Electronico" placeholder="Correo electrónico"><br/><br/></td>
+                        <td><input class="form-control has-focus" type="text" id="txtCorreo_Electronico" name="txtCorreo_Electronico" placeholder="Correo electrónico"><br><br></td>
                     </tr>
                     <tr>
                         <td><label>Direccion residencia: &nbsp;</label></td>
-                        <td><input class="form-control has-focus" type="text" id="txtDireccion_Residencia" name="txtDireccion_Residencia" placeholder="Direccion"><br/></td>
+                        <td><input class="form-control has-focus" type="text" id="txtDireccion_Residencia" name="txtDireccion_Residencia" placeholder="Direccion"><br><br></td>
                     </tr>
                     <tr>
                         <td><label>EPS: &nbsp;</label></td>
-                        <td><input class="form-control has-focus" type="text" id="txtEPS" name="txtEPS" placeholder="Nombre entidad"><br/></td>
+                        <td><input class="form-control has-focus" type="text" id="txtEPS" name="txtEPS" placeholder="Nombre entidad"><br><br></td>
                     </tr>
                     <tr>
                         <td><label>Grupo sanguíneo: &nbsp;</label></td>
@@ -132,7 +137,7 @@
                                 <option value="B">B</option>
                                 <option value="AB">AB</option>
                                 <option value="O">O</option>
-                            </select><br/>
+                            </select><br><br>
                         </td>
                     </tr>
                     <tr>
@@ -142,7 +147,7 @@
                                 <option value="" selected="true" disabled="disabled">Elija su tipo</option>
                                 <option value="+">+ Positivo</option>
                                 <option value="-">- Negativo</option>
-                            </select>
+                            </select><br><br>
                         </td>
                     </tr>
                     <tr>
@@ -153,26 +158,20 @@
                                 <option value="1">Administrador</option>
                                 <option value="2">Secretaria</option>
                                 <option value="3">Formador</option>
-                            </select>
+                            </select><br><br>
                         </td>
                     </tr>
                     <tr>
                         <td><label>Contraseña: &nbsp;</label></td>
-                        <td><input class="form-control has-focus" type="password" id="txtContrasena" name="txtContrasena" placeholder="Contraseña"><br/></td>
+                        <td><input class="form-control has-focus" type="password" id="txtContrasena" name="txtContrasena" placeholder="Contraseña"><br><br></td>
                     </tr>
                 </table>
                 <br/>
-            </div>
+            </div><br>
             <div>
-                <table>
-                    <br/>
-                    <tr>
-                        <td><input class="btn-danger" type="button" id="bo1" onclick="regresar()" value="Regresar"></td>
-                        <td><button class="btn-primary">Registrar Estudiante</button>
-                            <input type="hidden" name="textOpcion" value="1"/></td>
-                    </tr>
-                </table>
-            </div>
+                <button>Registrar Estudiante</button>
+                <input type="hidden" name="textOpcion" value="1"/>
+            </div><br>
         </form>
         <%if (request.getAttribute("error") != null) {%>
         ${error}
@@ -180,5 +179,7 @@
         ${exito}
         <%}%>
     </center>
+    <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="js/clickmenu.js" type="text/javascript"></script>
 </body>
 </html>

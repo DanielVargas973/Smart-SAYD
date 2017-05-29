@@ -40,8 +40,7 @@
             telefono = rs.getString("Numero_telefono");
             if (correo != null && telefono != null) {
                 fechan = rs.getString("Fecha_inscripcion");
-            }
-            else{
+            } else {
                 fechan = "";
                 correo = "";
                 telefono = "";
@@ -70,7 +69,7 @@
         <script src="JQuery/JqueryUI/jquery-ui-1.12.1/jquery-ui.js" type="text/javascript"></script>
         <script src="js/val_fechas_actuaestudiante.js" type="text/javascript"></script>
         <script src="js/val_actualizar_estudiante.js" type="text/javascript"></script>
-        <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <script>
             lim = false;
             $(function () {
@@ -79,21 +78,28 @@
                     return new Date().toJSON().split('T')[0];
                 });
             });
-            function regresar() {
-                window.location.href = 'menu.jsp';
-            }
             /*function limpiar() {
-                $("#estu1").val("");
-                 $("#nombres").val("");
-                 $("#apellidos").val("");
-            }*/
+             $("#estu1").val("");
+             $("#nombres").val("");
+             $("#apellidos").val("");
+             }*/
         </script>
         <title>Actualizar Estudiante</title>
     </head>
     <body>
         <header>
+            <div id="mostrar-menu"><label class="menu">Menú</label></div>
+            <nav id="menu">
+                <li><a href="registro_Personal.jsp"><img id="me" width="42px" height="42px" src="img/menu1.png" alt=""/>Registrar Personal</a></li>                
+                <li><a href="registrar_programa.jsp"><img id="me" width="42px" height="42px" src="img/menu2.png" alt=""/>Registrar Programa</a></li>  
+                <li><a href="registro_Cursos.jsp"><img id="me" width="42px" height="42px" src="img/menu3.png" alt=""/>Registrar Cursos</a></li>  
+                <li><a href="registro_estudiante.jsp"><img id="me" width="42px" height="42px" src="img/menu4.png" alt=""/>Registrar Estudiante</a></li>  
+                <li><a href="actualizar_estudiante.jsp"><img id="me" width="42px" height="42px" src="img/menu5.png" alt=""/>Actualizar Estudiante</a></li>  
+                <li><a href="Subirexcusa.jsp"><img id="me" width="42px" height="42px" src="img/menu6.png" alt=""/>Gestión Excusas</a></li>  
+                <li><a href="carga_masiva_datos.jsp"><img id="me" width="42px" height="42px" src="img/menu7.png" alt=""/>Carga Masiva</a></li>  
+            </nav>
             <br><div class="container">                
-                <img src="img/SmartSAYD.png" alt="logo"/>
+                <img id="logo" margin-left="200px" src="img/SmartSAYD.png" alt="logo"/>
             </div><br>
         </header>
     <center>
@@ -104,7 +110,7 @@
                     <td><label>Numero de identificación:&nbsp;</label></td>
                     <td><input class="form-control" type="number" name="textnumeroid" id="estu" ><p id="ReEstu"></p><br></td>
                 </table>
-                <button class="btn-primary">Actualizar Datos</button>
+                <button>Actualizar Datos</button>
                 <input type="hidden" name="textOpcion" value="3"><br>
             </form>
         </div>
@@ -157,13 +163,8 @@
 
                 </table>
             </div><br>    
-            <table>
-                <tr>
-                    <td><button class="btn-primary">Actualizar Estudiante</button>
-                        <input type="hidden" name="textOpcion" value="2" onclick="limpiar()"></td>
-                    <td><input class="btn-danger" type="button" id="bo1" onclick="regresar()" value="Regresar"></td>
-                </tr>
-            </table>
+            <button>Actualizar Estudiante</button>
+            <input type="hidden" name="textOpcion" value="2">
         </form>
         <%if (request.getAttribute("error") != null) {%>
         ${error}
@@ -171,5 +172,7 @@
         ${exito}      
         <%}%>
     </center>
+    <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="js/clickmenu.js" type="text/javascript"></script>
 </body>
 </html>

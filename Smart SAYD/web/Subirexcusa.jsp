@@ -25,74 +25,81 @@
         <script src="JQuery/JqueryUI/jquery-ui-1.12.1/jquery-ui.js" type="text/javascript"></script>
         <script src="js/val_registro_estudiante.js" type="text/javascript"></script>
         <script src="js/fechas.js" type="text/javascript"></script>
-        <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
         <script src="js/gestion_excusas.js" type="text/javascript"></script>
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <script>
             $(function () {
-                $("#fecha").datepicker({dateFormat:'yy/mm/dd'});
+                $("#fecha").datepicker({dateFormat: 'yy/mm/dd'});
                 $('[type="date"]').prop('max', function () {
                     return new Date().toJSON().split('T')[0];
                 });
             });
-            function regresar() {
-                window.location.href = 'menu.jsp';
-            }
         </script>
         <title>Excusa</title>
     </head>
     <body>
         <header>
+            <div id="mostrar-menu"><label class="menu">Menú</label></div>
+            <nav id="menu">
+                <li><a href="registro_Personal.jsp"><img id="me" width="42px" height="42px" src="img/menu1.png" alt=""/>Registrar Personal</a></li>                
+                <li><a href="registrar_programa.jsp"><img id="me" width="42px" height="42px" src="img/menu2.png" alt=""/>Registrar Programa</a></li>  
+                <li><a href="registro_Cursos.jsp"><img id="me" width="42px" height="42px" src="img/menu3.png" alt=""/>Registrar Cursos</a></li>  
+                <li><a href="registro_estudiante.jsp"><img id="me" width="42px" height="42px" src="img/menu4.png" alt=""/>Registrar Estudiante</a></li>  
+                <li><a href="actualizar_estudiante.jsp"><img id="me" width="42px" height="42px" src="img/menu5.png" alt=""/>Actualizar Estudiante</a></li>  
+                <li><a href="Subirexcusa.jsp"><img id="me" width="42px" height="42px" src="img/menu6.png" alt=""/>Gestión Excusas</a></li>  
+                <li><a href="carga_masiva_datos.jsp"><img id="me" width="42px" height="42px" src="img/menu7.png" alt=""/>Carga Masiva</a></li>  
+            </nav>
             <br><div class="container">                
-                <img src="img/SmartSAYD.png" alt="logo"/>
+                <img id="logo" margin-left="200px" src="img/SmartSAYD.png" alt="logo"/>
             </div><br>
         </header>
     <center>
         <br> <img src="img/gestion_excusas.png" alt=""/> <br><br>
-        
+
         <form id="fo" method="post" action="Excusa" class="form-inline" >
-                <div id="formulario" class="container"><br>
+            <div id="formulario" class="container"><br>
                 <table> 
                     <tr>
                         <td><label>Elija estudiante: &nbsp;</label></td>
-                            <td><select class="form-control" id="se1" name="textseleccion1">
-                                    <%try {
-                                            out.println("<option value=''>Selecione un estudiante</option>");
-                                            rs = puente.executeQuery("select * from estudiante");
-                                            while (rs.next()) {
-                                    %>
+                        <td><select class="form-control" id="se1" name="textseleccion1">
+                                <%try {
+                                        out.println("<option value=''>Selecione un estudiante</option>");
+                                        rs = puente.executeQuery("select * from estudiante");
+                                        while (rs.next()) {
+                                %>
 
-                                    <option value="<%=rs.getString("idEstudiante")%>"><%=rs.getString("Numero_identificacion")%></option>
+                                <option value="<%=rs.getString("idEstudiante")%>"><%=rs.getString("Numero_identificacion")%></option>
 
-                                    <%
-                                        }
-                                    } catch (Exception e) {
-                                    %>
-                                    <option value="">No se encontro ninguna lista</option> 
-                                    <%
-                                        }
-                                    %></select><br><br>
-                            </td>
+                                <%
+                                    }
+                                } catch (Exception e) {
+                                %>
+                                <option value="">No se encontro ninguna lista</option> 
+                                <%
+                                    }
+                                %></select><br><br>
+                        </td>
                     </tr>
                     <tr>
                         <td><label>Elija la asignatura: &nbsp;</label></td>
-                            <td><select class="form-control" id="se1" name="textseleccion">
-                                    <%try {
-                                            out.println("<option value=''>Selecione una asigantura</option>");
-                                            rs = puente.executeQuery("select * from asignatura");
-                                            while (rs.next()) {
-                                    %>
+                        <td><select class="form-control" id="se1" name="textseleccion">
+                                <%try {
+                                        out.println("<option value=''>Selecione una asigantura</option>");
+                                        rs = puente.executeQuery("select * from asignatura");
+                                        while (rs.next()) {
+                                %>
 
-                                    <option value="<%=rs.getString("idAsignatura")%>"><%=rs.getString("Nombre_asignatura")%></option>
+                                <option value="<%=rs.getString("idAsignatura")%>"><%=rs.getString("Nombre_asignatura")%></option>
 
-                                    <%
-                                        }
-                                    } catch (Exception e) {
-                                    %>
-                                    <option value="">No se encontro ninguna lista</option> 
-                                    <%
-                                        }
-                                    %></select><br><br>
-                            </td>
+                                <%
+                                    }
+                                } catch (Exception e) {
+                                %>
+                                <option value="">No se encontro ninguna lista</option> 
+                                <%
+                                    }
+                                %></select><br><br>
+                        </td>
                     </tr>
                     <tr>
                         <td><label>Fecha: &nbsp;</label></td>
@@ -107,22 +114,19 @@
                         <td><input class="form-control" type="file" id="ARCHIVO" name="textarchivo"><br><br></td>
                     </tr>
                 </table>
-                </div><br>
-                <table>
-                    <tr>
-                        <td><button class="btn-primary">Subir excusa</button>
-                            <input type="hidden" name="textOpcion" value="1"/></td>
-                        <td><input class="btn-danger" type="button" id="bo1" onclick="regresar()" value="Regresar"></td>
-                    </tr>
-                </table>
-            </form>
-        
+            </div><br>
+            <button>Subir excusa</button>
+            <input type="hidden" name="textOpcion" value="1"/>
+        </form>
+
         <%if (request.getAttribute("error") != null) {%>
         ${error}
         <%} else {%>
         ${exito}
         <%}%>
-        <br></center>               
+        <br></center>
+    <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="js/clickmenu.js" type="text/javascript"></script>
 </body>
 </html>
 

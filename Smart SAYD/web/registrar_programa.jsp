@@ -14,25 +14,30 @@
         <link href="css/registro_estudiante.css" rel="stylesheet" type="text/css"/>
         <script src="JQuery/jquery-3.2.1.min.js" type="text/javascript"></script>
         <script src="js/val_registrar_programa.js" type="text/javascript"></script>
-        <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <title>Registro Programa</title>
-        <script>
-            function regresar() {
-                window.location.href = 'menu.jsp';
-            }
-        </script>
     </head>
     <body>
-        
         <header>
+            <div id="mostrar-menu"><label class="menu">Menú</label></div>
+            <nav id="menu">
+                <li><a href="registro_Personal.jsp"><img id="me" width="42px" height="42px" src="img/menu1.png" alt=""/>Registrar Personal</a></li>                
+                <li><a href="registrar_programa.jsp"><img id="me" width="42px" height="42px" src="img/menu2.png" alt=""/>Registrar Programa</a></li>  
+                <li><a href="registro_Cursos.jsp"><img id="me" width="42px" height="42px" src="img/menu3.png" alt=""/>Registrar Cursos</a></li>  
+                <li><a href="registro_estudiante.jsp"><img id="me" width="42px" height="42px" src="img/menu4.png" alt=""/>Registrar Estudiante</a></li>  
+                <li><a href="actualizar_estudiante.jsp"><img id="me" width="42px" height="42px" src="img/menu5.png" alt=""/>Actualizar Estudiante</a></li>  
+                <li><a href="Subirexcusa.jsp"><img id="me" width="42px" height="42px" src="img/menu6.png" alt=""/>Gestión Excusas</a></li>  
+                <li><a href="carga_masiva_datos.jsp"><img id="me" width="42px" height="42px" src="img/menu7.png" alt=""/>Carga Masiva</a></li>  
+            </nav>
             <br><div class="container">                
-                <img src="img/SmartSAYD.png" alt="logo"/>
+                <img id="logo" margin-left="200px" src="img/SmartSAYD.png" alt="logo"/>
             </div><br>
         </header>
     <center>
         <br><h1>Registro Programa</h1><br>
-        <div id="formulario" class="container"><br>
+        
             <form method="post" action="Programa" class="form-inline">
+                <div id="formulario" class="container"><br>
                 <table>
                     <tr>
                         <td><label>Nombre Programa: &nbsp;</label></td>
@@ -55,20 +60,18 @@
                         <td><input class="form-control" type="number" name="textduracion" id="tiempo" placeholder="Tiempo"><p id="Retiem"></p><br><br></td>
                     </tr>
                 </table>
-                <table>
-                    <tr>
-                        <td><button  class="btn-primary">Registrar Programa</button>
-                            <input type="hidden" name="textOpcion" value="1"/></td>
-                        <td><input class="btn-danger" type="button" id="bo1" onclick="regresar()" value="Regresar"></td>
-                    </tr>
-                </table>
+                </div><br>
+                    <button>Registrar Programa</button>
+                    <input type="hidden" name="textOpcion" value="1"/>
             </form><br>
-        </div><br>
+        
         <%if (request.getAttribute("error") != null) {%>
         ${error}
         <%} else {%>
         ${exito}
         <%}%>
-        </center>
-    </body>
+    </center>
+    <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    <script src="js/clickmenu.js" type="text/javascript"></script>
+</body>
 </html>
