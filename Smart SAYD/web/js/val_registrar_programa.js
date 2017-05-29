@@ -8,11 +8,11 @@ $(document).ready(function () {
         ComprobarSede();
     });
 
-    $("input[name=textdescrip]").blur(function () {
+    $("textarea[name=textdescrip]").blur(function () {
         ComprobarDescripcion();
     });
     
-    $("input[name=textobjetivo]").blur(function () {
+    $("textarea[name=textobjetivo]").blur(function () {
         ComprobarObjetivo();
     });
     
@@ -47,8 +47,8 @@ function ComprobarSede() {
 }
 
 function ComprobarDescripcion() {
-    descrip = $("input[name=textdescrip]").val();
-    if (descrip == "") {
+    descrip = $("textarea[name=textdescrip]").val();
+    if (descrip == "" || descrip == " ") {
         $("#Redes").html("la descripcion del programa es Requerida. ");
         $("#descripcion").css("border-color","red");
     }
@@ -59,8 +59,8 @@ function ComprobarDescripcion() {
 }
 
 function ComprobarObjetivo() {
-    objetivo = $("input[name=textobjetivo]").val();
-    if (objetivo == "") {
+    objetivo = $("textarea[name=textobjetivo]").val();
+    if (objetivo == "" || objetivo == " ") {
         $("#Reobj").html("el objetivo del programa es Requerido. ");
         $("#objetivo").css("border-color","red");
     }
