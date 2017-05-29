@@ -17,38 +17,10 @@
 <%@ page import="org.apache.commons.io.*" %>
 <%@ page import="java.io.*" %>
  
-<%
-    String archivo = "";    
-        /*FileItemFactory es una interfaz para crear FileItem*/
-        FileItemFactory file_factory = new DiskFileItemFactory();
- 
-        /*ServletFileUpload esta clase convierte los input file a FileItem*/
-        ServletFileUpload servlet_up = new ServletFileUpload(file_factory);
-        /*sacando los FileItem del ServletFileUpload en una lista */
-        List items = servlet_up.parseRequest(request);
- 
-        for(int i=0;i<items.size();i++){
-            /*FileItem representa un archivo en memoria que puede ser pasado al disco duro*/
-            FileItem item = (FileItem) items.get(i);
-            /*item.isFormField() false=input file; true=text field*/
-            if (! item.isFormField()){
-                /*cual sera la ruta al archivo en el servidor*/
-                File archivo_server = new File("C:/Users/Usuario/Documents/carga"+item.getName());
-                /*y lo escribimos en el servidor*/
-                item.write(archivo_server);
-                archivo = item.getName();
-                out.print("Nombre --> " + item.getName());
-                out.print("<br> Tipo --> " + item.getContentType());
-                out.print("<br> tamaño --> " + (item.getSize()/1240)+ "KB");
-                out.print("<br>");
-            }
-        }          
-        
-%>
 
 <%
 
-    Conexion cnx = new Conexion();
+   /*Conexion cnx = new Conexion();
 
     Connection con = null;
     Statement puente = null;
@@ -57,11 +29,11 @@
     boolean mensaje = false;
 
     con = cnx.ObtenerConexion();
-    puente = con.createStatement();
+    puente = con.createStatement();*/
 %>
 
 <%
-    String tabla = "";
+    /*String tabla = "";
     tabla = request.getParameter("texttabla");
     
     try {
@@ -74,11 +46,11 @@
     }
     
     if (mensaje == true) {
-        %><script>alert('Se registró correctamente en la tabla <%=tabla%>, el archivo <%=archivo%> en formato .csv.');</script><%    
+            
     }
     else{
-        %><script>alert('No se ha podido registrar los datos.');</script><% 
-    }
+        
+    }*/
 %>
 <html>
     <head>
@@ -107,7 +79,7 @@
         </header>
     <center>        
         <br><img src="img/registro.png" alt=""/><br><br>
-        <form method="POST" action="carga_masiva_datos.jsp">
+        <form method="POST" enctype="MULTIPART/FORM-DATA" action="CargaMasiva">
             <div id="formulario" class="container"><br>
                 <table>
                     <tr>
@@ -133,7 +105,7 @@
             <table>
                 <tr>
                     <td><button class="btn-primary">Insertar Datos</button>
-                        <input type="hidden"></td>
+                        <input type="hidden" name="textOpcion" value="1"></td>
                     <td><input class="btn-danger" type="button" id="bo1" onclick="regresar()" value="Regresar"></td>
                 </tr>
             </table>
