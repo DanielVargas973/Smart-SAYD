@@ -7,11 +7,11 @@ public class BeanPrograma {
     private String Sede_realizacion;
     private String Descripcion_programa;
     private String Objetivo_formacion;
-    private boolean Pensum_del_programa;
-    private long Pensum_Archivo;
+    private String Pensum_del_programa;
+    private String Pensum_Archivo;
     private String Tiempo_duracion;
 
-    public BeanPrograma(String idPrograma, String Nombre_programa, String Sede_realizacion, String Descripcion_programa, String Objetivo_formacion, boolean Pensum_del_programa, long Pensum_Archivo, String Tiempo_duracion) {
+    public BeanPrograma(String idPrograma, String Nombre_programa, String Sede_realizacion, String Descripcion_programa, String Objetivo_formacion, String Pensum_del_programa, String Pensum_Archivo, String Tiempo_duracion) {
         this.idPrograma = idPrograma;
         this.Nombre_programa = Nombre_programa;
         this.Sede_realizacion = Sede_realizacion;
@@ -62,19 +62,19 @@ public class BeanPrograma {
         this.Objetivo_formacion = Objetivo_formacion;
     }
 
-    public boolean isPensum_del_programa() {
+    public String Pensum_del_programa() {
         return Pensum_del_programa;
     }
 
-    public void setPensum_del_programa(boolean Pensum_del_programa) {
+    public void setPensum_del_programa(String Pensum_del_programa) {
         this.Pensum_del_programa = Pensum_del_programa;
     }
 
-    public long getPensum_Archivo() {
+    public String getPensum_Archivo() {
         return Pensum_Archivo;
     }
 
-    public void setPensum_Archivo(long Pensum_Archivo) {
+    public void setPensum_Archivo(String Pensum_Archivo) {
         this.Pensum_Archivo = Pensum_Archivo;
     }
 
