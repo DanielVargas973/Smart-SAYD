@@ -50,10 +50,12 @@ public class ServletCargaMasiva extends HttpServlet {
             case 1://Carga Masiva de datos
                 if (DCar.CargaMasiva()) {
                    
-                    request.setAttribute("exito", "<script> alert('Se registró correctamente')</script>");
+                    request.setAttribute("exito", "<script> alert('Se registró correctamente en la tabla "+tabla+", el archivo en .csv')</script>");
+                    
                 }else {
                      
                     request.setAttribute("error", "<script> alert('NO se ha podido registrar')</script>");
+                
                 }
                 request.getRequestDispatcher("carga_masiva_datos.jsp").forward(request, response);
                 break;
