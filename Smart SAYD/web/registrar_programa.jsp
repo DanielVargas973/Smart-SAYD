@@ -14,7 +14,7 @@
         <link href="css/registro_estudiante.css" rel="stylesheet" type="text/css"/>
         <script src="JQuery/jquery-3.2.1.min.js" type="text/javascript"></script>
         <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
-        <title>JSP Page</title>
+        <title>Registro Programa</title>
         <script>
             function regresar() {
                 window.location.href = 'menu.jsp';
@@ -34,24 +34,24 @@
             <form method="post" action="Programa" class="form-inline">
                 <table>
                     <tr>
-                        <td><label>Nombre Programa: </label></td>
-                        <td><input class="form-control" type="text" name="textnombreprog" placeholder="Nombre"><br><br></td>
+                        <td><label>Nombre Programa: &nbsp;</label></td>
+                        <td><input class="form-control" type="text" name="textnombreprog" id="nombre" placeholder="Nombre"><p id="Renombre"></p><br><br></td>
                     </tr>
                     <tr>
-                        <td><label>Sede: </label></td>
-                        <td><input class="form-control" type="text" name="textsedereal" placeholder="Sede"><br><br></td>
+                        <td><label>Sede: &nbsp;</label></td>
+                        <td><input class="form-control" type="text" name="textsedereal" id="sede" placeholder="Sede"><p id="Resede"></p><br><br></td>
                     </tr>
                     <tr>
-                        <td><label>Descripcion Programa: </label></td>
-                        <td><input class="form-control" type="text" name="textdescrip" placeholder="Descripcion"><br><br></td>
+                        <td><label>Descripcion Programa: &nbsp;</label></td>
+                        <td><textarea class="form-control" name="textdescrip" id="descripcion" placeholder="Descripcion"></textarea><p id="Redes"></p><br><br></td>
                     </tr>
                     <tr>
-                        <td><label>Objetivo Programa: </label></td>
-                        <td><input class="form-control" type="text" name="textobjetivo" placeholder="Objetivo"><br><br></td>
+                        <td><label>Objetivo Programa: &nbsp;</label></td>
+                        <td><textarea class="form-control" type="textarea" name="textobjetivo" id="objetivo" placeholder="Objetivo"></textarea><p id="Reobj"></p><br><br></td>
                     </tr>
                     <tr>
-                        <td><label>Tiempo Duracion: </label></td>
-                        <td><input class="form-control" type="number" name="textduracion" placeholder="Tiempo"><br><br></td>
+                        <td><label>Tiempo Duracion: &nbsp;</label></td>
+                        <td><input class="form-control" type="number" name="textduracion" id="tiempo" placeholder="Tiempo"><p id="Retiem"></p><br><br></td>
                     </tr>
                 </table>
                 <table>
