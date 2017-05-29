@@ -14,12 +14,20 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.*;
+import org.apache.commons.fileupload.*;
+import org.apache.commons.fileupload.disk.*;
+import org.apache.commons.fileupload.servlet.*;
+import org.apache.commons.io.*;
+import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author Samuel Cubillos
  */
-@WebServlet(name = "ServletCargaMasiva", urlPatterns = {"/ServletCargaMasiva"})
+@WebServlet(name = "ServletCargaMasiva", urlPatterns = {"/CargaMasiva"})
 public class ServletCargaMasiva extends HttpServlet {
 
     /**
@@ -32,30 +40,56 @@ public class ServletCargaMasiva extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, Exception {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
+
         //Obtener datos 
         int opcion = Integer.parseInt(request.getParameter("textOpcion"));
         String tabla = request.getParameter("texttabla");
         String archivo = request.getParameter("archivo");
-        
+
         //Llamar BEAN y el DAO
-        BeanCargaMasiva BCar = new BeanCargaMasiva(tabla,archivo);
+        BeanCargaMasiva BCar = new BeanCargaMasiva(tabla, archivo);
         DaoCargaMasiva DCar = new DaoCargaMasiva(BCar);
-        
+
         //Generar mensajes dependiendo de las opciones
         switch (opcion) {
             case 1://Carga Masiva de datos
+
+                /*FileItemFactory es una interfaz para crear FileItem*/
+                FileItemFactory file_factory = new DiskFileItemFactory();
+
+                /*ServletFileUpload esta clase convierte los input file a FileItem*/
+                ServletFileUpload servlet_up = new ServletFileUpload(file_factory);
+                /*sacando los FileItem del ServletFileUpload en una lista */
+                List items = servlet_up.parseRequest(request);
+
+                for (int i = 0; i < items.size(); i++) {
+                    /*FileItem representa un archivo en memoria que puede ser pasado al disco duro*/
+                    FileItem item = (FileItem) items.get(i);
+                    /*item.isFormField() false=input file; true=text field*/
+                    if (!item.isFormField()) {
+                        /*cual sera la ruta al archivo en el servidor*/
+                        File archivo_server = new File("C:/Users/Usuario/Documents/carga" + item.getName());
+                        /*y lo escribimos en el servidor*/
+                        item.write(archivo_server);
+                        archivo = item.getName();
+                        out.print("Nombre --> " + archivo);
+                        out.print("<br> Tipo --> " + item.getContentType());
+                        out.print("<br> tamaño --> " + (item.getSize() / 1240) + "KB");
+                        out.print("<br>");
+                    }
+                }
+
                 if (DCar.CargaMasiva()) {
-                   
-                    request.setAttribute("exito", "<script> alert('Se registró correctamente en la tabla "+tabla+", el archivo en .csv')</script>");
-                    
-                }else {
-                     
+
+                    request.setAttribute("exito", "<script> alert('Se registró correctamente en la tabla " + tabla + ", el archivo en .csv')</script>");
+
+                } else {
+
                     request.setAttribute("error", "<script> alert('NO se ha podido registrar')</script>");
-                
+
                 }
                 request.getRequestDispatcher("carga_masiva_datos.jsp").forward(request, response);
                 break;
@@ -75,7 +109,11 @@ public class ServletCargaMasiva extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (Exception ex) {
+            Logger.getLogger(ServletCargaMasiva.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -89,7 +127,11 @@ public class ServletCargaMasiva extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (Exception ex) {
+            Logger.getLogger(ServletCargaMasiva.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
