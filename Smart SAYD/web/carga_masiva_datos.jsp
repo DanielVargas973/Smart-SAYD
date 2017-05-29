@@ -66,7 +66,7 @@
     
     try {
         
-        puente.executeUpdate("LOAD DATA INFILE ‘Path_Archivo_CSV’ INTO TABLE Nombre_Tabla FIELDS TERMINATED BY ‘,’ IGNORED 1 LINES;");
+        puente.executeUpdate("LOAD DATA INFILE ‘C:/Users/Usuario/Documents/carga"+archivo+"’ INTO TABLE "+tabla+" FIELDS TERMINATED BY ‘,’ IGNORED 1 LINES;");
         mensaje = true;
 
     } catch (Exception e) {
