@@ -57,19 +57,19 @@
     <center>
         <br> <img src="img/gestion_excusas.png" alt=""/> <br><br>
 
-        <form id="fo" method="post" action="Excusa" class="form-inline" >
+        <form id="fo" method="post" action="GestionAsignaturas" class="form-inline" >
             <div id="formulario" class="container"><br>
                 <table> 
                     <tr>
-                        <td><label>Elija estudiante: &nbsp;</label></td>
+                        <td><label>selecciona programa: &nbsp;</label></td>
                         <td><select class="form-control" id="se1" name="textseleccion1">
                                 <%try {
-                                        out.println("<option value=''>Selecione un estudiante</option>");
-                                        rs = puente.executeQuery("select * from estudiante");
+                                        out.println("<option value=''>Selecione un programa</option>");
+                                        rs = puente.executeQuery("select * from programa");
                                         while (rs.next()) {
                                 %>
 
-                                <option value="<%=rs.getString("idEstudiante")%>"><%=rs.getString("Numero_identificacion")%></option>
+                                <option value="<%=rs.getString("idPrograma")%>"><%=rs.getString("Nombre_programa")%></option>
 
                                 <%
                                     }
@@ -81,38 +81,22 @@
                                 %></select><br><br>
                         </td>
                     </tr>
+              
                     <tr>
-                        <td><label>Elija la asignatura: &nbsp;</label></td>
-                        <td><select class="form-control" id="se1" name="textseleccion">
-                                <%try {
-                                        out.println("<option value=''>Selecione una asigantura</option>");
-                                        rs = puente.executeQuery("select * from asignatura");
-                                        while (rs.next()) {
-                                %>
-
-                                <option value="<%=rs.getString("idAsignatura")%>"><%=rs.getString("Nombre_asignatura")%></option>
-
-                                <%
-                                    }
-                                } catch (Exception e) {
-                                %>
-                                <option value="">No se encontro ninguna lista</option> 
-                                <%
-                                    }
-                                %></select><br><br>
-                        </td>
+                        <td><label>Nombre Asignatura: &nbsp;</label></td>
+                        <td><input class="form-control" type="text" id="nomasig" name="nombreasig" placeholder="Nombre de la asiganatura"><br><br></td>
                     </tr>
                     <tr>
-                        <td><label>Fecha: &nbsp;</label></td>
-                        <td><input class="form-control" type="text" id="fecha" name="textfecha" placeholder="AAAA/MM/DD"><br><br></td>
+                        <td><label>codigo Asignatura: &nbsp;</label></td>
+                        <td><input class="form-control" type="text" id="codasig" name="codasig" placeholder="Codigo de la asiganatura"><br><br></td>
                     </tr>
                     <tr>
-                        <td><label>observaciones: &nbsp;</label></td>
-                        <td><textarea class="form-control" id="observacion" name="textobservaciones" placeholder="Escribe el motivo de tu inasistencia"></textarea><br><br></td>
+                        <td><label>Decripcion: &nbsp;</label></td>
+                        <td><textarea class="form-control" id="descripcion" name="descripcion" placeholder="Escribe Una breve descripcion"></textarea><br><br></td>
                     </tr>
                     <tr>
-                        <td><label>Seleccionar archivo: &nbsp;</label></td>
-                        <td><input class="form-control" type="file" id="ARCHIVO" name="textarchivo"><br><br></td>
+                        <td><label>Cupos a disponer : &nbsp;</label></td>
+                        <td><input class="form-control" type="number" id="numeroscupos" name="cupos"><br><br></td>
                     </tr>
                 </table>
             </div><br>
