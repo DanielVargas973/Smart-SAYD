@@ -35,9 +35,11 @@
                 });
             });
         </script>
-        <title>Excusa</title>
+        <title>Gestion De excusa</title>
     </head>
     <body>
+   
+
         <header>
             <div id="mostrar-menu"><label class="menu">Menú</label></div>
             <nav id="menu">
@@ -88,7 +90,7 @@
                     </tr>
                     <tr>
                         <td><label>codigo Asignatura: &nbsp;</label></td>
-                        <td><input class="form-control" type="text" id="codasig" name="codasig" placeholder="Codigo de la asiganatura"><br><br></td>
+                        <td><input class="form-control" type="number" id="codasig" name="codasig" placeholder="Codigo de la asiganatura"><br><br></td>
                     </tr>
                     <tr>
                         <td><label>Decripcion: &nbsp;</label></td>
@@ -100,9 +102,10 @@
                     </tr>
                 </table>
             </div><br>
-            <button>Subir excusa</button>
+            <button>Crear Excusa</button>
             <input type="hidden" name="textOpcion" value="1"/>
         </form>
+                        
 
         <%if (request.getAttribute("error") != null) {%>
         ${error}
@@ -110,6 +113,10 @@
         ${exito}
         <%}%>
         <br></center>
+    
+        
+         
+             
     <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
     <script src="js/clickmenu.js" type="text/javascript"></script>
 </body>

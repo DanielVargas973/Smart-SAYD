@@ -34,25 +34,7 @@
             </div><br>
         </header>
     <center>
-        <img src="img/menu.png" alt=""/><br><br>
-
-        <b><a type="button" href="registro_Cursos.jsp"><button class="btn-danger">Registrar Cursos</button></a></b>
-        <br><br>
-
-        <b><a type="button" href="registro_estudiante.jsp"><button class="btn-danger">Registrar Estudiante</button></a></b>
-
-        <br><br>
-
-        <b><a type="button" href="actualizar_estudiante.jsp"><button class="btn-danger">Actualizar Estudiante</button></a></b>
-
-        <br><br>
-
-        <b><a type="button" href="Subirexcusa.jsp"><button class="btn-danger">Gestion de Excusa</button></a></b>
-
-        <br><br>
-
-        <b><a type="button" href="registro_Personal.jsp"><button class="btn-danger">Registrar personal</button></a></b>
-
+        
 
     </center>
     <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
