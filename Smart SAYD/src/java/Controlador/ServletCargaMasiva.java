@@ -15,10 +15,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.*;
-import org.apache.commons.fileupload.*;
-import org.apache.commons.fileupload.disk.*;
-import org.apache.commons.fileupload.servlet.*;
-import org.apache.commons.io.*;
+//import org.apache.commons.fileupload.*;
+//import org.apache.commons.fileupload.disk.*;
+//import org.apache.commons.fileupload.servlet.*;
+//import org.apache.commons.io.*;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -57,30 +57,30 @@ public class ServletCargaMasiva extends HttpServlet {
         switch (opcion) {
             case 1://Carga Masiva de datos
 
-                /*FileItemFactory es una interfaz para crear FileItem*/
-                FileItemFactory file_factory = new DiskFileItemFactory();
-
-                /*ServletFileUpload esta clase convierte los input file a FileItem*/
-                ServletFileUpload servlet_up = new ServletFileUpload(file_factory);
-                /*sacando los FileItem del ServletFileUpload en una lista */
-                List items = servlet_up.parseRequest(request);
-
-                for (int i = 0; i < items.size(); i++) {
-                    /*FileItem representa un archivo en memoria que puede ser pasado al disco duro*/
-                    FileItem item = (FileItem) items.get(i);
-                    /*item.isFormField() false=input file; true=text field*/
-                    if (!item.isFormField()) {
-                        /*cual sera la ruta al archivo en el servidor*/
-                        File archivo_server = new File("C:/Users/Usuario/Documents/carga" + item.getName());
-                        /*y lo escribimos en el servidor*/
-                        item.write(archivo_server);
-                        archivo = item.getName();
-                        out.print("Nombre --> " + archivo);
-                        out.print("<br> Tipo --> " + item.getContentType());
-                        out.print("<br> tamaño --> " + (item.getSize() / 1240) + "KB");
-                        out.print("<br>");
-                    }
-                }
+//                /*FileItemFactory es una interfaz para crear FileItem*/
+//                FileItemFactory file_factory = new DiskFileItemFactory();
+//
+//                /*ServletFileUpload esta clase convierte los input file a FileItem*/
+//                ServletFileUpload servlet_up = new ServletFileUpload(file_factory);
+//                /*sacando los FileItem del ServletFileUpload en una lista */
+//                List items = servlet_up.parseRequest(request);
+//
+//                for (int i = 0; i < items.size(); i++) {
+//                    /*FileItem representa un archivo en memoria que puede ser pasado al disco duro*/
+//                    FileItem item = (FileItem) items.get(i);
+//                    /*item.isFormField() false=input file; true=text field*/
+//                    if (!item.isFormField()) {
+//                        /*cual sera la ruta al archivo en el servidor*/
+//                        File archivo_server = new File("C:/Users/Usuario/Documents/carga" + item.getName());
+//                        /*y lo escribimos en el servidor*/
+//                        item.write(archivo_server);
+//                        archivo = item.getName();
+//                        out.print("Nombre --> " + archivo);
+//                        out.print("<br> Tipo --> " + item.getContentType());
+//                        out.print("<br> tamaño --> " + (item.getSize() / 1240) + "KB");
+//                        out.print("<br>");
+//                    }
+//                }
 
                 if (DCar.CargaMasiva()) {
 
