@@ -44,7 +44,7 @@
         /*item.isFormField() false=input file; true=text field*/
         if (!item.isFormField()) {
             /*cual sera la ruta al archivo en el servidor*/
-            File archivo_server = new File("C:/Users/Usuario/Desktop/carga/" + item.getName());
+            File archivo_server = new File("C:/Users/sena1/Desktop/carga/" + item.getName());
             /*y lo escribimos en el servidor*/
             item.write(archivo_server);
             archivo = item.getName();
@@ -57,7 +57,7 @@
 
     try {
 
-        puente.executeUpdate("LOAD DATA INFILE 'C:/Users/Usuario/Desktop/carga/"+archivo+"' INTO TABLE `programa` FIELDS TERMINATED BY ';' ENCLOSED BY '\"' ESCAPED BY '\\' LINES TERMINATED BY '\r\n' IGNORE 1 LINES;");
+        puente.executeUpdate("LOAD DATA INFILE 'C:/Users/sena1/Desktop/carga/"+archivo+"' INTO TABLE `programa` FIELDS TERMINATED BY ';' ENCLOSED BY '\"' ESCAPED BY '\\' LINES TERMINATED BY '\r\n' IGNORE 1 LINES;");
         mensaje = true;
 
     } catch (Exception e) {
