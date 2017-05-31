@@ -33,8 +33,9 @@
 %>
 
 <%
-    /*String tabla = "";
+   /*String tabla = "";
     tabla = request.getParameter("texttabla");
+    String archivo = "";
     
     try {
         
@@ -51,6 +52,9 @@
     else{
         
     }*/
+
+
+
 %>
 <html>
     <head>
@@ -83,7 +87,7 @@
         </header>
     <center>        
         <br><img src="img/registro.png" alt=""/><br><br>
-        <form method="POST" enctype="MULTIPART/FORM-DATA" action="CargaMasiva">
+        <form method="POST" enctype="MULTIPART/FORM-DATA" action="probandocarga.jsp">
             <div id="formulario" class="container"><br>
                 <table>
                     <tr>
