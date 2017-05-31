@@ -41,7 +41,7 @@ public class DaoGestionCursos extends Conexion implements InterfaceCurso {
     @Override
     public boolean AgregarCurso() {//Agregar curso
         try {
-            puente.executeUpdate("INSERT INTO curso (`Fecha_fin`,`Fecha_inicio`,`Id_Curso`,`id_programa`) VALUES ('" + Fecha_fin + "','" + Fecha_inicio + "'," + id_Curso + "," + idPrograma + ")");
+            puente.executeUpdate("CALL `PA_AgregarCurso`(" + Fecha_fin + "," + Fecha_inicio + "," + id_Curso + "," + idPrograma + ");");
             listo = true;
         } catch (Exception e) {
             Logger.getLogger(DaoGestionCursos.class.getName()).log(Level.SEVERE, null, e);
