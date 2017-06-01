@@ -22,6 +22,10 @@ public class BeanPrograma {
         this.Tiempo_duracion = Tiempo_duracion;
     }
 
+    public BeanPrograma() {
+        
+    }
+
     public String getIdPrograma() {
         return idPrograma;
     }
