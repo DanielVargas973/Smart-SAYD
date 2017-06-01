@@ -87,7 +87,7 @@
         </header>
     <center>        
         <br><img src="img/registro.png" alt=""/><br><br>
-        <form method="POST" enctype="multipart/form-data" action="CargaMasiva">
+        <form method="POST" enctype="multipart/form-data" action="ServletCarga">
             <div id="formulario" class="container"><br>
                 <table>
                     <tr>
@@ -113,6 +113,11 @@
             <button>Insertar Datos</button>
             <input type="hidden" name="textOpcion" value="1">
         </form>
+        <%if (request.getAttribute("error") != null) {%>
+        ${error}
+        <%} else {%>
+        ${exito}
+        <%}%>
     </center>
     <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
     <script src="js/clickmenu.js" type="text/javascript"></script>

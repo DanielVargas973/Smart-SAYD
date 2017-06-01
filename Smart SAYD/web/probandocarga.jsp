@@ -30,7 +30,7 @@
     tabla = "programa";
    // tabla = request.getParameter("texttabla");
     String archivo = "";
-    String carga = "LOAD DATA LOCAL INFILE 'C:/Users/Usuario/Documents/carga/'"+archivo+"' INTO TABLE programa FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n' IGNORE 1 LINES";
+    String carga = "LOAD DATA LOCAL INFILE 'C:/Users/sena1/Desktop/carga/"+archivo+"' INTO TABLE programa FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n' IGNORE 1 LINES";
 
     /*FileItemFactory es una interfaz para crear FileItem*/
     FileItemFactory file_factory = new DiskFileItemFactory();
@@ -46,7 +46,7 @@
         /*item.isFormField() false=input file; true=text field*/
         if (!item.isFormField()) {
             /*cual sera la ruta al archivo en el servidor*/
-            File archivo_server = new File("C:/Users/Usuario/Documents/carga/" + item.getName());
+            File archivo_server = new File("C:/Users/sena1/Desktop/carga/" + item.getName());
             /*y lo escribimos en el servidor*/
             item.write(archivo_server);
             archivo = item.getName();

@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+
 import Modelo.BEAN.BeanCargaMasiva;
 import Modelo.DAO.DaoCargaMasiva;
 import Util.Conexion;
@@ -15,15 +16,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.*;
-import org.apache.commons.fileupload.*;
-import org.apache.commons.fileupload.disk.*;
-import org.apache.commons.fileupload.servlet.*;
-import org.apache.commons.io.*;
-import java.io.*;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -50,7 +42,7 @@ public class ServletCargaMasiva extends HttpServlet {
 
         //Obtener datos 
         int opcion = Integer.parseInt(request.getParameter("textOpcion"));
-        String tabla = request.getParameter("tabla");
+        String tabla = request.getParameter("texttabla");
         String archivo = request.getParameter("archivo");
 
         //Llamar BEAN y el DAO
@@ -87,7 +79,7 @@ public class ServletCargaMasiva extends HttpServlet {
 
                 if (DCar.CargaMasiva()) {
 
-                    request.setAttribute("exito", "<script> alert('Se registró correctamente en la tabla " + tabla + ", el archivo en .csv')</script>");
+                    request.setAttribute("exito", "<script> alert('Se registró correctamente en la tabla , el archivo en .csv')</script>");
 
                 } else {
 
