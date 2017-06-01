@@ -27,8 +27,10 @@
 
 <%
     String tabla = "";
-    tabla = request.getParameter("texttabla");
+    tabla = "programa";
+   // tabla = request.getParameter("texttabla");
     String archivo = "";
+    String carga = "LOAD DATA LOCAL INFILE 'C:/Users/Usuario/Documents/carga/'"+archivo+"' INTO TABLE programa FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n' IGNORE 1 LINES";
 
     /*FileItemFactory es una interfaz para crear FileItem*/
     FileItemFactory file_factory = new DiskFileItemFactory();
@@ -44,7 +46,7 @@
         /*item.isFormField() false=input file; true=text field*/
         if (!item.isFormField()) {
             /*cual sera la ruta al archivo en el servidor*/
-            File archivo_server = new File("C:/Users/sena1/Desktop/carga/" + item.getName());
+            File archivo_server = new File("C:/Users/Usuario/Documents/carga/" + item.getName());
             /*y lo escribimos en el servidor*/
             item.write(archivo_server);
             archivo = item.getName();
@@ -56,20 +58,20 @@
     }
 
     try {
-
-        puente.executeUpdate("LOAD DATA INFILE 'C:/Users/sena1/Desktop/carga/"+archivo+"' INTO TABLE `programa` FIELDS TERMINATED BY ';' ENCLOSED BY '\"' ESCAPED BY '\\' LINES TERMINATED BY '\r\n' IGNORE 1 LINES;");
+        puente.executeUpdate(carga);
+        //puente.executeUpdate("LOAD DATA INFILE 'C:/Users/Usuario/Documents/carga/programa.csv' INTO TABLE programa FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n' IGNORE 1 LINES");
         mensaje = true;
-
+        
     } catch (Exception e) {
-        e.printStackTrace();
+        %><script>alert("Error no se ha podido registrar los datos revise su archivo .csv y vuelva a intentarlo");</script><%
     }
 
-    if (mensaje == true) {
-%><script>alert("Se ha registrado correctamente los datos en la tabla " +<%=tabla%> + ", del .csv con el nombre " +<%=archivo%>);</script><%
-        } else {
-%><script>alert("Error no se ha podido registrar los datos revise su archivo .csv y vuelva a intentarlo");</script><%
-            }
-
+    /*if (mensaje == true) {
+%><!--<script>alert("Se ha registrado correctamente los datos en la tabla " +<%=tabla%> + ", del .csv con el nombre " +<%=archivo%>);</script><%
+       /* } else {
+%><script>alert("Error no se ha podido registrar los datos revise su archivo .csv y vuelva a intentarlo");</script>--><%
+           /* }*/
+        //request.getRequestDispatcher("carga_masiva_datos.jsp").forward(request, response);
 
 %>
 <html>

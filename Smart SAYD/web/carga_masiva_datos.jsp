@@ -53,9 +53,9 @@
         
     }*/
 
-
-
 %>
+
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -87,7 +87,7 @@
         </header>
     <center>        
         <br><img src="img/registro.png" alt=""/><br><br>
-        <form method="POST" enctype="MULTIPART/FORM-DATA" action="probandocarga.jsp">
+        <form method="POST" enctype="multipart/form-data" action="CargaMasiva">
             <div id="formulario" class="container"><br>
                 <table>
                     <tr>
@@ -106,7 +106,7 @@
                     </tr>
                     <tr>
                         <td><label>Suba el archivo (.csv): &nbsp;</label></td>
-                        <td><input type="file" name="archivo"><br><br></td>
+                        <td><input type="file" accept=".csv" name="archivo" required><br><br></td>
                     </tr>
                 </table>
             </div><br>

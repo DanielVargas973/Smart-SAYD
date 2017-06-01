@@ -7,6 +7,7 @@ package Controlador;
 
 import Modelo.BEAN.BeanCargaMasiva;
 import Modelo.DAO.DaoCargaMasiva;
+import Util.Conexion;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -15,11 +16,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.*;
-//import org.apache.commons.fileupload.*;
-//import org.apache.commons.fileupload.disk.*;
-//import org.apache.commons.fileupload.servlet.*;
-//import org.apache.commons.io.*;
+import org.apache.commons.fileupload.*;
+import org.apache.commons.fileupload.disk.*;
+import org.apache.commons.fileupload.servlet.*;
+import org.apache.commons.io.*;
 import java.io.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -46,7 +50,7 @@ public class ServletCargaMasiva extends HttpServlet {
 
         //Obtener datos 
         int opcion = Integer.parseInt(request.getParameter("textOpcion"));
-        String tabla = request.getParameter("texttabla");
+        String tabla = request.getParameter("tabla");
         String archivo = request.getParameter("archivo");
 
         //Llamar BEAN y el DAO
@@ -56,10 +60,9 @@ public class ServletCargaMasiva extends HttpServlet {
         //Generar mensajes dependiendo de las opciones
         switch (opcion) {
             case 1://Carga Masiva de datos
-
+                
 //                /*FileItemFactory es una interfaz para crear FileItem*/
 //                FileItemFactory file_factory = new DiskFileItemFactory();
-//
 //                /*ServletFileUpload esta clase convierte los input file a FileItem*/
 //                ServletFileUpload servlet_up = new ServletFileUpload(file_factory);
 //                /*sacando los FileItem del ServletFileUpload en una lista */
