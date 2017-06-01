@@ -31,7 +31,7 @@ public class ServletGestionAsignaturas extends HttpServlet {
         
         //Obtener datos 
         int opcion = Integer.parseInt(request.getParameter("textOpcion"));
-        String idAsignatura = request.getParameter("");
+        String idAsignatura = request.getParameter("idasig");
         String idPrograma = request.getParameter("textseleccion1");
         String Nombre_asignatura = request.getParameter("nombreasig");
         String Codigo_asignatura = request.getParameter("codasig");
@@ -57,22 +57,14 @@ public class ServletGestionAsignaturas extends HttpServlet {
             case 2: //Actualizar curso
                 if (DAsig.ActualizarAsignatura()) {
                     
-                    request.setAttribute("exito", "<script> alert('Se registró correctamente')</script>");
+                    request.setAttribute("exito", "<script> alert('Se actualizo correctamente')</script>");
                     
                 }else {
-                    request.setAttribute("error", "<script> alert('NOse ha logrado actualizar')</script>");
+                    request.setAttribute("error", "<script> alert('NO se ha logrado actualizar')</script>");
                 }
                 request.getRequestDispatcher("Gestion_asignatura.jsp").forward(request, response);
                 break;
-            case 3: //Eliminar curso
-                if (DAsig.EliminarAsignatura()) {
-                    request.setAttribute("exito", "<script> alert('Se registró correctamente')</script>");
-
-                }else {
-                    request.setAttribute("error", "<script> alert('NO se ha podido registrar')</script>");
-                }
-                request.getRequestDispatcher("Gestion_asignatura.jsp").forward(request, response);
-                break;
+           
         }
 
     }

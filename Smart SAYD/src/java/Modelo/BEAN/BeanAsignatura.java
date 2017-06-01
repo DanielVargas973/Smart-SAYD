@@ -2,13 +2,6 @@ package Modelo.BEAN;
 
 public class BeanAsignatura {
 
-    private String idAsignatura;
-    private String idPrograma;
-    private String Nombre_asignatura;
-    private String Codigo_asignatura;
-    private String Descripcion;
-    private String Numero_cupos;
-
     public BeanAsignatura(String idAsignatura, String idPrograma, String Nombre_asignatura, String Codigo_asignatura, String Descripcion, String Numero_cupos) {
         this.idAsignatura = idAsignatura;
         this.idPrograma = idPrograma;
@@ -17,6 +10,17 @@ public class BeanAsignatura {
         this.Descripcion = Descripcion;
         this.Numero_cupos = Numero_cupos;
     }
+
+      public BeanAsignatura() {
+      
+    }
+
+    private String idAsignatura;
+    private String idPrograma;
+    private String Nombre_asignatura;
+    private String Codigo_asignatura;
+    private String Descripcion;
+    private String Numero_cupos;
 
     public String getIdAsignatura() {
         return idAsignatura;
@@ -65,5 +69,7 @@ public class BeanAsignatura {
     public void setNumero_cupos(String Numero_cupos) {
         this.Numero_cupos = Numero_cupos;
     }
-
 }
+
+
+      

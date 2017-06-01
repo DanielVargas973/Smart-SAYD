@@ -20,6 +20,8 @@ public class Daoasignatura extends Conexion implements InterfaceAsignatura{
     
 
     public boolean listo = false;
+    public boolean encontrado = false;
+    
     
     public String idAsignatura  = "";
     public String idPrograma  = "";
@@ -59,7 +61,7 @@ public class Daoasignatura extends Conexion implements InterfaceAsignatura{
             puente.executeUpdate("INSERT INTO asignatura (idAsignatura, idPrograma, Nombre_asignatura, Codigo_asignatura, Descripcion, Numero_cupos) VALUES (NULL, '"+idPrograma+"', '"+Nombre_asignatura+"', '"+Codigo_asignatura+"', '"+Descripcion+"', '"+Numero_cupos+"')");
             listo = true;
         } catch (Exception e) {
-            Logger.getLogger(DaoSubirExcusa.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Daoasignatura.class.getName()).log(Level.SEVERE, null, e);
         }
         return listo;
     }
@@ -67,10 +69,10 @@ public class Daoasignatura extends Conexion implements InterfaceAsignatura{
     @Override
     public boolean ActualizarAsignatura() {
            try {
-            puente.executeUpdate(")");
+            puente.executeUpdate("update asignatura set idPrograma='"+idPrograma+"', Nombre_asignatura = '"+Nombre_asignatura+"', Codigo_asignatura = '"+Codigo_asignatura+"', Descripcion = '"+Descripcion+"', Numero_cupos = '"+Numero_cupos+"' WHERE  idAsignatura ="+idAsignatura+";");
             listo = true;
         } catch (Exception e) {
-            Logger.getLogger(DaoSubirExcusa.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(Daoasignatura.class.getName()).log(Level.SEVERE, null, e);
         }
         return listo;
     }
@@ -85,5 +87,73 @@ public class Daoasignatura extends Conexion implements InterfaceAsignatura{
         }
         return listo;
     }
+      public BeanAsignatura  Consultar(int Parametro){
+          BeanAsignatura BAsig = new BeanAsignatura();
+        try {
+             rs =puente.executeQuery("select * from asignatura where idAsignatura = "+Parametro);
+             while(rs.next()){
+               
+                 BAsig.setIdAsignatura(rs.getString("idAsignatura"));
+                 
+                BAsig.setIdPrograma(rs.getString("idPrograma"));
+                BAsig.setNombre_asignatura(rs.getString("Nombre_asignatura"));
+                BAsig.setCodigo_asignatura(rs.getString("Codigo_asignatura"));
+                BAsig.setDescripcion(rs.getString("Descripcion"));
+                BAsig.setNumero_cupos(rs.getString("Numero_cupos"));
+           
+             }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+             Logger.getLogger(Daoasignatura.class.getName()).log(Level.SEVERE, null, e);
+        }    
+        
+        
+        return BAsig;
+        
+    }
     
+    
+    
+    
+    public ArrayList<BeanAsignatura> Listar() {
+
+        Conexion conex = new Conexion();
+        ArrayList<BeanAsignatura> listadeasignaturas = new ArrayList<BeanAsignatura>();
+
+        try {
+            puente = conex.ObtenerConexion().createStatement();
+            rs = puente.executeQuery("select * from asignatura");
+
+            while(rs.next()){
+                
+                idAsignatura = rs.getString("idAsignatura");
+                idPrograma = rs.getString("idPrograma");
+                Nombre_asignatura = rs.getString("Nombre_asignatura");
+                Codigo_asignatura = rs.getString("Codigo_asignatura");
+                Descripcion = rs.getString("Descripcion");
+                Numero_cupos = rs.getString("Numero_cupos");
+                
+                
+                BeanAsignatura BAsig = new BeanAsignatura();
+                BAsig.setIdAsignatura(idAsignatura);
+                BAsig.setIdPrograma(idPrograma);
+                BAsig.setNombre_asignatura(Nombre_asignatura);
+                BAsig.setCodigo_asignatura(Codigo_asignatura);
+                BAsig.setDescripcion(Descripcion);
+                BAsig.setNumero_cupos(Numero_cupos);
+                
+                
+                listadeasignaturas.add(BAsig);
+                
+            }        
+        
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        return listadeasignaturas;
+    }
+       public Daoasignatura() {
+        
+    }
 }

@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="Modelo.DAO.Daoasignatura"%>
+<%@page import="Modelo.BEAN.BeanAsignatura"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="Util.Conexion"%>
 <%@page import="java.sql.*"%>
@@ -38,7 +41,7 @@
         <title>Gestion De excusa</title>
     </head>
     <body>
-   
+
 
         <header>
             <div id="mostrar-menu"><label class="menu">Menú</label></div>
@@ -57,7 +60,7 @@
             </div><br>
         </header>
     <center>
-        <br> <img src="img/gestion_excusas.png" alt=""/> <br><br>
+        <br> <h1 class="text-danger">Gestion De Asignatura</h1><br>
 
         <form id="fo" method="post" action="GestionAsignaturas" class="form-inline" >
             <div id="formulario" class="container"><br>
@@ -83,7 +86,7 @@
                                 %></select><br><br>
                         </td>
                     </tr>
-              
+
                     <tr>
                         <td><label>Nombre Asignatura: &nbsp;</label></td>
                         <td><input class="form-control" type="text" id="nomasig" name="nombreasig" placeholder="Nombre de la asiganatura"><br><br></td>
@@ -102,10 +105,91 @@
                     </tr>
                 </table>
             </div><br>
-            <button>Crear Excusa</button>
+            <button>Crear Asignatura</button>
             <input type="hidden" name="textOpcion" value="1"/>
         </form>
+       
+                
+                <!-- Button trigger modal -->
+	<button type="button"  data-toggle="modal" data-target="#myModal">
+	  Editar Asignatura
+	</button>
+	
+	<!-- Modal -->
+	<div class="modal fullscreen-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Editar Asignatura</h4>
+	      </div>
+	      <div class="modal-body">
+	          <table border="0" class="b">
+                <tr>
+                    <td style="width: 200px; text-align: center;" class="text-primary">
+                        ID ASIGNATURA                        
+                    </td>
+                    <td style="width: 200px; text-align: center;"class="text-primary">
+                        ID PROGRAMA                        
+                    </td>
+                    <td style="width: 200px; text-align: center;"class="text-primary">
+                        NOMBRE ASIGNATURA                        
+                    </td>
+                    <td style="width: 200px; text-align: center;"class="text-primary">
+                       CODIGO ASIGNATURA                      
+                    </td>
+                    <td style="width: 200px; text-align: center;"class="text-primary">
+                        DESCRIPCION                      
+                    </td>
+                    <td style="width: 200px; text-align: center;"class="text-primary">
+                        NUMERO DE CUPOS                        
+                    </td>
+                    
+                    
+                </tr>
+                <% 
+                 BeanAsignatura Ba = new BeanAsignatura();
+                 Daoasignatura Da = new Daoasignatura();
+                 
+                 ArrayList<BeanAsignatura>listadeasignaturas = Da.Listar();
+                 for(int i=0; i<listadeasignaturas.size(); i++){
+                     Ba = listadeasignaturas.get(i);
+                %>
+                <tr>
+            <td><center><%=Ba.getIdAsignatura()%></center></td>
+            <td><center><%=Ba.getIdPrograma()%></center></td>
+            <td><center><%=Ba.getNombre_asignatura()%></center></td>
+            <td><center><%=Ba.getCodigo_asignatura()%></center></td>
+            <td><center><%=Ba.getDescripcion()%></center></td>
+            <td><center><%=Ba.getNumero_cupos()%></center></td>
+                <th>
+                                       <form method="post" action="Modificar_asignatura.jsp">
+                                           
+                                           <input type="hidden" name="idAsignatura" value="<%=Ba.getIdAsignatura()%>"><button type="submit">Modificar</button>   
+                                           
+                                       </form>
+                                       
+                                       
+                                       <th>
+            
+                </tr>
+                <% }%>
+               
+            </table>
+            
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+	        
+	      </div>
+	    </div>
+	  </div>
+	</div>
+                
                         
+                        
+                        
+
 
         <%if (request.getAttribute("error") != null) {%>
         ${error}
@@ -113,10 +197,9 @@
         ${exito}
         <%}%>
         <br></center>
+
     
-        
-         
-             
+
     <script src="Bootstrap/js/bootstrap.js" type="text/javascript"></script>
     <script src="js/clickmenu.js" type="text/javascript"></script>
 </body>
