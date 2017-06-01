@@ -64,7 +64,10 @@
                 </div><br>
                     <button>Registrar Programa</button>
                     <input type="hidden" name="textOpcion" value="1"/>
-            </form><br>
+            </form>
+        <button type="button"  data-toggle="modal" data-target="#myModal">
+	  Editar Programa
+	</button>
         
         <%if (request.getAttribute("error") != null) {%>
         ${error}

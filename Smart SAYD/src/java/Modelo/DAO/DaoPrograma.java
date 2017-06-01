@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Modelo.DAO;
 
 import Modelo.BEAN.BeanPrograma;
@@ -70,6 +65,17 @@ public class DaoPrograma extends Conexion implements InterfacePrograma{
         }
         return listo;
     }
+    
+    @Override
+    public boolean ActualizarPrograma() {
+        try {
+            puente.executeUpdate("update programa set Nombre_programa='"+Nombre_programa+"', Sede_realizacion='"+Sede_realizacion+"', Descripcion_programa='"+Descripcion_programa+"', Objetivo_formacion='"+Objetivo_formacion+"',Tiempo_duracion='"+Tiempo_duracion+"' where idPrograma='"+ idPrograma+"';");
+            listo = true;
+        } catch (Exception e) {
+            Logger.getLogger(DaoGestionCursos.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return listo;
+    }
 
     @Override
     public boolean EliminarPrograma() {
@@ -103,5 +109,8 @@ public class DaoPrograma extends Conexion implements InterfacePrograma{
         }
         return BProg;
     }
+    
+
+    
     
 }

@@ -1,7 +1,9 @@
 package Controlador;
 
 import Modelo.BEAN.BeanCargaMasiva;
+import Modelo.BEAN.BeanPrograma;
 import Modelo.DAO.DaoCargaMasiva;
+import Modelo.DAO.DaoPrograma;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -27,14 +29,22 @@ public class NuevoServletCarga extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
+            throws ServletException, IOException {
         PrintWriter out = response.getWriter();
 
         //Obtener datos 
         int opcion = 1;
-        
-        String tabla = "";
+
+        String tabla = "programa";
         String archivo = "";
+        String idPrograma = request.getParameter("textidprog");
+        String Nombre_programa = request.getParameter("textnombreprog");
+        String Sede_realizacion = request.getParameter("textsedereal");
+        String Descripcion_programa = request.getParameter("textdescrip");
+        String Objetivo_formacion = request.getParameter("textobjetivo");
+        String Pensum_del_programa = request.getParameter("textpensumprogr");
+        String Pensum_Archivo = request.getParameter("textpensumarchi");
+        String Tiempo_duracion = request.getParameter("textduracion");
 
         //Llamar BEAN y el DAO
         BeanCargaMasiva BCar = new BeanCargaMasiva(tabla, archivo);
@@ -42,7 +52,7 @@ public class NuevoServletCarga extends HttpServlet {
 
         switch (opcion) {
             case 1:
-                
+
                 if (DCar.CargaMasiva()) {
 
                     request.setAttribute("exito", "<script> alert('Se registró correctamente en la tabla " + tabla + ", el archivo en .csv')</script>");
@@ -52,10 +62,10 @@ public class NuevoServletCarga extends HttpServlet {
                     request.setAttribute("error", "<script> alert('NO se ha podido registrar')</script>");
 
                 }
-                
-        request.getRequestDispatcher("carga_masiva_datos.jsp").forward(request, response);
-        break;
-    }
+
+                request.getRequestDispatcher("carga_masiva_datos.jsp").forward(request, response);
+                break;
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

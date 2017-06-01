@@ -61,8 +61,19 @@ public class ServletPrograma extends HttpServlet {
                 }
                 request.getRequestDispatcher("registrar_programa.jsp").forward(request, response);
                 break;
-
+                
             case 2:
+                
+                if (DProg.ActualizarPrograma()) {
+                    request.setAttribute("exito", "<script> alert('Se actualizaron correctamente los datos!!')</script>");
+
+                } else {
+                    request.setAttribute("error", "<script> alert('Error, no se ha podido actualizar')</script>");
+                }
+                request.getRequestDispatcher("registrar_programa.jsp").forward(request, response);
+                break;
+
+            case 3:
 
                 BProg = DaoPrograma.FiltrarPrograma(idPrograma);
                 if (BProg != null) {
