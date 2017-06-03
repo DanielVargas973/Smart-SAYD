@@ -105,6 +105,33 @@ public class DaoPrograma extends Conexion implements InterfacePrograma {
         }
         return BProg;
     }
+    public BeanPrograma  Consultar(int Parametro){
+          BeanPrograma BProg = new BeanPrograma();
+        try {
+             rs =puente.executeQuery("select * from programa where idPrograma = "+Parametro);
+             while(rs.next()){
+               
+                 BProg.setIdPrograma(rs.getString("idPrograma"));
+                 BProg.setNombre_programa(rs.getString("Nombre_programa"));
+                 BProg.setSede_realizacion(rs.getString("Sede_realizacion"));
+                 BProg.setDescripcion_programa(rs.getString("Descripcion_programa"));
+                 BProg.setObjetivo_formacion(rs.getString("Objetivo_formacion"));
+                 BProg.setPensum_del_programa(rs.getString("Pensum_del_programa"));
+                 BProg.setPensum_Archivo(rs.getString("Pensum_Archivo"));
+                 BProg.setTiempo_duracion(rs.getString("Tiempo_duracion"));
+                 
+               
+           
+             }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+             Logger.getLogger(Daoasignatura.class.getName()).log(Level.SEVERE, null, e);
+        }    
+        
+        
+        return BProg;
+        
+    }
 
     public ArrayList<BeanPrograma> Listar() {
 

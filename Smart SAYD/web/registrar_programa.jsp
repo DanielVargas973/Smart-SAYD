@@ -45,6 +45,7 @@
                 <li><a href="Subirexcusa.jsp"><img id="me" width="42px" height="42px" src="img/menu6.png" alt=""/>Gestión Excusas</a></li>  
                 <li><a href="carga_masiva_datos.jsp"><img id="me" width="42px" height="42px" src="img/menu7.png" alt=""/>Carga Masiva</a></li>  
                 <li><a href="Gestion_asignatura.jsp"><img id="me" width="42px" height="42px" src="img/Menu8.png" alt=""/>Gestionar Asignaturas</a></li>
+                <title>Registrar Programa</title>
             </nav>
             <br><div class="container">                
                 <img id="logo" margin-left="200px" src="img/SmartSAYD.png" alt="logo"/>
@@ -135,9 +136,9 @@
                             <td><center><%=BProg.getPensum_Archivo()%></center></td>
                             <td><center><%=BProg.getTiempo_duracion()%></center></td>
                             <th>
-                                <form method="post" action="Modificar_asignatura.jsp">
+                                <form method="POST" action="modificar_programa.jsp">
 
-                                    <input type="hidden" name="idAsignatura" value="<%=BProg.getIdPrograma()%>"><button type="submit">Modificar</button>   
+                                    <input type="hidden" name="idPrograma" value="<%=BProg.getIdPrograma()%>"><button type="submit">Modificar</button>   
 
                                 </form>
 
