@@ -26,9 +26,18 @@
                 </tr>
             </table>
             <input type="submit" value="Ingresar"/>
-            <input type="hidden" name="textOpcion" value="1"/>
         </form>
-        <% if (request.getAttribute("error") != null) { %>
+        <%
+            //Recupera la sesion
+            HttpSession sesion = request.getSession();
+            //Cierra la sesion
+            if (request.getParameter("cerrar")!=null) {
+            sesion.invalidate();
+            response.sendRedirect("login.jsp");
+        }
+        %>
+        <% if (request.getAttribute("error") != null) {%>
+        <%response.sendRedirect("Login/login.jsp");%>
         ${error}
         <% } else { %>
         ${exito}

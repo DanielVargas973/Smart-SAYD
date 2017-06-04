@@ -37,7 +37,6 @@ public class ServletLogin extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         //rescatar datos
-        int Opcion = Integer.parseInt(request.getParameter("textOpcion"));
         String Numero_identificacion = request.getParameter("txtNumIdenti");
         String Contrasena = request.getParameter("txtContrase");
 
@@ -63,12 +62,15 @@ public class ServletLogin extends HttpServlet {
                 sesion.setAttribute("Rol", "Forrmador");
                 response.sendRedirect("Login/indexFor.jsp");
                 break;
+            case 4://Estudiante
+                sesion.setAttribute("User", Numero_identificacion);
+                sesion.setAttribute("Rol", "Estudiante");
+                response.sendRedirect("Login/indexEstu.jsp");
+                break;
             default: 
                 request.setAttribute("error", "<script> alert('Usuario o contraseña incorrectos')</script>");
+                request.getRequestDispatcher("Login/login.jsp").forward(request, response);
                 break;
-        }
-        if (request.getParameter("cerrar")!=null) {
-            sesion.invalidate();
         }
     }
 

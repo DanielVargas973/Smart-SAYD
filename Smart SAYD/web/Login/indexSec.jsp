@@ -5,17 +5,6 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<% HttpSession sesion = request.getSession();
-    String Numero_identificacion;
-    String Rol;
-    if (sesion.getAttribute("User") != null && sesion.getAttribute("Rol") != null) {
-        Numero_identificacion = sesion.getAttribute("User").toString();
-        Rol = sesion.getAttribute("Rol").toString();
-        out.print("<a href='login.jsp)cerrar=true><h5>Cerrar sesion" + Rol + "</h5></a>'");
-    } else {
-        out.print("<script>location.replace('login.jsp');</script>");
-    }
-%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -40,8 +29,19 @@
                 <li><a href="carga_masiva_datos.jsp"><img id="me" width="42px" height="42px" src="../img/menu7.png" alt=""/>Carga Masiva</a></li>  
                 <li><a href="Gestion_asignatura.jsp"><img id="me" width="42px" height="42px" src="../img/Menu8.png" alt=""/>Gestionar Asignaturas</a></li>
             </nav>
-            <br><div class="container">                
+            <br><div class="container">
                 <img src="../img/SmartSAYD.png" alt="logo"/>
+                <% HttpSession sesion = request.getSession();
+                    String Numero_identificacion;
+                    String Rol;
+                    if (sesion.getAttribute("User") != null && sesion.getAttribute("Rol") != null) {
+                        Numero_identificacion = sesion.getAttribute("User").toString();
+                        Rol = sesion.getAttribute("Rol").toString();
+                        out.print("<a href='login.jsp?cerrar=true'><h5>Cerrar sesion" + Numero_identificacion + "</h5></a>");
+                    } else {
+                        out.print("<script>location.replace('login.jsp');</script>");
+                    }
+                    %>
             </div><br>
         </header>
     <center>

@@ -41,6 +41,14 @@ public class DaoLogin extends Conexion {
             while(rs.next()){
                 Rol_Asignado = rs.getInt(1);
             }
+            if (Rol_Asignado==0) {
+            try {
+                puente.executeQuery("select * FROM estudiante where Numero_identificacion ='"+Numero_identificacion+"' and Contrasena ='"+Contrasena+"'" );       
+                Rol_Asignado= 4 ;
+            } catch (Exception e) {
+                Logger.getLogger(DaoGestionCursos.class.getName()).log(Level.SEVERE, null, e);
+            }
+        }
             conexion.close();
         } catch (Exception e) {
             Logger.getLogger(DaoGestionCursos.class.getName()).log(Level.SEVERE, null, e);
