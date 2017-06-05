@@ -103,28 +103,21 @@
                     </tr>
                     <tr>
                         <td>Nombre Asignatura</td>  
-                        <td><input type="text" class="form-control" value="<%=Nombre_asignatura%>" name="nombreasig"></input></td>  
+                        <td><input type="text" class="form-control" value="<%=Nombre_asignatura%>" name="nombreasig"></td>  
                     </tr>
                     <tr>
                     <tr>
                         <td>codigo Asignatura:</td>  
-                        <td><input type="text" value="<%=Codigo_asignatura%>" class="form-control" name="codasig" ></input></td>  
+                        <td><input type="text" value="<%=Codigo_asignatura%>" class="form-control" name="codasig" ></td>  
                     </tr>
                     <tr>
                         <td>Descripcion</td>  
-                        <td><input type="text" value="<%=Descripcion%>" class="form-control" name="descripcion"></input></td>  
+                        <td><input type="text" value="<%=Descripcion%>" class="form-control" name="descripcion"></td>  
                     </tr>
                     <tr>
                         <td>Numero de cupos</td>  
-                        <td><input type="text" value="<%=Numero_cupos%>" class="form-control" name="cupos"></input></td>  
+                        <td><input type="text" value="<%=Numero_cupos%>" class="form-control" name="cupos"><br></td>  
                     </tr>
-
-
-
-
-
-
-
                 </table>
             </div><br>
             <button>Actualizar asignatura</button>
