@@ -65,7 +65,7 @@ public class DaoRegistroEstudiante extends Conexion implements InterfaceEstudian
     @Override
     public boolean AgregarRegistro() {
         try {
-            puente.executeUpdate("INSERT INTO estudiante (`idEstudiante`, `Id_Curso`, `Nombres`, `Apellidos`, `Genero`, `Fecha_nacimiento`, `Tipo_identificacion`, `Numero_identificacion`, `Fecha_inscripcion`, `Fecha_expedicion`, `Estrato`, `Numero_telefono`, `Correo_electronico`, `Contrasena`) VALUES (NULL, '"+id_Curso+"', '"+Nombres+"', '"+Apellidos+"', '"+Genero+"', NULL, '"+Tipo_identificacion+"', '"+Numero_identificacion+"', '"+Fecha_inscripcion+"', '"+Fecha_expedicion+"', NULL, NULL, NULL, '"+Numero_identificacion+"')");
+            puente.executeUpdate(" CALL `PA_AgregarEstudiante`("+id_Curso+", '"+Nombres+"', '"+Apellidos+"', "+Genero+","+Tipo_identificacion+", '"+Numero_identificacion+"', '"+Fecha_inscripcion+"', '"+Fecha_expedicion+"','"+Numero_identificacion+"');");
             listo = true;
         } catch (Exception e) {
             Logger.getLogger(DaoRegistroEstudiante.class.getName()).log(Level.SEVERE, null, e);
@@ -76,7 +76,7 @@ public class DaoRegistroEstudiante extends Conexion implements InterfaceEstudian
     @Override
     public boolean ActualizarRegistros() {
         try {
-            puente.executeUpdate("update estudiante set Nombres='"+Nombres+"', Apellidos='"+Apellidos+"', Fecha_nacimiento='"+Fecha_nacimiento+"', Estrato='"+Estrato+"', Numero_telefono='"+Numero_telefono+"', Correo_electronico='"+Correo_electronico+"', Contrasena='"+Contrasena+"' where Numero_identificacion=" + Numero_identificacion + ";");
+            puente.executeUpdate("CALL `PA_ActualizarEstudiante` ('"+Nombres+"','"+Apellidos+"','"+Fecha_nacimiento+"',"+Estrato+","+Numero_telefono+",'"+Correo_electronico+"','"+Contrasena+"','" + Numero_identificacion + "');");
             listo = true;
         } catch (Exception e) {
             Logger.getLogger(DaoRegistroEstudiante.class.getName()).log(Level.SEVERE, null, e);

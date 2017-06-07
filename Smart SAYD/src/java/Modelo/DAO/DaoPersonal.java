@@ -76,7 +76,7 @@ public class DaoPersonal extends Conexion implements InterfaceTrabajador {
     @Override
     public boolean AgregarTrabajador() {
         try {
-            puente.executeUpdate("INSERT INTO `personal` (`Nombre`, `PrimerApellido`, `SegundoApellido`, `Tipo_identificacion`, `Numero_identificacion`, `Fecha_Expedicion`, `Ciudad_Expedicion`, `Pais_Expedicion`, `Genero`, `Fecha_Nacimiento`, `Ciudad_Nacimiento`, `Pais_Nacimiento`, `Estrato`, `Numero_Telefono`, `Correo_Electronico`, `Direccion_Residencia`, `EPS`, `RH_y_Gruposanguineo`, `Rol_Asignado`, `Contrasena`) VALUES ('"+Nombre+"', '"+PrimerApellido+"', '"+SegundoApellido+"',"+Tipo_identificacion+",'"+Numero_identificacion+"', '"+Fecha_Expedicion+"', '"+Ciudad_Expedicion+"', '"+Pais_Expedicion+"',"+Genero+", '"+Fecha_Nacimiento+"', '"+Ciudad_Nacimiento+"', '"+Pais_Nacimiento+"',"+Estrato+","+Numero_Telefono+", '"+Correo_Electronico+"', '"+Direccion_Residencia+"', '"+EPS+"', '"+RH_y_Gruposanguineo+"',"+Rol_Asignado+", '"+Contrasena+"');");
+            puente.executeUpdate("CALL `PA_AgregarPersonal`('"+Nombre+"', '"+PrimerApellido+"', '"+SegundoApellido+"',"+Tipo_identificacion+",'"+Numero_identificacion+"', '"+Fecha_Expedicion+"', '"+Ciudad_Expedicion+"', '"+Pais_Expedicion+"',"+Genero+", '"+Fecha_Nacimiento+"', '"+Ciudad_Nacimiento+"', '"+Pais_Nacimiento+"',"+Estrato+","+Numero_Telefono+", '"+Correo_Electronico+"', '"+Direccion_Residencia+"', '"+EPS+"', '"+RH_y_Gruposanguineo+"',"+Rol_Asignado+", '"+Contrasena+"');");
             listo = true;
         } catch (Exception e) {
             Logger.getLogger(DaoPersonal.class.getName()).log(Level.SEVERE, null, e);

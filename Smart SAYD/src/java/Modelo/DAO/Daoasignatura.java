@@ -58,7 +58,7 @@ public class Daoasignatura extends Conexion implements InterfaceAsignatura{
     @Override
     public boolean AgregarAsignatura() {
            try {
-            puente.executeUpdate("INSERT INTO asignatura (idAsignatura, idPrograma, Nombre_asignatura, Codigo_asignatura, Descripcion, Numero_cupos) VALUES (NULL, '"+idPrograma+"', '"+Nombre_asignatura+"', '"+Codigo_asignatura+"', '"+Descripcion+"', '"+Numero_cupos+"')");
+            puente.executeUpdate("CALL `PA_AgregarAsignatura`("+idPrograma+"', '"+Nombre_asignatura+"',"+Codigo_asignatura+", '"+Descripcion+"',"+Numero_cupos+");");
             listo = true;
         } catch (Exception e) {
             Logger.getLogger(Daoasignatura.class.getName()).log(Level.SEVERE, null, e);
@@ -69,7 +69,7 @@ public class Daoasignatura extends Conexion implements InterfaceAsignatura{
     @Override
     public boolean ActualizarAsignatura() {
            try {
-            puente.executeUpdate("update asignatura set idPrograma='"+idPrograma+"', Nombre_asignatura = '"+Nombre_asignatura+"', Codigo_asignatura = '"+Codigo_asignatura+"', Descripcion = '"+Descripcion+"', Numero_cupos = '"+Numero_cupos+"' WHERE  idAsignatura ="+idAsignatura+";");
+            puente.executeUpdate("CALL `PA_ActualizarAsignatura`("+idPrograma+",'"+Nombre_asignatura+"',"+Codigo_asignatura+",'"+Descripcion+"',"+Numero_cupos+", "+idAsignatura+");");
             listo = true;
         } catch (Exception e) {
             Logger.getLogger(Daoasignatura.class.getName()).log(Level.SEVERE, null, e);

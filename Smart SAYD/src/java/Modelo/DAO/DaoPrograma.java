@@ -55,7 +55,7 @@ public class DaoPrograma extends Conexion implements InterfacePrograma {
     @Override
     public boolean AgregarPrograma() {
         try {
-            puente.executeUpdate("INSERT INTO programa (idPrograma, Nombre_programa, Sede_realizacion, Descripcion_programa, Objetivo_formacion, Pensum_del_programa, Pensum_Archivo, Tiempo_duracion) values (NULL, '" + Nombre_programa + "', '" + Sede_realizacion + "', '" + Descripcion_programa + "', '" + Objetivo_formacion + "', NULL, NULL, '" + Tiempo_duracion + "');");
+            puente.executeUpdate("CALL `PA_AgregaPrograma` ('" + Nombre_programa + "', '" + Sede_realizacion + "', '" + Descripcion_programa + "', '" + Objetivo_formacion + "','" + Tiempo_duracion + "');");
             listo = true;
         } catch (Exception e) {
             Logger.getLogger(DaoGestionCursos.class.getName()).log(Level.SEVERE, null, e);
@@ -66,7 +66,7 @@ public class DaoPrograma extends Conexion implements InterfacePrograma {
     @Override
     public boolean ActualizarPrograma() {
         try {
-            puente.executeUpdate("update programa set Nombre_programa='" + Nombre_programa + "', Sede_realizacion='" + Sede_realizacion + "', Descripcion_programa='" + Descripcion_programa + "', Objetivo_formacion='" + Objetivo_formacion + "',Tiempo_duracion='" + Tiempo_duracion + "' where idPrograma='" + idPrograma + "';");
+            puente.executeUpdate("CALL `PA_ActualizarPrograma`('"+Nombre_programa+"','"+Sede_realizacion+"','"+Descripcion_programa+"','"+Objetivo_formacion+"',"+Tiempo_duracion+","+idPrograma+");");
             listo = true;
         } catch (Exception e) {
             Logger.getLogger(DaoGestionCursos.class.getName()).log(Level.SEVERE, null, e);
@@ -77,7 +77,7 @@ public class DaoPrograma extends Conexion implements InterfacePrograma {
     @Override
     public boolean EliminarPrograma() {
         try {
-            puente.executeUpdate("DELETE FROM programa WHERE idPrograma ='" + idPrograma + "'");
+            puente.executeUpdate("CALL `PA_EliminarPrograma`(" + idPrograma + "'");
             listo = true;
         } catch (Exception e) {
             Logger.getLogger(DaoGestionCursos.class.getName()).log(Level.SEVERE, null, e);

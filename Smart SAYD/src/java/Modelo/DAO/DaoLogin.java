@@ -36,13 +36,13 @@ public class DaoLogin extends Conexion {
 
     public int IngresarSistema(String Numero_identificacion, String Contrasena) {
         try {
-            rs = puente.executeQuery("select Rol_Asignado from personal WHERE Numero_identificacion = '" + Numero_identificacion + "' and Contrasena = '" + Contrasena + "'");
+            rs = puente.executeQuery("CALL `PA_LoginPersonal` ('"+Numero_identificacion+"','"+Contrasena+"')");
             while (rs.next()) {
                 Rol_Asignado = rs.getInt(1);
             }
             if (Rol_Asignado == 0) {
                 try {
-                    rs = puente.executeQuery("select idEstudiante FROM estudiante where Numero_identificacion ='" + Numero_identificacion + "' and Contrasena ='" + Contrasena + "'");
+                    rs = puente.executeQuery("CALL PA_LoginEstudiante('"+Numero_identificacion+"','"+Contrasena+"')");
                     while (rs.next()) {
                         Rol_Asignado = rs.getInt(1);
                     }
