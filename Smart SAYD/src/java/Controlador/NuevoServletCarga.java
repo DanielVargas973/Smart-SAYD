@@ -36,7 +36,7 @@ public class NuevoServletCarga extends HttpServlet {
         //Obtener datos 
         int opcion = 1;
 
-        String tabla = "programa";
+        String tabla = "";
         String archivo = "";
         
         //Llamar BEAN y el DAO
@@ -48,11 +48,11 @@ public class NuevoServletCarga extends HttpServlet {
 
                 if (DCar.CargaMasiva()) {
 
-                    request.setAttribute("exito", "<script> alert('Se registró correctamente en la tabla " + tabla + ", el archivo en .csv')</script>");
+                    request.setAttribute("exito", "<script> alert('Se ha cargado correctamenete, el archivo .csv')</script>");
 
                 } else {
 
-                    request.setAttribute("error", "<script> alert('NO se ha podido registrar')</script>");
+                    request.setAttribute("error", "<script> alert('No se ha podido registrar')</script>");
 
                 }
 

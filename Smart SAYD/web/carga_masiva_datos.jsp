@@ -63,6 +63,7 @@
         <link href="Bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="Bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
         <link href="css/registro_estudiante.css" rel="stylesheet" type="text/css"/>
+        <link href="css/carga.css" rel="stylesheet" type="text/css"/>
         <link href="JQuery/JqueryUI/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css"/>
         <script src="JQuery/jquery-3.2.1.min.js" type="text/javascript"></script>
         <script src="JQuery/JqueryUI/jquery-ui-1.12.1/jquery-ui.js" type="text/javascript"></script>
@@ -86,11 +87,11 @@
             </div><br>
         </header>
     <center>        
-        <br><img src="img/registro.png" alt=""/><br><br>
-        <form method="POST" enctype="multipart/form-data" action="ServletCarga">
+        <br><img src="img/carga.png" alt=""/><br><br>
+        <form method="POST" enctype="multipart/form-data" action="probandocarga.jsp">
             <div id="formulario" class="container"><br>
                 <table>
-                    <tr>
+                    <!--<tr>
                         <td><label>Tabla: &nbsp;</label></td>
                         <td><select class="form-control" id="se" name="texttabla">
                                 <option value="" selected="true" disabled="disabled">Selecione la tabla</option>
@@ -103,7 +104,7 @@
                                 <option value="personal">Personal</option>
                                 <option value="programa">Programa</option>
                             </select><br><br></td>
-                    </tr>
+                    </tr>-->
                     <tr>
                         <td><label>Suba el archivo (.csv): &nbsp;</label></td>
                         <td><input type="file" accept=".csv" name="archivo" required><br><br></td>
