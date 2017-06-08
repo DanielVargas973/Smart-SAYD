@@ -26,9 +26,10 @@
         <link href="JQuery/JqueryUI/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css"/>
         <script src="JQuery/jquery-3.2.1.min.js" type="text/javascript"></script>
         <script src="JQuery/JqueryUI/jquery-ui-1.12.1/jquery-ui.js" type="text/javascript"></script>
-        <script src="js/val_registro_estudiante.js" type="text/javascript"></script>
-        <script src="js/fechas.js" type="text/javascript"></script>
-        <script src="js/gestion_excusas.js" type="text/javascript"></script>
+       
+        
+        <script src="js/val_gestion_asignaturas.js" type="text/javascript"></script>
+        
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <script>
             $(function () {
