@@ -18,14 +18,13 @@
         <title>Smart SAYD</title>
     </head>
     <body>
+        <br><br><div class="container">                
+                <img id="logo" src="../img/SmartSAYD2.png" alt="logo"/>
+        </div>
     <center>
-        <br/>
-        <br/>
-        <h1>Iniciar sesión</h1>
-        <br/>
-        <br/>
         <form class="form-inline" method="post" action=".../Smart_SAYD">
             <div id="formulario" class="container">
+                <h1>Iniciar sesión</h1>
                 <br/>
                 <table>
                     <tr>
