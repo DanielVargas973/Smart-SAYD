@@ -13,7 +13,7 @@
         <link href="../Bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
         <script src="../JQuery/jquery-3.2.1.min.js" type="text/javascript"></script>
         <link href="../css/menu.css" rel="stylesheet" type="text/css"/>
-        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link href="../css/font/raleway.css" rel="stylesheet" type="text/css"/>
         <title>Smart SAYD</title>
     </head>
     <body>
@@ -31,6 +31,17 @@
             </nav>
             <br><div class="container">                
                 <img src="../img/SmartSAYD.png" alt="logo"/>
+                <% HttpSession sesion = request.getSession();
+                    String Numero_identificacion;
+                    String Rol;
+                    if (sesion.getAttribute("User") != null && sesion.getAttribute("Rol") != null) {
+                        Numero_identificacion = sesion.getAttribute("User").toString();
+                        Rol = sesion.getAttribute("Rol").toString();
+                        out.print("<a href='login.jsp?cerrar=true'><h5>Cerrar sesion" + Numero_identificacion + "</h5></a>");
+                    } else {
+                        out.print("<script>location.replace('login.jsp');</script>");
+                    }
+                    %>
             </div><br>
         </header>
     <center>
