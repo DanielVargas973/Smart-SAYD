@@ -5,7 +5,6 @@
  */
 package Controlador;
 
-
 import Modelo.BEAN.BeanCargaMasiva;
 import Modelo.DAO.DaoCargaMasiva;
 import Util.Conexion;
@@ -20,10 +19,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileItemFactory;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 /**
  *
@@ -42,7 +37,7 @@ public class ServletCargaMasiva extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, Exception {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
 
@@ -58,30 +53,6 @@ public class ServletCargaMasiva extends HttpServlet {
         //Generar mensajes dependiendo de las opciones
         switch (opcion) {
             case 1://Carga Masiva de datos
-                
-                /*FileItemFactory es una interfaz para crear FileItem*/
-                FileItemFactory file_factory = new DiskFileItemFactory();
-                /*ServletFileUpload esta clase convierte los input file a FileItem*/
-                ServletFileUpload servlet_up = new ServletFileUpload(file_factory);
-                /*sacando los FileItem del ServletFileUpload en una lista */
-                List items = servlet_up.parseRequest(request);
-
-                for (int i = 0; i < items.size(); i++) {
-                    /*FileItem representa un archivo en memoria que puede ser pasado al disco duro*/
-                    FileItem item = (FileItem) items.get(i);
-                    /*item.isFormField() false=input file; true=text field*/
-                    if (!item.isFormField()) {
-                        /*cual sera la ruta al archivo en el servidor*/
-                        File archivo_server = new File("C:/Users/Usuario/Documents/carga" + item.getName());
-                        /*y lo escribimos en el servidor*/
-                        item.write(archivo_server);
-                        archivo = item.getName();
-                        out.print("Nombre --> " + archivo);
-                        out.print("<br> Tipo --> " + item.getContentType());
-                        out.print("<br> tamaño --> " + (item.getSize() / 1240) + "KB");
-                        out.print("<br>");
-                    }
-                }
 
                 if (DCar.CargaMasiva()) {
 
@@ -110,11 +81,7 @@ public class ServletCargaMasiva extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (Exception ex) {
-            Logger.getLogger(ServletCargaMasiva.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -128,11 +95,7 @@ public class ServletCargaMasiva extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (Exception ex) {
-            Logger.getLogger(ServletCargaMasiva.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**

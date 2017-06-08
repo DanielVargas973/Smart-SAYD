@@ -41,7 +41,7 @@ public class DaoCargaMasiva extends Conexion implements InterfaceCargaMasiva {
     @Override
     public boolean CargaMasiva() {
         try {
-            puente.executeUpdate("LOAD DATA INFILE 'C:/Users/sena1/Desktop/carga/programa.csv' INTO TABLE programa FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n' IGNORE 1 LINES");
+            puente.execute("LOAD DATA LOCAL INFILE 'C:/Users/Usuario/Desktop/carga/programa.csv' INTO TABLE programa FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n' IGNORE 1 LINES");
             listo = true;
         } catch (Exception e) {
             Logger.getLogger(DaoGestionCursos.class.getName()).log(Level.SEVERE, null, e);

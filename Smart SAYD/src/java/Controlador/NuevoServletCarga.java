@@ -30,6 +30,7 @@ public class NuevoServletCarga extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
 
         //Obtener datos 
@@ -37,15 +38,7 @@ public class NuevoServletCarga extends HttpServlet {
 
         String tabla = "programa";
         String archivo = "";
-        String idPrograma = request.getParameter("textidprog");
-        String Nombre_programa = request.getParameter("textnombreprog");
-        String Sede_realizacion = request.getParameter("textsedereal");
-        String Descripcion_programa = request.getParameter("textdescrip");
-        String Objetivo_formacion = request.getParameter("textobjetivo");
-        String Pensum_del_programa = request.getParameter("textpensumprogr");
-        String Pensum_Archivo = request.getParameter("textpensumarchi");
-        String Tiempo_duracion = request.getParameter("textduracion");
-
+        
         //Llamar BEAN y el DAO
         BeanCargaMasiva BCar = new BeanCargaMasiva(tabla, archivo);
         DaoCargaMasiva DCar = new DaoCargaMasiva(BCar);
